@@ -155,5 +155,9 @@ alias ahat="aha >/win3/ls-with-colors.html"
 if [ -f /etc/bash.bashrc ]; then
     . /etc/bash.bashrc
 fi
+if [ -f /etc/bash.bash_aliases]; then
+    . /etc/bash.bash_aliases
+fi
+
 
 
