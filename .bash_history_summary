@@ -679,3 +679,262 @@ watch progress -q
 watch "tail -n20 .bash_history"
 watch "tail -n2 .bash_history"
 watch "tail -n5 .bash_history"
+
+ag /win4
+aha
+apt-get install aha
+apt-get install ncdu
+bash clearcmd 
+bash cmd
+bypy
+bypy upload csv15
+bypy upload csv15 csv
+cat .bash_history|fzy
+cat /root/.bashrc|aha 
+cat /root/.bashrc|aha >ls_with_color.html
+cat /root/.bashrc|aha >/opt/ls_with_color.html
+cd
+cd /
+cd ..
+cd airportscan/
+cd bashrc/
+cd csv
+cd csv/
+cd csv15
+cd /etc/
+cd git
+cd /opt
+cd /opt/
+cd /opt/oss
+cd /opt/tc_climate
+cd /opt/tc_climate/
+cd /oss
+cd /oss/
+cd /otp
+cd tc_climate
+cd tc_climate/
+cd tc_git_bashrc
+cd tc_git_bashrc/
+cd tc_git_climate/
+cd test
+cd wiki
+chattr 777 tc_git_climate/
+chattr -R 777 tc_git_climate
+chown git:git /opt/tc_git_bashrc/
+chown git:git /opt/tc_git_climate/
+chown -r git:git /opt/tc_git_bashrc/
+chown -R git:git /opt/tc_git_bashrc/
+cp .bash_aliases /etc/bash.bash_aliases
+cp .bashrc.backup .bashrc
+cp .bashrc.backupt .bashrc
+cp .bashrc .bashrc.backup
+cp *.csv csv15/
+cp filter_test.py /opt/tc_climate
+cp /oss/tc_climate/count_tp_test.py  .
+cp /oss/tc_climate/filter_test.py  .
+cp /oss/tc_climate/tc_climate_temp_train.py .
+cp /oss/tc_climate/tc_climate_temp_train.py /opt/
+cp /oss/tc_climate/tc_run1.py /opt/tc_climate
+cp /oss/tc_climate/tc_run20.py
+cp /oss/tc_climate/tc_run20.py .
+cp /oss/tc_climate_temp_train.py .
+cp -prd .bashrc /etc/bash.bashrc
+cp -prd.bashrc /etc/bash.bashrc
+cp -prd ./.git /var/
+cp -prd ./git /var/
+cp -prd /oss/tc_climate/ /opt/
+cp -prd /oss/tc_climate/*.py  /opt/tc_climate/
+cp -prd tc_git_climate tc_git_bashrc
+cp tc_run20_single_run.py /opt/tc_climate
+df -lh
+du | sort -n
+echo "">.bashrc
+echo "">note
+exit
+git add .bash_aliases 
+git add .bash_history_summary 
+git add .bashrc
+git add note
+git branch
+git branch -v
+git branch -va
+git checkout .
+git clone git@47.94.205.80:/opt/tc_git_climate
+git clone git@47.94.205.80:/opt/tc_git_climate tc_climate
+git clone git@localhost:/opt/tc_git_bashrc bashrc
+git clone git@localhost:/opt/tc_git_climate tc_climate
+git clone https://github.com/ipython/ipython.git
+git commit -m "note"
+git config
+git config -l
+git diff
+git diff .bashrc
+git fetch origin
+git fetch origin master
+git fetch origin/master
+git init
+git init --bare
+git init --help
+git push origin master
+git rebase 
+git rebase --abort
+git rebase origin/master
+git rebase --skip
+git reflog
+git remote add origin git@localhost:/opt/tc_git_bashrc
+git remote -v
+git remote -va
+git status
+gm
+gm "add .bashrc"
+gm "add the bash_aliases"
+gm -m "update the bashrc"
+gm "update bashrc"
+gm "update the .bash_history_summary"
+gm "update the bashrc"
+hg
+hg cp
+hg jupyter
+hg oss
+hg ossfs
+hg python
+hg run20
+hg source
+hg tar
+hg wget
+HISHID
+jupyter notebook --ip=*
+jupyter notebook --ip=* --allow-root
+kill 2941
+kill 2983
+kill 7471
+kill 7472
+kill 7496
+l
+less 10_20.dcsv
+less .bash_aliases
+less .bash_aliases 
+less .bashrc
+less .bashrc.backup 
+less cmd
+less /etc/bash.bash_aliases 
+less .git/rebase-apply/patch
+less nohup
+less nohup.out 
+less /root/.git/rebase-apply/patch
+less tc_run11.log
+less tc_run13.log
+less tc_run1.log
+less tc_run20.log
+less tf_run11.log
+llt
+llt 
+llt .bash*
+llt bash*
+llt *_*.csv
+llt *.csv
+llt -h *d.csv
+ls
+ls .bash*
+ls ch*
+ls *d.csv
+ls tc_climate
+lt
+mkdir csv
+mkdir csv15
+mkdir git
+mkdir tc_climate
+mkdir tc_git_climate
+mkdir wiki
+ncdu
+nohup bypy upload csv15 csv &
+nohup bypy upload csv15/*_*.csv csv &
+nohup bypy upload *_*.csv csv &
+nohup jupyter notebook --ip=* --allow-root &
+nohup python -m http.server 7778 &
+ossfs 
+ossfs oss://tbxy09test
+ossfs oss://tbxy09test /oss
+ossfs tbxy09test /oss
+ossfs tbxy09test /oss --ourl=http://oss-cn-beijing-internal.aliyuncs.com
+ossfs tbxy09test /oss -ourl=http://oss-cn-beijing-internal.aliyuncs.com
+ossfs tbxy09test /oss ourl=http://oss-cn-beijing-internal.aliyuncs.com
+passwd git
+ps aux
+ps aux|grep bypy
+ps aux|grep jupyter
+ps aux|grep nohup
+ps aux|grep notebook
+python count_tp_test.py 
+python ../filter_test.py
+python filter_test.py
+python filter_test.py 
+python -m http.server 7777
+python -m http.server 7778
+python tc_run1.py
+python tc_run1.py> tc_run11.log
+python tc_run1.py >> tc_run12.log
+python tc_run1.py >> tc_run13.log
+python tc_run1.py >> tc_run1.log
+python tc_run1.py > tc_run1.log
+python tc_run20.py
+python tc_run20.py > tc_run20.log
+rm .bash_aliases 
+rm ForecastDataforTesting_201712.csv 
+rmi .git
+rm *.ipynb
+rm -iv *d.csv
+rm key_1.csv.zip 
+rm key_2.csv.zip 
+rm *.py
+rm -r *
+rm -r .git
+rm -r ./.git
+rm -r tc_climate/
+rm sample_submission*
+rm stage2_aps.tar.gz 
+rm tc_climate/
+rm test-tif-v2.tar.7z 
+rm test.zip
+rm test.zip1
+rm test.zip.1 
+rm train_2.csv.zip 
+rm train2.csv.zip
+rm train.7z 
+rm train_masks.csv.zip 
+rm train-tif-v2.tar.7z 
+rm -v *d.csv
+rm -vir *
+rm -vir .git
+sap34
+source activate patent-landscape
+source .bashrc
+sudo useradd -m -d /var/git -s /bin/bash git
+su git
+tar
+tar -f
+tar -ft
+tar -f --test stage2_aps.tar.gz
+tar -ft stage2_aps.tar.gz
+tar -test stage2_aps.tar.gz
+tar -tf stage2_aps.tar.gz
+tar -t stage2_aps.tar.gz
+top
+unzip ForecastDataforTesting_20171205.zip 
+unzip ForecastDataforTraining_20171205.zip 
+useradd -m -d /var/git -s /bin/bash git
+vim count_tp_test.py 
+vim /etc/bash.bashrc 
+vim ../filter_test.py
+vim filter_test.py
+vim filter_test.py 
+vim /root/.bashrc
+vim tcclimate.py
+vim tc_climate_temp.py
+vim tc_climate_temp_train.py
+vim tc_climate_temp_train.py 
+vim tc_run11.py
+vim tc_run1.py
+vim tc_run20.py
+vim tf_flags.py 
+vncserver
