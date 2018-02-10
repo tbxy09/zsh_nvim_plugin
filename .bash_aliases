@@ -25,3 +25,28 @@ alias ffzy='find -type f|fzy'
 alias sap34='source activate python34'
 alias cddir='cd $(dirname $(find -type f|fzy))'
 alias hgs='cat /root/.bash_history_summary|fzy'
+# enable color support of ls and also add handy aliases
+alias ls='ls --color=auto'
+#alias dir='dir --color=auto'
+#alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias llt="ls -latr"
+alias dfwin3="df -lh|grep win3"
+alias dfwin4="df -lh|grep win4"
+alias dfdata="df -lh|grep data"
+alias dfbackup="df -lh|grep backup"
+alias lltwin3="llt /win3|tail -10"
+alias lltwin4="llt /win4|tail -10"
+alias lltopt="llt /opt|tail -10" 
+alias llth="llt .|tail -10"
+alias alisec="47.94.205.80"
+alias b1="104.129.180.167"
+alias hg="history|fzy"
+alias rmi="rm -vi"
+alias ahat="aha >/win3/ls-with-colors.html"
