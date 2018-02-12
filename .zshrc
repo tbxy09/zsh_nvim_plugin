@@ -1,0 +1,1 @@
+/data/dotfiles/zshrc
