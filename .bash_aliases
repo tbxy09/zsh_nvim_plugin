@@ -50,3 +50,8 @@ alias b1="104.129.180.167"
 alias hg="history|fzy"
 alias rmi="rm -vi"
 alias ahat="aha >/win3/ls-with-colors.html"
+alias zhg='cat /root/.zhistory|fzy'
+alias sap34="conda activate python34"
+alias sap2="conda activate patent-landscape"
+alias start8888="nohup jupyter notebook --ip=* --allow-root &"
+alias start7778='nohup python -m http.server 7778 &'

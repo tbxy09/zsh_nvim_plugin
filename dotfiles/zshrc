@@ -1,8 +1,10 @@
-# load custom executable functions
+#  load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
 done
-
+TRAPWINCH() {
+  zle && { zle reset-prompt; zle -R }
+}
 # extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post
 # these are loaded first, second, and third, respectively.
 _load_settings() {
@@ -46,3 +48,14 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
+[[ -f /opt/enhancd/init.sh ]] && source /opt/enhancd/init.sh
+
+[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+. /root/anaconda/etc/profile.d/conda.sh
+alias start7778='nohup python -m http.server 7778 &'
+alias start8888="nohup jupyter notebook --ip=* --allow-root &"
+export OPT='/opt/'

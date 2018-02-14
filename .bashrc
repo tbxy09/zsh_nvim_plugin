@@ -162,3 +162,5 @@ fi
 
 
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
