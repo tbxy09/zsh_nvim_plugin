@@ -7,6 +7,7 @@ if [ -d "$HOME/.asdf" ]; then
 fi
 
 # mkdir .git/safe in the root of repositories you trust
-PATH=".git/safe/../../bin:$PATH"
-
+PATH=".git/safe/../../bin:$PATH" 
+# add the conda path to the zsh path
+PATH="$HOME/anaconda/bin:$PATH"
 export -U PATH
