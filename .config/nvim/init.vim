@@ -198,12 +198,12 @@ call plug#begin('~/.config/nvim/plugged')
 	" move line mappings
 	" ∆ is <A-j> on macOS
 	" ˚ is <A-k> on macOS
-	nnoremap ∆ :m .+1<cr>==
-	nnoremap ˚ :m .-2<cr>==
-	inoremap ∆ <Esc>:m .+1<cr>==gi
-	inoremap ˚ <Esc>:m .-2<cr>==gi
-	vnoremap ∆ :m '>+1<cr>gv=gv
-	vnoremap ˚ :m '<-2<cr>gv=gv
+"	nnoremap ∆ :m .+1<cr>==
+"	nnoremap ˚ :m .-2<cr>==
+"	inoremap ∆ <Esc>:m .+1<cr>==gi
+"	inoremap ˚ <Esc>:m .-2<cr>==gi
+"	vnoremap ∆ :m '>+1<cr>gv=gv
+"	vnoremap ˚ :m '<-2<cr>gv=gv
 
 	" toggle cursor line
 	nnoremap <leader>i :set cursorline!<cr>
@@ -439,6 +439,8 @@ call plug#begin('~/.config/nvim/plugged')
 	"vim-unimpared{{{
 	"Plug 'tpope/vim-unimpaired'
 	"}}}
+         Plug 'ctrlpvim/ctrlp.vim'
+	"
 " }}}
 
 " Language-Specific Configuration {{{
@@ -552,3 +554,8 @@ call plug#end()
 " }}}
 
 " vim:set foldmethod=marker foldlevel=0
+set tags=./tags;/
+set autochdir
+let g:tagbar_ctags_bin='/usr/bin/ctags'
+let g:ctrlp_cmd='CtrlP :pwd'
+noremap <leader>b :CtrlPBuffer<CR>
