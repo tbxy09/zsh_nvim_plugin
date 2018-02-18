@@ -276,7 +276,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'tpope/vim-surround'
 
 	" tmux integration for vim
-	Plug 'benmills/vimux'
+	"Plug 'benmills/vimux'
 
 	" enables repeating other supported plugins with the . command
 	Plug 'tpope/vim-repeat'
@@ -397,7 +397,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" }}}
 
 	" signify {{{
-	    " Plug 'airblade/vim-gitgutter'
+	    Plug 'airblade/vim-gitgutter'
 	    Plug 'mhinz/vim-signify'
 	    let g:signify_vcs_list = [ 'git' ]
 	    let g:signify_sign_add               = '+'
@@ -433,6 +433,12 @@ call plug#begin('~/.config/nvim/plugged')
 		Plug 'SirVer/ultisnips' " Snippets plugin
 		let g:UltiSnipsExpandTrigger="<tab>"
 	" }}}
+	"gitgutter{{{
+	"Plug 'airblade/vim-gitgutter'
+	"}}}
+	"vim-unimpared{{{
+	"Plug 'tpope/vim-unimpaired'
+	"}}}
 " }}}
 
 " Language-Specific Configuration {{{
@@ -506,6 +512,9 @@ call plug#begin('~/.config/nvim/plugged')
 		Plug 'elzr/vim-json', { 'for': 'json' }
 		let g:vim_json_syntax_conceal = 0
 	" }}}
+	"indentpython{{{
+	Plug 'vim-scripts/indentpython'
+	"}}}
 
 	Plug 'fatih/vim-go', { 'for': 'go' }
 	Plug 'timcharper/textile.vim', { 'for': 'textile' }
