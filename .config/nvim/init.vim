@@ -440,7 +440,9 @@ call plug#begin('~/.config/nvim/plugged')
 	"Plug 'tpope/vim-unimpaired'
 	"}}}
          Plug 'ctrlpvim/ctrlp.vim'
-	"
+         Plug 'git@github.com:majutsushi/tagbar.git'
+ 
+
 " }}}
 
 " Language-Specific Configuration {{{
@@ -559,3 +561,5 @@ set autochdir
 let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:ctrlp_cmd='CtrlP :pwd'
 noremap <leader>b :CtrlPBuffer<CR>
+nmap <F8> :TagbarToggle<CR>
+
