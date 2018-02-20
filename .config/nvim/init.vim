@@ -24,8 +24,8 @@ call plug#begin('~/.config/nvim/plugged')
 	set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 	if (has('nvim'))
-		let g:python_host_prog = '/usr/local/bin/python2'
-		let g:python3_host_prog = '/usr/local/bin/python3'
+		let g:python_host_prog = '/root/anaconda/bin/python2'
+		let g:python3_host_prog = '/usr/bin/python3'
 		" show results of substition as they're happening
 		" but don't open a split
 		set inccommand=nosplit
@@ -348,7 +348,8 @@ call plug#begin('~/.config/nvim/plugged')
 	" }}}
 
 	" FZF {{{
-		Plug '/usr/local/opt/fzf'
+	"	Plug '/usr/local/opt/fzf'
+	        Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 		Plug 'junegunn/fzf.vim'
 		let g:fzf_layout = { 'down': '~25%' }
 
