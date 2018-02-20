@@ -59,3 +59,10 @@ _load_settings "$HOME/.zsh/configs"
 alias start7778='nohup python -m http.server 7778 &'
 alias start8888="nohup jupyter notebook --ip=* --allow-root &"
 export OPT='/opt/'
+zle     -N    hgss
+bindkey '^Y' hgss
+export PATH=$PATH:/usr/local/go/pkg/tool/linux_amd64/
+export GOBIN=/usr/local/go/bin
+export GOROOT=/usr/local/go/
+export GOPATH=$HOME/godns
+export QT_QPA_PLATFORM=offscreen
