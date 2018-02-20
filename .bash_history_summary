@@ -1,242 +1,270 @@
 
-a1=1&&a2="marker/core.py"|vim +'$a1' '$a2'
-a1=1&&a2="marker/core.py"&&vim +$a1 $a2
-a1=1&&a2="marker/core"|vim +a1 a2
-a1=2
-a=$(cat .bashrc|grep alias)
-ag
+ ?
+ &
+?
+\: 1518798616:0;cd
+6c
+add -i
 ag '$'
 ag '${'
 ag ${
 ag accept-and-hold
-ag -a --ignore-dir anaconda/ -G . marker|fzy
+ag ag_handler
+ag ag_handler ./*
+ag airline ./*
+ag airline ./*|fzf
+ag airlinetoggle
+ag airlinetoggle ./*
 ag .bash_history_summary
 ag bindkey
 ag bindkey|fzf
 ag bundles
+ag "C-"
+ag "C-["
+ag "C-[" .
+ag C-[
+ag c-d ./*|fzf
+ag "C-"|fzf
+ag cnext
+ag cnext|fzf
+ag cnext ./*|fzf
+ag cnext ./*|fzy
+ag cnext map
+ag cnext&&map
+ag cn ./*|fzf
 ag $ conda
 ag "$ conda" index.html
 ag "$conda" index.html
 ag "conda" index.html
 ag $ conda index.html
 ag "conda " index.html|fzf
+ag <c-p>
+ag c-p
+ag cprevious ./*|fzf
+ag C-t
 ag ctag
+ag ctags
 ag ctag .vimrc
 ag ctag .vimrc.bundles
+ag CtrlP
+ag ctrlp_cmd
+ag CtrlPpath
+ag CtrlPPATH
+ag ctrlp_user_command
+ag -d 5 focus
+ag -D 5 focus
+ag -D 7 -G .vim focus .
 ag date.time
-ag df_g
-ag evaluate
+ag --depth=11 -G .vim focus .
+ag --depth=11 -G .vim focus ./vim
+ag --depth=11 -G .vim -i nerdfocus ./vim
+ag --depth=11 -G .vim nerdfocus ./vim
+ag --depth=11 -G .vim NERDfocus ./vim
+ag --depth=1 -G .vim focus ./*
+ag --depth=2 -G .vim focus .
+ag --depth=3 -G .vim focus .
+ag --depth=3 -G .vim focus ./*
+ag --depth=4 -G .vim focus .
+ag --depth 5 focus
+ag --depth=5 -G .vim focus .
+ag --depth=6 -G .vim focus .
+ag --depth=6 -G .vim focus ./*
+ag --depth=7 -G .vim focus .
+ag --depth=7 -G .vim focus ./*
+ag --depth=8 -G .vim focus .
+ag --d tc_ |fzf
+ag -d tc_ |fzf
+ag E6
+ag e612
+ag E612
+ag E6|fzf
+ag E7
+ag E712
+ag E7|fzf
 ag export
+ag focus
+ag focus -
+ag focus .
+ag focus ./*
+ag focuse
+ag focus .vim
+ag focus ./vim
+ag|fzf
 ag fzf_
-ag -G . alisec|fzy
-ag g.append
-ag -G . bind
-ag -G bind .
-ag -G . C-@
-ag -G . C-k
-ag -G . C-l
-ag -G . common|fzy
-ag -G .ipynb im.read
-ag -G .ipynb imshow
-ag -G .ipynb im.show
-ag -G .ipynb scipy
-ag -G .ipynb show
+ag "g:"
+ag -G focus .
+ag -G focus .vim
 ag git_prompt_info
-ag -G -l . C-@
-ag -G -l . C-k
-ag -G marker
-ag -G . marker
-ag -G  marker|fzy
-ag -G . marker|fzy
-ag -G . osx|fzy
-ag -G . osx.txt|fzy
-ag -G .py 
-ag -G .py category
-ag -G .py 'category'
-ag -G .py daterange
-ag -G .py date_range
-ag -G .py datetime
-ag -G .py date.time
-ag -G .py df_city
-ag -G .py df_g
-ag -G .py evaluate
-ag -G .py fitness
-ag -G .py g.append 
-ag -G .py gen_ds_all
-ag -G .py 'group'
-ag -G .py ['group']
-ag -G .py g.to_csv
-ag -G .py im.show
-ag -G .py inputs_x
-ag -G .py plt.show
-ag -G .py seed
-ag -G .py show_pool|fzy
-ag -G .py sns
-ag -G . summary|fzy
-ag -G . tldr|fzy
-ag --help|fzy
-ag --hidden -G . marker|fzy
-ag --hidden -G marker|fzy
-ag --hidden --ignore-dir anaconda/ -G .sh marker|fzy
+ag Glog
+ag -G .py ProgressBar .
+ag -G .py read_csv ./*
+ag -G .py read_csv ./*|ahat
+ag -G .vim focus
+ag -G .vim focus 
+ag -G .vim focus .
+ag -G .vim focus ./*
+ag -G .vim "$HSLINES" .
+ag --help
+ag hgss
+ag --hidden "$HSLINES" .
+ag --hidden "HSLINES" .
 ag --hidden --ignore-dir anaconda/ runtimepath|fzy
 ag hooks
-ag --ignore-dir anaconda/ -Ga . marker|fzy
-ag --ignore-dir anaconda/ -G . marker
-ag --ignore-dir anaconda/ -G . marker|fzy
-ag --ignore-dir anaconda/ -G .sh marker|fzy
-ag --ignore-dir anaconda/ torch/ -G . marker|fzy
-ag --ignore-dir anaconda/,torch/ -G . marker|fzy
-ag --ignore-dir anaconda/ torch -G .sh marker|fzy
-ag im.show
+ag "$HSLINES"
+ag "$HSLINES" .
+ag "HSLINES"
+ag $HSLINES
+ag -i "bindkey"|fzf
+ag -i c-
+ag -i c-|fzf
+ag --i "<c-p>"
+ag -i "<c-p>"
+ag -i "<c-p>" ./*
+ag -i c-p
+ag -i "c-t" ./*|fzf
+ag -i "ctrlp_cmd" ./*
+ag -i "ctrlp_map" ./*
+ag -i -]|fzf
+ag -i "-]"|fzf
+ag -i "jump"|fzf
+ag -i jump|fzf
+ag -i "map"|fzf
+ag -i nerd ./*
+ag -i nerdfocus ./*
+ag -i nerdfocus ./vim
+ag -i nerdtreefocus ./*
+ag -i "nmap"|fzf
 ag insert-last-command-output
-ag label15
-ag -l -G . C-k
-ag marker
-ag marker|fzy
-ag --nobreak --noheading | fzy
-ag --nobreak --noheading .| fzy
-ag --nobreak --noheading . | fzy
-ag --nobreak --noheading .sh | fzy
-ag --nobreak --nonumbers --noheading . | fzf
-ag --nobreak --nonumbers --noheading . | fzy
-ag --nonumbers --noheading . | fzy
+ag "let g:"
+ag map ./*
+ag map ./*|fzf
+ag nerd
+ag NERD
+ag NERDF
+ag NERDFocus
+ag NerdTree
+ag nmap
+ag nmap ./*
+ag nmap ./*|fzf
+ag noremap
+ag normap
 ag PATH
-ag plt.save
+ag $PATH
 ag Plug
 ag plug .vimrc.bundles
 ag Plug .vimrc.bundles
+ag ProgressBar
+ag quickfix
 ag -r ctag
 ag -r ctags
+ag -r ctrlp
+ag -r CtrlP
+ag read_csv
+ag -r focus
 ag -r git_prompt_info
 ag -rgit_prompt_info
+ag -r -G .vim focus .
+ag -r -G .vim focus ./*
 ag -r insert-last-command-output
 ag runtimepath
 ag runtimepath|fzy
+ag tag
+ag tagbar
+ag taglist
+ag tagsbar
+ag tmux
+ag tmux ./*
+ag tmux.conf
+ag tmux.conf .
+ag tmux.conf ./
+ag tmux.conf ./*
 ag vf
 ag 'vf()'
 ag 'vf()'|fzf
-ag /win4
-aha
-aha --help
-al
-alia cptc= "cp -prd tc_climate/*.py tc_git_climate/"
+ag ./vim focus
+ag zle ./*
+ag zshenv
+ag zshenv .zshrc
 alias
-alias cptc= "cp -prd tc_climate/*.py tc_git_climate/"
-alias cptc="cp -prd tc_climate/*.py tc_git_climate/"
-alias cptc="cp -prd /win3/tc_climate/*.py /win3/tc_git_climate/"
 alias|fzf -q
 alias|fzf -q sljf
 alias|fzy
-alias gits="bash /win3/bashscript/gits.sh"
-alias gits=/win3/bashscript/gits.sh
-alias hg="history|fzy"
-alias hg=history|fzy
 alias zhg='cat /root/.zhistory|fzy'
-alis
-# allowed in the [Allowed Applications].
 an
-# applications.
-[applications_to_ignore]
-apt-get install aha
+apt-cache search libevent
+apt-config
+apt-config dump
+apt-config list
+apt-get
 apt-get install clipcopy
 apt-get install copyclip
-apt-get install ncdu
+apt-get install --help|fzf
+apt-get install kconsole
+apt-get install konsole
+apt-get install libevent
+apt-get install list
+apt-get install neovim
 apt-get install NeoVim
 apt-get install pbcopy
+apt-get install tmux
 apt-get install vim
 apt-get install Vim8
 apt-get install Vim 8
+apt-get install xshell
+apt-get install xterm
 apt-get install zle
 apt-get install zsh
 apt-get install zsh-beta
 apt-get install zsh-dev
+apt-get intall xterm
+apt-get list
+apt-get remove docker
+apt-get remove neovim
+apt-get remove tmux
+apt-get remove tumx
+apt-get update
 apt-get upgrade
+apt --help|fzf
 apt-key list
+apt-key list|fzf
 apt-key list|fzy
-a='$("which mackup")'
-a='$(which mackup)'
-a=$('which mackup')
-a=$(which mackup)
-basedir
-basedir($(which mackup))
-basedir(which mackup)
-bash
-bash clearcmd 
-bash cmd
-bash --debugger
+apt list
+.bas
 .bash gitbk.sh
-bash gits.sh
-bash --help
 bash install_marker.sh
+bash install-sh
 .bashrc
-bash /usr/local/bin/dl.sh
-bash -v
-bash -V
-bash -v > bashoutput
-bash -version
 bash -x insert-last-command-output
 bind
-bind 
-bind -
-bind -C
-bind '"\er": redraw-current-line'
-bindkey
-bind -r
-bind remove
-bind remove --help
-bind remove _ssh_suit
-bind r marker_mark
-bind -r _ssh_suit
-bind -x
-bind -X
-bind -x ssh_suit
-brew
-brew tap thoughtbot/formulae
-$BUFFER
-bypy upload csv15
-bypy upload csv15 csv
-cat 5_19.csv|wc -l
-cat 5_20.csv|wc -l
+ c
+cat
 cat .bash_history|fzf
-cat .bash_history|fzy
 cat .bash_history_summary
 cat .bash_history_summary|fzf
 cat ./.bash_history_summary_log
 cat ./.bash_history_summary_log|wc -l
 cat ./.bash_history_summary|wc -l
 cat .bash_history_summary|wc -l
-cat .bashrc|fzy
-cat .bashrc|grep alias
-cat .bashrc|grep alias>>.bash_aliases
-cat .bashrc|grep alias>>testlog
 cat>/dev/null
-cat $(ffzy)
+cat /etc/shells|fzf
 cat install_marker.sh|fzf
-cat /root/.bash_history|aha --title history > /win3/history.html
-cat /root/.bash_history|fzy
-cat /root/.bash_history|sort -k1|uniq -f1
-cat /root/.bash_history|sort -k1|uniq -f1|ahat
-cat /root/.bash_history|sort -k1|uniq -f1 > log
-cat /root/.bash_history|sort -k1|uniq -f1 > /root/.bash_history
+cat plug.vim|fzf
+cat README|ahat
 cat /root/.bash_history|sort -k1|uniq -f1 >> /root/.bash_history_summary
 cat /root/.bash_history_summary|fzf --bind "f1:execute(cat {} >> conda_update.sh)+abort"
 cat /root/.bash_history_summary|fzf --multi --bind "f1:execute(cat {} >> conda_update.sh)"
 cat /root/.bash_history_summary|fzf --multi --bind "f1:execute(echo {} >> conda_update.sh),f2:execute(less conda_update.sh)"
 cat /root/.bash_history_summary|fzf --multi --bind "f1:execute(echo {} >> install_marker.sh),f2:execute(less install_marker.sh)"
+cat /root/.bash_history_summary|fzf --multi --bind "f1:execute(echo {} >> libevent_install.sh),f2:execute(less {{libevent_install.sh}})"
+cat /root/.bash_history_summary|fzf --multi --bind "f1:execute(echo {} >> libevent_install.sh),f2:execute(less libevent_install.sh)"
 cat /root/.bash_history_summary|fzf --multi 'echo {+1}>>conda_update'
 cat /root/.bash_history_summary|fzf --multi excute!('echo{+1} >>conda_update')
 cat /root/.bash_history_summary|fzf --multi excute('echo{+1} >>conda_update')
 cat /root/.bash_history_summary|fzf --multi excute!('echo >>conda_update')
 cat /root/.bash_history_summary|fzf --multi excute('echo >>conda_update')
-cat /root/.bash_history_summary|fzy
 cat /root/.bash_history_summary|sort -k1|uniq -f1 >> /root/.bash_history_summary
 cat /root/.bash_history_summary|wc -l
 cat /root/.bash_history|wc -l
-cat /root/bash_history|wc -l
-cat /root/.bashrc|aha 
-cat /root/.bashrc|aha >ls_with_color.html
-cat /root/.bashrc|aha >/opt/ls_with_color.html
-cat /root/.bashrc|ahat
 cat /root/.viminfo
 cat /root/.viminfo|fpp
 cat /root/.viminfo|fzf
@@ -244,201 +272,128 @@ cat /root/.zhistory|fzf -q
 cat /root/.zhistory|fzf -q hhh
 cat /root/.zhistory|sort -k1|uniq -f1 >> /root/.bash_history_summary
 cat /root/.zhistory|wc -l
+cat /root/.zshrc|fzf --multi --bind "f1:execute(echo {} >> .bash_aliases),f2:execute(less .bash_aliases)"
+cat tags-cn|fzf
+cat tags|fzf
+cat .vimrc|ahat
+cat .vimrc|aht
 cat .zhistory|fzy
 cat .zhistory|wc -l
 cat .zsh_history
 cat .zsh_history|wc -l
 cd
 cd 
-cd ~
-cd /
+cd .
 cd ..
 cd ...
 cd..
-cd airportscan/
-cd anaconda/
-cd backup
-cd /backup2
-cd bakcup
-cd basdir($(whcih mackup))
-cd basdir(whcih mackup)
-cd basedir(whcih mackup)
-cd basesample
-cd bashrc/
-cd bashscript
+cd 97
+cd 97*
+cd apt
+cd autoload
 cd bim
 cd bin
 cd /bin
-cd bing
-cd code
+cd .bin
+cd bundle
 cd common
 cd config
+cd .config
 cd configs
-cd csv
-cd /csv
-cd /csv/
-cd csv/
-cd csv0
-cd csv15
-cd csv2
-cd csv2|
-cd csv3
-cd /csv3
-cd ../csv3
-cd csv4
-cd ../csv4
-cd data
+cd .continuum
+cd ctags58
+cd ctrlp.vim
+cdd
 cd /data
 cd /data/
-cd /data/dotfiles
-cd /data/dotfiles/
-cd /data/var/
-cddir
-cd $(dirname $(ffzy))
-cd $(dirname $(which mackup))
+cd $(dirname $(fzf))
 cd doc
 cd dotfiles
-cd dotfiles/
-cd downloads
-cd easy-navigate.vim/
+cd ./dotfiles/vim/bundle/tagbar
 cd etc
 cd /etc/
+cd /etc/apt
+cd /etc/apt/sources.list
+cd /etc/apt/sources.list.d
 cd /etc/init
+cd /etc/pki
 cd ftplugin
 cd functions
 cd .fzf
 cd .fzf/shell
-cd git
-cd .git
-cd Git
-cd github
-cd /github
-cd Github
-cd GitHub
-cd history_Airportscan/
-cd ./home
-cd hooks
-cd init
-cd .ipython/
-cd ipython/
-cd iTorch
-cd jiaotong/
 cd lib
-cd /lib
+cd libevent-2.1.8-stable
+cd libevent-2.1.8-stable.tar.gz
 cd linux
-cd log
-cd mackup
+cd maker
 cd marker
+cd neovim
+cd nicknisi_dotfiles
+cd numpy
+cd numpy-1.11.3-py34_0
+cd nvim
 cd ./.oh-my-zsh
-cd /opt
-cd /opt/
+cd .oh-my-zsh
+cd opt
 cd $OPT/marker
-cd /opt/oss
-cd /opt/tc_climate
-cd /opt/tc_climate/
-cd /oss
-cd /oss/
-cd /otp
 cd pages
 cdpath
+cd pkgs
+cd plug
+cd pluged
+cd plugged
 cd plugin
-cd plugin/
 cd plugins
 cd post
 cd profile.d
-cd profile_default
-cd progress
-cd pyfiles
-cd rcrc
+cd python3.4
 cd /root
 cd /root/anaconda/bin/
 cd /root/bin
+cd /root/.bin
 cd /root/.confg/tldr
 cd /root/.config/tldr
+cd /root/dotfiles
 cd /root/.fzf
-cd /root/.vim/plugin
-cd scripts
-cd share
 cd shell
-cd speech_commands/
+cd site-packages
+cd sources.list
+cd sources.list.d
+cd sources.list..d
 cd src
-cd /src
-cd ssh-HaY3upZomgMp/
-cd sublimepy
-cd ../taglist.vim/
-cd taglist.vim/
-cd tc_climate
-cd tc_climate/
-cd tc_git_bashrc
-cd tc_git_bashrc/
-cd tc_git_climate/
-cd tensorflow
-cd test
-cd tftry
+cd tc_carretail
+cd test_rmlater
+cd themes
 cd tldr
-cd /tmp
-cd torch
-cd ts_ieee/
+cd tmux
 cd /usr
-cd /usr/
 cd /usr/bin
-cd /usr/loca
-cd /usr/local/bin
-cd /usr/src
-cd /var
-cd /var/
-cd /var/data
-cd /var/home
+cd /usr/local
+cd /usr/local/bin/
+cd /usr/local/bin/bin
 cd vim
 cd .vim
 cd .vim.backup
+cd .vimdot
+cd vim-interaction
 cd vimrc
 cd .vimrc
-cd .vnc
-cd $(whcih mackup)
-cd $(which mackup)
-cd($(which mackup))
-cd wiki
-cd /win
-cd /win2
+cd vm
 cd /win3
 cd /win3/
-cd /win3/data
-cd win3/data
 cd /win3/marker
 cd /win3|python -m http.server 7778
 cd /win3&&python -m http.server 7778
-cd /win3/tc_climate/
-cd win4
-cd /win4
-cd yan
-cd /yan/hom
 cd zsh
 cd .zsh
+CD ZSH
 cd zsh-5.4.2
-chattr 777 tc_git_climate/
-chattr -R 777 tc_git_climate
+chmod u+x nvim.appimage
 chmod +x /root/bin/tldr
-chown git:git /opt/tc_git_bashrc/
-chown git:git /opt/tc_git_climate/
-chown -r git:git /opt/tc_git_bashrc/
-chown -R git:git /opt/tc_git_bashrc/
 chsh
-chsh 
-chsh -s /bin/bash
+chsh --help
 chsh -s /bin/zsh
-chsh -s git 
-chsh -s git /bin/bash
-chsh -s $(which bash)
-compgen -cdfa ali
-compgen -cdfa /win3/ma
-compgen -cdfa /win3/marker/
-compgen -cdfa /win3/marker/bin
-compgen -cdfa /win3/marker/bin/
-compgen -cdfa /win3/marker/m
-compgen -cdfa /win3/marker/marker/
-compgen -cdfa /win3/marker/marker.
-compgen -cdfa /win3/marker/marker/m
+clear
 conda activate **
 conda activate patent
 conda activate patent-landscape
@@ -451,103 +406,62 @@ conda list
 conda.sh
 conda update conda
 conda --version
-cp 5_20.csv csv/
-cp Anaconda-2.3.0-Linux-x86_64.sh /data/
-cp backup0 /win3/tc_git_climate/
-cp .bash_aliases /etc/bash.bash_aliases
-cp .bashrc.backup .bashrc
-cp .bashrc.backupt .bashrc
-cp .bashrc .bashrc.backup
-cp .bashrc .bashrc.backupt
-cp ../csv0/5_20.csv  .
-cp *.csv csv
-cp *.csv csv/
-cp *.csv csv0
-cp *.csv csv15/
-cp *.csv csv2
-cp *.csv csv2/
+./config
+./configure &&make
+./configure&&make
+cp /data/dotfiles/zsh/configs/history.zsh ./zsh/configs/
+cp /data/dotfiles/zsh/configs/post/path.zsh .
 cp /data/dotfiles/zsh dotfiles/zsh
+cp /data/dotfiles/zsh/functions/hgss ./dotfiles/zsh/functions
 cp /data/dotfiles/zshrc dotfiles/zshrc
 cp dd.md conda_update.md
 cp dd.md dd2.md
-cp doc/.mackup.cfg /root/
-cp doc/.mackup /root/
-cp filter_test.py /opt/tc_climate
-cp inception_resnet/ /data/var/data
-cp inception_resnet_v2_2016_08_30.ckpt  /data
-cp ncdu /usr/local/bin/
-cp /oss/tc_climate/count_tp_test.py  .
-cp /oss/tc_climate/filter_test.py  .
-cp /oss/tc_climate/tc_climate_temp_train.py .
-cp /oss/tc_climate/tc_climate_temp_train.py /opt/
-cp /oss/tc_climate/tc_run1.py /opt/tc_climate
-cp /oss/tc_climate/tc_run20.py
-cp /oss/tc_climate/tc_run20.py .
-cp /oss/tc_climate_temp_train.py .
-cp -prd .bash_history.backup .bash_history
-cp -prd .bashrc /etc/bash.bashrc
-cp -prd.bashrc /etc/bash.bashrc
-cp -prd ../csv3 .
-cp -prd data/ /backup/win3
-cp -prd data/ /backup/win3/data
-cp prd data/ /backup/win3/data
-cp -prd * /data/home/yan/
-cp -prd doc ../
-cp -prd dotfiles/* /data/dotfiles/
-cp -prd ./.git /var/
-cp -prd ./git /var/
-cp -prd inception_resnet/ /data/var/data
-cp -prd inception_resnet/ /data/var/data/
-cp -prdi * /win4/
-cp -prd /oss/tc_climate/ /opt/
-cp -prd /oss/tc_climate/*.py  /opt/tc_climate/
+cp google-cloud-sdk.list google-cloud-sdk.list.backup
+cp google-cloud-sdk.list.save google-cloud-sdk.list.save.backup
+cp init.vim ../
+cp init.vim.backup init.vim
+cp init.vim init.vim.backup
+cp marker.sh /root/
+cp -prd /data/dotfiles/* .
+cp -prd /root/.bin /opt/
+cp -prd /root/.config/nvim/* .
+cp -prd /root/.config/nvim/* ./nvim
 cp -prd * /root/.config/tldr
-cp -prd /root/dotfiles/zsh .
-cp -prd /root/dotfiles/zshrc .
-cp -prd tc_climate/*.ipybn tc_git_climate/
-cp -prd tc_climate/*.ipynb tc_git_climate/
-cp -prd tc_climate/*.py tc_git_climate/
-cp prd tc_climate/*.py tc_git_climate/
-cp -prd tc_climate/*.py tc_git_climate/rint
-cp prd tc_climate/* tc_git_climate/
-cp -prd tc_git_climate tc_git_bashrc
-cp -prd tempdir/ /data/var/
-cp -prd tensorflow/ /data/var/
-cp -prd tensorflow/ /data/var/data/
+cp -prd /root/dotfiles/* .
+cp -prd /root/nicknisi_dotfiles/config/nvim/* .
+cp -prd /win3/nicknisi_dotfiles .
 cp -r /data/dotfiles/zsh dotfiles/zsh
-cp * /root/.vim/plugin
-cp taglist.vim/* .
-cptc
-cp tc_run20_single_run.py /opt/tc_climate
-cp 'temp0' backup/
-cp temp0 /win3/tc_git_climate/
-cp temp1 backup/
-cp temp1 /win3/tc_git_climate/
-cp temp2 /win3/tc_git_climate/
-cp tempd0 /win3/tc_git_climate/
-cp tempd1 /win3/tc_git_climate/
-cp tensorflow/ /data/var/
 cp tldr /usr/bin
-cp -v ../h1020.csv 10_20.csv
-cp -v../h1020.csv 10_20.csv
+cp tmux /usr/local/bin
 cp vim /usr/bin/
-cp /win3/mackup/doc/.mackup.cfg .
-cp /win3/tc_climate/tempd2 .
-cs csv2
-curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh install.sh
+cp /win3/n
+ctag
+ctags .
+ctags -R .
+ctrl-b
+ctrl-b n
+curl
+curl baidu.com
+curl --cacert /etc/ssl/certs/ca-certificates.crt ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \~/.local/share/nvim/site/autoload/plug.vim --create-dirs \          
+curl-config
+curl-config --ca
+curl-config --ca ./ssl/certs/ca-certificates.crt
+curl-config -ca ./ssl/certs/ca-certificates.crt
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \\
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \~/.local/share/nvim/site/autoload/plug.vim --create-dirs \\
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \\
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\
+curl http://baidu.com
+curl https://baidu.com
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 curl -o /root/bin/tldr 
 curl -o /root/bin/tldr https://raw.githubusercontent.com/raylee/tldr/master/tldr
-cut
-cut -d'{{:}}' -f{{5-10}}
-cut --help
-cut --help|aha --black --title 'ls-with-colors' > ls-with-colors.html
-cut --help|aha --title 'ls-with-colors' 
-cut --help|aha --title 'ls-with-colors' > ls-with-colors.html
-cut --help|aha --white --title 'ls-with-colors' > ls-with-colors.html
-dafdaf
+curl ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\
+curl www.baidu.com
+ c\\va
 /data/src/vim --version
-dd --help
 declare accept-and-hold
 declare -f accept-and-hold
 declare -f fzf-cd-widget
@@ -562,63 +476,18 @@ declare -f ZSH_NAME
 declare -f ZSH_VERSION
 declare hgss
 declare ZSH_VERSION
-# default, if not specified, Mackup creates a "Mackup" directory in the storage
-</dev/tty
-</dev/tty echo ''
-/dev/tty<echo -en "thinks" > /dev/tty
-</dev/tty echo 'fjis'
 dfas
-d=$(find -type d|fzy)|cd d
-d=$(find -type d|fzy)|cd $d
-d=$(find -type d|fzy)&&cd $d
-d=$(find -type d|fzy)|echo $d
-d=$(find -type d|fzy)&&echo $d
-dfkjalf
 df -lh
-directory = Mackup
-dirname(echo)
-dirname(echo pwd)
-dirname('echo $(which bash)')
-dirname(echo $(which bash))
-dirname($pwd)
-dirname $(which bash)
-dir($(which bash))
-display () {     TMPFILE=$(mktemp ${TMPDIR-/tmp}/bash_kernel.XXXXXXXXXX);     cat > $TMPFILE;     echo "bash_kernel: saved image data to: $TMPFILE" >&2; }
 dit dff
-djfa
-docker --help|fzy
+docker
+dpkg --help|fzf
 dpkg -i /data/zsh/zsh_5.4.2-1_amd64.deb
 dpkg -r vim
-# Dropbox folder.
-du .
-du -h
-du . -h
-du -h -d 1
-du -h -d 1 .
-du . -h -d 1
-du -h -d 1|sort -k2 -k1nr
-du -h -d 1|sort -k2 -k1nr | uniq -f1 | sort -n | cut -c8-
-du -h -d 1| sort -n
-du -h --max-depth=1 >usage 
-du -sh
-du . -sh
-du -sh -d 0 
-du -sh -d 0 >usage 
-du -sh -d 1
-du -sh -d 1 >usage 
-du -sh --max-depth=1 >usage 
-du|sort -k2 -k1nr | uniq -f1 | sort -n | cut -c8-
-du | sort -n
-du | sort -n|sort -k2 -k1nr | uniq -f1 | sort -n | cut -c8-
-echo
-echo $?
+e
+echo "\
 echo **
-echo '1'
 echo 3
 echo 3\
-echo 'alias ahat="aha >/win3/ls-with-colors.html"' >> /root/.bashrc
-echo 'alias hg="history|fzy"' >> /root/.bashrc
-echo 'alias rmi="rm -vi"' >> /root/.bashrc
 echo 'alias sap2="conda activate patent-landscape"' >> /root/.bash_aliases
 echo 'alias sap34="conda activate python34"
 echo 'alias sap34="conda activate python34"' >> /root/.bash_aliases
@@ -626,25 +495,9 @@ echo "alias start7778='nohup python -m http.server 7778 &'" >> /root/.zshrc
 echo 'alias start8888="nohup jupyter notebook --ip=* --allow-root &"' >> /root/.zshrc
 echo 'alias zhg='cat /root/.zhistory|fzy''>>/root/.bash_aliases
 echo "alias zhg='cat /root/.zhistory|fzy'">>/root/.bash_aliases
-echo alisec
-echo $alisec
-echo "">.bashrc
+echo "/bin/zsh" >> /etc/shells
 echo "conda config --add channels conda-canary" >> conda_updata.sh
-echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
-<echo"df"
-echo "dfa">m.log
-echo 'dfwwf '</dev/tty
-echo -en "\003[6n" > /dev/tty
-echo -en "\033[6n" > /dev/tty
-echo -en "\033[6n" > /dev/tty&&echo "thinks"
-echo -en "\033[6ner" > /dev/tty
-echo -en "\033[6nsjfieaf" > /dev/tty&&echo "thinks"
-echo -en "\6n" > /dev/tty
-echo -en "6n" > /dev/tty
-echo -en "" > /dev/tty
-echo -en "\er" > /dev/tty
 echo $ENHANCD_DIR 
-echo -en "thinks" > /dev/tty
 echo "export $OPT=/opt/" >> .zshrc
 echo "export $OPT='/opt/'" >> .zshrc
 echo $files
@@ -654,131 +507,63 @@ echo $FPATH|ahat
 echo $hgs
 echo $(hgs)
 echo($hgs)
-echo "hgs='cat /root/.bash_history_summary|fzy'" >> .bash_aliases 
 echo $(hgs|fzy)
 echo $HISTFILE
 echo HSLINES
+echo  $HSLINES
 echo $HSLINES
+echo "if filereadable($HOME . "/.vimrc.local")"
 echo jfe
+echo "let g:ctrlp_cmd='CtrlP :pwd'" >> /root/.vimrc
 echo $LINES
-echo $MARKER_HOME
-echo $marker_key_get
-echo $MARKER_KEY_GET
-echo $marker_key_mark
-echo $MARKER_KEY_MARK
-echo > nohup.out 
-echo "">note
 echo $OPT
 echo $PATH
-(echo "$READLINE_LINE" | python -c 'import sys;keyboard_input = raw_input if sys.version_info[0] == 2 else input; print(keyboard_input())')
-$(echo "$READLINE_LINE" | python -c 'import sys;keyboard_input = raw_input if sys.version_info[0] == 2 else input; print(keyboard_input())
-$(echo "$READLINE_LINE" | python -c 'import sys;keyboard_input = raw_input if sys.version_info[0] == 2 else input; print(keyboard_input())')
-$(echo "$READLINE_LINE" | python -c 'import sys;keyboard_input = raw_input if sys.version_info[0] == 2 else input; print(keyboard_input().index("1"))')
-$(echo "$READLINE_LINE" | python -c 'import sys;keyboard_input = raw_input if sys.version_info[0] == 2 else input; print(keyboard_input().index("'$match'"))')
 echo ". /root/anaconda/etc/profile.d/conda.sh">>.zshrc
 echo sfafd
 echo sfd
-echo '[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"'>>/root/.bashrc
-echo 'ssh-copy-id -i /root/.ssh/id_ecdsa.pub  git@47.94.205.80'
-echo 'ssh-copy-id -i /root/.ssh/id_ecdsa.pub  git@47.94.205.80' >> /win3/bashscript/gits.sh 
-echo 'ssh-copy-id -i /root/.ssh/id_ecdsa.pub  git@47.94.205.80' >> /win3/bashscript/sshs.sh 
-echo 'ssh-keygen -t rsa -b 4096 -C "{{email}}"' >> sshs.sh
-echo 'thanks'>/dev/tty&&echo -en "\033[6n" > /dev/tty
-echo 'thanks'>/dev/tty&&echo -en "\033[6nef" > /dev/tty
-echo 'thinks'&&echo -en "\033[6n" > /dev/tty
-echo $(which bash)
-echo $(which bash)|dirname
-egrep -o '[0-9]+' access_log
-egrep -o 'acct_id=[0-9]+' access_log
-egrep -o 'acct_id=[0-9]+' access.log
-emacs
-emacs -nw
-enchanced
-# engine and Mackup won't try to detect any path for you: it will store your
-# engine = copy
-engine = dropbox
-# engine = file_system
-# engine = google_drive
-# engine you chose, e.g. "~/Dropbox/Mackup".
+echo $shell
+echo $SHELL
+echo $term
+endif\
 $ENHANCD_DIR 
+ethogs eth2
 exit
 export **
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 export ENHANCD_DIR 
 export OPT=/opt
-export PAGER=cat
 f
-fc --help
-ffzy
 FILE=$(ag accept-and-hold | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag c-d ./*| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . bash_history_summary | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . /bind | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . bind | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . bindkey | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . C-l | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . cmd_get | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . cmd.get | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . 'common' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1-2)
-FILE=$(ag -G . 'common' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1-2)&&echo $a1
-FILE=$(ag -G . 'common' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&echo $a1
-FILE=$(ag -G . 'common' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&echo $a2
-FILE=$(ag -G . 'common' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . 'common' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 &a1
-FILE=$(ag -G . 'common' | fzy) && echo "$FILE"
-FILE=$(ag -G . 'common' | fzy) && echo "$FILE"|cut -d ':' -f 1
-FILE=$(ag -G . 'common' | fzy) && echo "$FILE"|cut -d ':' -f 1-2
-FILE=$(ag -G . 'common' | fzy) && echo "$FILE"|cut f2
-FILE=$(ag -G . C-r | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag -G . c-d | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag -G ./* c-d| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . \C-t | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . /C_T | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . /C-T | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . curse | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . cursor | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . CURSOR | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . cursor_previous | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . _CURSOR_PREVIOUS_LINES | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . get_cursor | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . 'get_selected_command_or_input' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . get_selected | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . grey text | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . grey_text | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag -G . export| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag -G . export | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G --hidden . | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G -hidden . | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G --hidden . history| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G --hidden . history  | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . HISTFILE | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . HISTFILE | nerd) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G --ignore-dir anaconda/ . marker | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag -G . HOME=| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag -G . HOME | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . insert | fzf) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . insert- | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . insert-output | fzf) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . $LBUFFER | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . LBUFFER | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . MACKUP_CONFIG_FILE| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . MACKUP_CONFIG_FILE | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . marker | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . move_cursor | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . nerd | fzf) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . nerd | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag -G . nmap | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . output | fzf) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . PATH | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . place_cursor_next_line | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . 'placeholder' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&echo $a1
-FILE=$(ag -G . 'placeholder' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&echo $a2
-FILE=$(ag -G . 'placeholder' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&echo $a2 &a1
-FILE=$(ag -G . 'placeholder' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . 'placeholder' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 &a1
 FILE=$(ag -G . {{'placeholder'}} | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . placeholder | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G .py 'common' | fzy) && echo "$FILE"
-FILE=$(ag -G .py 'common' | fzy) && echo "$FILE"|cut -c-10
-FILE=$(ag -G .py 'common' | fzy) && echo "$FILE"|cut -c-3
-FILE=$(ag -G .py 'common' | fzy) && echo "$FILE"|cut -d ':'-f-2
-FILE=$(ag -G . READLINE | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . refresh | fpp) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . refresh | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . search | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . tput | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -G . tty | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . zhistory | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . zle | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . zle reset | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
@@ -788,226 +573,144 @@ FILE=$(ag --hidden -G . history | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2
 FILE=$(ag --hidden -G . history | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -hidden -G . history | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag --hidden -G . insert- | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag --hidden -G . MACKUP_CONFIG_FILE| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag --hidden --ignore-dir anaconda -G . | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag --hidden ignore-dir anaconda -G . | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag --hidden --ignore-dir anaconda -G . history | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag --hidden -ignore-dir anaconda -G . history | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag --hidden --ignore-dir anaconda -G . insert | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag --hidden --ignore-dir anaconda/ -G . marker| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag --ignore-dir anaconda/ -G . marker | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
-FILE=$(ag -l -G . 'common' | fzy) && vim "$FILE"
-FILE=$(ag -l -G 'common' | fzy) && vim "$FILE"
-FILE=$(ag -l -g .'' | fzy) && vim "$FILE
-FILE=$(ag -l -g '' | fzy) && vim "$FILE
-FILE=$(ag -l -g '' | fzy) && vim "$FILE'
-FILE=$(ag -l -g '' | fzy) && vim "$FILE"
-FILE=$(ag -l -g '' | fzy) && vim "$FILErint
-FILE=$(ag -l -G .py 'common' | fzy) && echo "$FILE"
-FILE=$(ag -l -G .py 'show_pool' | fzy) && vim "$FILE"
-FILE=$(ag -l -G .py 'show_pool' | fzy) && vim "$FILErint
-file=$(cat .bashrc|fzy)
-file=$(cat .bashrc|grep alias)
+FILE=$(ag --hidden ./* leader| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag --hidden "<leader> -r" ./*| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag -hidden "<leader> -r" ./*| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag --hidden ./* "RunInteractive"| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag --hidden "RunInteractive" ./*| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag ./* leader| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag leader ./*| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag "<leader> -r" ./*| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 file=$(ffzy)&&vim $file
 file=$(find -type f|fzf)&&vim $file
 file=$(find -type file|fzf)&&vim $file
-file=$(hg)&&file
 file=$(hgs)&&echo $file
-file=$(netstat -anop|fzy)&&a=$(echo $file|cut -c5-10)&&kill $a
-file=$(ps aux|fzy)&&a=$(echo $file|cut -c1-10)|echo $a
-file=$(ps aux|fzy)&&a=$(echo $file|cut -c1)|echo $a
-file=$(ps aux|fzy)&&a=$(echo $file|cut -c1)&&echo a
-file=$(ps aux|fzy)&&a=$(echo $file|cut -c5-10)|echo $a
-file=$(ps aux|fzy)&&a=$(echo $file|cut -c5-10)&&echo a
-file=$(ps aux|fzy)&&a=$(echo $file|cut -c5-10)&&echo $a
-file=$(ps aux|fzy)&&a=$(echo $file|cut -c5-10)|echo $file
-file=$(ps aux|fzy)&&a=$(echo $file|cut -c5-10)|kill $a
 file=$(ps aux|fzy)&&a=$(echo $file|cut -c5-10)&&kill $a
-file=$(ps aux|fzy)&&echo $file|cut -c1
-file=$(ps aux|grep 8888)
-file=$(ps aux|grep 8888)&&a=$(echo $file|cut -c5-10)
-file=$(ps aux|grep 8888)&&a=$(echo $file|cut -c5-10)|kill a
-file=$(ps aux|grep 8888)&&a=$(echo $file|cut -c5-10)|kill $a
-file=$(ps aux|grep 8888)&&echo $file|cut -c1-
-file=$(ps aux|grep 8888)&&echo $file|cut -c3-
-file=$(ps aux|grep 8888)&&echo $file|cut -c3-10
-file=$(ps aux|grep 8888)&&echo $file|cut -c4-
-file=$(ps aux|grep 8888)&&echo $file|cut -c5-
-file=$(ps aux|grep 8888)&&echo $file|cut -c5-10
-file=$(ps aux|grep 8888)&&echo $file|cut -c5-12
-file=$(ps aux|grep 8888)&&echo $file|cut -c8-
-file=$(ps aux|grep 8888)|echo $file|cut -c8-15
-file=$(ps aux|grep 8888)&&echo $file|cut -c8-15
-file=$(ps aux|grep dl)&&echo $file|cut -c5-10
-file=$(ps aux|grep {{}})&&echo $file|cut -c5-10
-file=$(ps aux|grep jupyter)&&a=$(echo $file|cut -c5-10
-file=$(ps aux|grep jupyter)&&a=$(echo $file|cut -c5-10)
-file=$(ps aux|grep jupyter)&&a=$(echo $file|cut -c5-10)|
-file=$(ps aux|grep jupyter)&&a=$(echo $file|cut -c5-10)|kill $a
-file=$(ps aux|grep jupyter|fzy)&&a=$(echo $file|cut -c5-10)|kill $a
 files
-# files.
 files=$(git ls-files -m)
-# files where you explicitly told him to, using the "path" setting.
-file=$(which bash)&&dirname $file
-file=$(which bash)&&dirname($file)
-file=$(which bash)&&echo $file
-file=$(which mackup)
-file=$(which mackup)&&basedir($file)
+find -d
 find -d|fzf
-find -d|fzy
+find -d tc_ |fzf
 find -f|fzf
 find|fpp
-find -name / lupa-1.6-cp35-cp35m-manylinux1_x86_64.whl
-find / -name  lupa-1.6-cp35-cp35m-manylinux1_x86_64.whl
-find / -name ncdu
-find -name / *.whl
-find / -name  *.whl
-find -type d|fzy
+find -type d|fzf
+find type -d|fzf
 find -type f|fzf
-find -type f|fzy
-# For example, to not sync SSH and Adium, add:
-# For example, to sync Irssi, Ventrilo and XEmacs, add:
-# For now you have 3 options: "dropbox", "google_drive" and "file_system".
  fpath
 fzf -
 fzf --bind "f1:execute(cat {} >> conda_update.sh)+abort"
 fzf -bind "f1:execute(cat {} >> conda_update.sh)+abort"
 fzf-completion
 fzy -q
-ga .bash_aliases
-ga .bashrc
-gc git@github.com:Xfennec/progress.git
-gc 'inputs_pre.py'
+ga -i
+gc "correct the history.zh and sync to the previous /data/dotfiles, and add the zsh.local as the oh-my-zsh"
+gc git@github.com:neovim/neovim.git
+gc git@github.com:nicknisi/dotfiles.git
+gc git@github.com:nicknisi/dotfiles.git nicknisi_dotfiles
+gc -m "correct the history.zh and sync to the previous /data/dotfiles, and add the zsh.local as the oh-my-zsh"
 getent services
 getent services|fzf
 getent services|fzy
+gid add -i
+giit checkout tmux.conf
 git
 git add
-git add 
 git add 
+git add -a
 git add add .bash_history_summary
 git add -all
 git add --all
-git add backup0
-git add .bash_alias
 git add .bash_aliases
-git add .bash_aliases 
-git add .bash_aliases .bashrc .bash_history .bash_history_summary 
+git add .bash_history
 git add .bash_history_summary
-git add .bash_history_summary 
-git add .bashrc
-git add .bash_rc
-git add .bashrc.backupt
 git add conda_update.sh
 git add dotfififjiad
 git add dotfiles
 git add dotfiles/
 git add dotfiles/*
+git add ./dotfiles/zsh/functions
+git add ./dotfiles/zsh/functions/hgss
 git add dotkfjia
-git add -f bin/marker.sh 
 git add $files
 git add -i
-git add import_all.py 
-git add inputs_pre
-git add inputs_pre.py
-git add inputs_pre.py 
-git add ipython_kernel_config.py 
+git add in
+git add init.vim
+git add install_marker.sh
 git add lll
-git add lua_def.py 
-git add m.log
-git add note
-git add *.py *.ipynb
-git add tc_climate_temp_train.py
-git add temp0
-git add tempd2
-git add tf_flags.py
+git add marker
+git add marker.sh
+git add nvim
+git add  ./nvim
+git add  ./nvim/
+git add ./nvim
+git add -r ./nvim
+git add .tmux.conf
+git add .vimrc
+git add .vimrc.bundles
 git add .zhistory
 git add .zsh
 git add .zshrc
+git add .zshrc .bash_aliases
+git add .zshrc.local
 gitbk
-git brach
-git branch
-git branch -v
-git branch -va
+git checkcout .config/nvim/init.vim
+git checkout
 git checkout .
 git checkout .bash_history_summary
-git checkout .bashrc HEAD~9
-git checkout .bashrc@HEAD~9
-git checkout HEAD~8
-git checkout HEAD~9
-git checkout --help
+git checkout .config/nvim/init.vim
+git checkout init.vim
+git checkout /root/.config/nvim/init.vim
+git checkout tmux.conf
+git chekcout .config/nvim/init.vim
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-git clone git@47.94.205.80:/opt/tc_git_climate
-git clone git@47.94.205.80:/opt/tc_git_climate tc_climate
 git-clone git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-git clone git@github.com:facebookarchive/iTorch.git
-git clone git@github.com:ipython/ipython.git
-git clone git@github.com:lra/mackup.git
-git clone git@github.com:pindexis/marker.git
 git clone git@github.com:skwp/dotfiles.git dotfiles_withvim
 git clone git@github.com:tldr-pages/tldr.git
-git clone git@github.com:vim-scripts/easy-navigate.vim.git
-git clone git@github.com:vim-scripts/taglist.vim.git
-git clone git@localhost:/opt/tc_git_bashrc bashrc
-git clone git@localhost:/opt/tc_git_climate tc_climate
-git clone https://github.com/facebook/iTorch.git
-git clone https://github.com/ipython/ipython.git
-git clone https://github.com/pindexis/marker.git
+git clone https://github.com/tmux/tmux.git
 git clone https://github.com/vim/vim.git
-git clone -v https://github.com/pindexis/marker.git
+git commit 'add the symbolink .zshrc .zsh'
+git commit -m "add the dotfiles init.vim"
+git commit -m "add the hgss"
+git commit -m "add the init.vim"
+git commit -m "add the marker"
+git commit -m 'add the symbolink .zshrc .zsh'
+git commit -m "add the .tmux.conf"
+git commit -m "add the vim bundles"
 git commit -m "add the .zhistory"
-git commit -m "another working version of lua_def"
-git commit -m "backup0"
-git commit -m 'bashrc'
+git commit -m "add .vimrc"
+git commit -m "comment out the nvim"
+git commit -m "fix the path to the local dotfiles"
 git commit -m "git add the dotfiles"
-git commit -m 'import_all.py'
-git commit -m "inputs_pre"
-git commit -m "lua_def.py"
-git commit -m "note"
-git commit -m "rm the .bash_history"
-git commit -m 'temp0'
+git commit -m "init"
+git commit -m "remove the nvim"
+git commit -m "rm the history"
+git commit -m "rm the new add nvim"
+git commit -m 'update'
 git commit -m "update"
 git commit -m "update .bash_aliases"
-git commit -m "update inputs_pre"
-git commit -m "update working version lua_def.py"
-git commit -m "work version mark tc_climate_temp_train"
-git config
-git config --help
-git config -l
-git-ctags
-git delete
 git dff
-git dif
 git diff
-git diff .bash_aliases 
-git diff .bash_history
 git diff .bash_history_summary
 git diff .bash_history_summary|fzf
-git diff .bashrc
 git diff --cached
+git diff .config/nvim/init.vim
+git diff dotfiles/vimrc
 git diff dotfiles/zshrc
 git diff dotfiles/.zshrc
 git diff-files
-git diff inputs_pre.py
-git diff lua_def.py
+git diff init.vim
 git diff /root/.bash_aliases
+git diff .vimrc
 git diff .zshrc
-git dif lua_def.py
-git fetch git@47.94.205.80:/opt/tc_git_bashrc
-git fetch origin
-git fetch origin master
-git fetch origin/master
-git --help|fzy
-git ignore
-git ini
+git diff.zshrc
 git init
-git init --bare
-git init --help
-git int
 git log
-git log|fpp
-git log|fzy
+git log|fzf
 git log --oneline | fzf --multi --preview 'git show'
 git log --oneline | fzf --multi --preview 'git show {+1}'
 git log --oneline | fzf --multi --preview 'git show {+2}'
@@ -1016,6 +719,8 @@ git ls-files
 git ls-files -
 git ls-files --cached
 git ls-files --deleted
+git ls-files|fzf
+git ls-files init.vim
 git ls-files -m
 git ls-files -m|fzf --multi --preview 'git diff {+1}'
 git ls-files --modified
@@ -1032,12 +737,14 @@ git ls-files --stage|ahat
 git ls-files --stages
 git ls-tree
 git ls-tree 
+git ls-tree *
 git ls-tree -d
 git ls-tree HEAD
 git ls-tree HEAD~0
 git ls-tree HEAD~0 
 git ls-tree HEAD|fpp
 git ls-tree master
+git ls-tree master|fzf
 git ls-tree  master --name-only
 git ls-tree -r master
 git ls-tree -r master --name-only
@@ -1045,48 +752,33 @@ git ls-tree -r master -name-only
 git ls-tree -r master --name-only|fpp
 git ls-tree -r master --name-only|fzf --multi --preview 'git diff {+1}'
 git ls-tree -r master --name-only|fzf --multi --preview 'less {+1}'
-git push
-git push git@47.94.205.80:/opt/tc_git_bashrc
-git push git@47.94.205.80:/opt/tc_git_climate
-git push origin
+git push orgin master
 git push origin master
-git push --set-upstream git@47.94.205.80:/opt/tc_git_bashrc
-git push --set-upstream git@47.94.205.80:/opt/tc_git_bashrc master
-git push --set-upstream git@47.94.205.80:/opt/tc_git_climate
-git push --set-upstream git@47.94.205.80:/opt/tc_git_climate master
-git push -v git@47.94.205.80:/opt/tc_git_bashrc
-git push -v git@47.94.205.80:/opt/tc_git_climate
-git rebase 
-git rebase --abort
-git rebase --help
-git rebase master
-git rebase master origin
-git rebase orgin master
-git rebase origin
-git rebase origin master
-git rebase origin/master
-git rebase origin/ master
-git rebase --skip
 git reflog
-git reflog|fpp
 git relog
-git remote add git@47.94.205.80:/opt/tc_git_bashrc
-git remote add origin git@47.94.205.80:/opt/tc_git_bashrc
-git remote add origin git@localhost:/opt/tc_git_bashrc
-git remote -v
-git remote -va
-git rm .bash_history
-git rm .bashrc.backupt
-git rm --cached  .bash_history
-git rm *.ipynb
-git rm *.py
-gits
-git show
-git show|fpp
+git revert HEAD~1
+git revert --hel
+git revert --help
+git rm --cached .bash_history
+git rm --cached .vimrc
+git rm --cached .zhistory
+git rm --cached .zsh
+git rm --cached .zshrc
+git rm -i
+git rm -i --cached .bash_history
+git rm -i --cached bash_history
+git rm nvim
+git rm ./nvim
+git rm ./nvim/*
+git rm -rf ./nvim
+git rm -r  nvim
+git rm -r ./nvim
+git rm -r ./nvim/*
+git rm -r ./nvim/*|fzf
+git-shell
 git show HEAD~0 --stat
+git show HEAD~10 --stat
 git show HEAD~1 --stat
-git show HEAD~1 --stat|fpp
-git show HEAD~2 --stat
 git show master
 git show master --stat
 git show  --stat
@@ -1095,276 +787,136 @@ git status|
 git status .bash_history_summary
 git status|fzf
 git status|fzy
-git status~~gijiwf
 git status -s
 git status --short
-git_suit
-gm ""
-gm "add .bashrc"
 gm "add conda_update.sh"
-gm "add the backup to merge"
-gm "add the bash_aliases"
-gm "add the .bash_history_summary"
-gm "add the bashrc bash_history_summary bash_alias"
-gm "add the tempd2"
-gm "change the ctrl-space to ctrl-l"
-gm "dfa"
-gm 'first update'
-gm 'immp'
-gm 'inputs_pre.py'
+gm "change the bin/marker.sh to a link type, so I can include all configure files into the root"
+gm "correct the history.zh and sync to the previous /data/dotfiles, and add the zsh.local as the oh-my-zsh"
+gm "cp the cur dot"
+gm -m "i change the bin/marker.sh to a link, because I want to include all the sh files into the root"
 gm -m "update the .bash_history_summary"
-gm -m "update the bashrc"
-gm "rm the backupt"
-gm "rm the erro"
-gm "save inputs_pre.py"
-gm "update bashrc"
-gm "update inputs_pre"
-gm "update tf_flags inputs_pre"
-gm "update the bash_aliases"
 gm "update the .bash_history_summary"
-gm "update the .bashrc"
-gm "update the bash_rc"
-gm "update the bashrc"
-h
-hel emac
-%help
-help bash|fzy
-help emac
-help history
-help history |aha >/win3/ls-with-colors.html 
-help history |aha /win3/ls-with-colors.html 
-help history|fzy
-help history > /win3/ls-with-colors.html 
-help ncdu
-help sort
-help tput
-help vi|fzy
+grep /zsh$ /etc/shells | wc -l
+gs
 help zle
 hg
-hg 7777
-hg ag
-hg alias
-hg allow
-hg chsh
-hg clone
-hg cp
-hg|cut -c 1-5
-hg|cut -c 5-100
-hg|cut -c7-
-hg|cut -c 7-100
-hg|cut -c8-
-hg|cut -c8-|:p
-hg|cut -d ' '
-hg|cut -d ' ' -f 2
-hg|cut -d '' -f 2
-hg|cut -f 1
-hg|echo
-hg fzy
-hg g.append
-hg ju
-hg jupyter
-hg ls
-hg nohup
-hg oss
-hg ossfs
-hg:p
-hg push
-hg python
-hg run20
-hgs
-hg source
-hg source activat
-hg ssh
-hg sudo
-hgs|xclip
-hg tar
-hg vi
-hg vim
-hg wget
-HISHID
-history -a
-history|aha > /win3/ls-with-colors2.html 
-history|aha > /win3/ls-with-colors.html 
-history|aha >/win3/ls-with-colors.html 
-history|aha /win3/ls-with-colors.html 
-history -d
-history -d 1
-history -d 300
-history -d -300
-history -d 5080
-history -d 50800
-history -d 50801
  history|fzf --q "$LBUFFER"
  history|fzf -q "$LBUFFER"
  history|fzf -q "LBUFFER"
-history|fzy
-history --help
-history|more
+history|grep
 history -n
-history|sort -k2|ahat
-history|sort -k2 -k1nr |ahat
-history|sort -k2 -k1nr | uniq -f1 | sort -n
-history|sort -k2 -k1nr | uniq -f1 | sort -n |
-history|sort -k2 -k1nr | uniq -f1 | sort -n | cut -c8-
-history|wc -l
-# home directory.
-HSLINES
-# If an application is ignored, it will be ignored even if it's been explicitly
-# If none is specified, Mackup will try to use the default: "dropbox".
-if ps aux|grep 8887|cut -c 10-16|wc -l
-# If this list is empty, Mackup will try to sync all the supported
-# If you choose the "copy" storage engine, Mackup will figure
-# If you choose the "google_drive" storage engine instead, Mackup will figure
-# If you want to specify another directory, you can use the "file_system"
+HISTSZIE
+h j k
+hop
+if filereadable($HOME . "/.vimrc.local")\
+if filereadable( . "init.local")\
+" >> init.vim
 insert-last-command-output
-ipython profile create IPyLua
-ipyton
-itorch notebook
-JDKG
-jupyter notebook --ip=*
-jupyter notebook --ip=* .
-jupyter notebook --ip=* . &
-jupyter notebook --ip=* --allow-root
-kill 13413
-kill 1359
-kill 1360
-kill 17698
-kill 2421
-kill 2471
-kill 2622
-kill 28460
-kill 2941
-kill 2983
-kill 31880
+kill 2606
 kill 32054
-kill 32115
 kill 32298
-kill 7471
-kill 7472
-kill 7496
-kill -9 28460
-kill -f 28460
-kill --help
-l
+kill 3939
+killall tmux
+killtmux
 lc ..
 less
-less 10_19
-less 10_19.csv 
-less 10_20.dcsv
-less 1_3.csv
-less 1_4.csv
-less 1-9.csv
-less 5_1
-less 5_19.csv
-less 5_1.csv
-less 5_20
-less 5_20.csv
-less 6_20.csv 
-less access_log
-less backup
-less backup0
-less .bash_aliases
-less .bash_aliases 
-less .bashrc
-less .bashrc.backup 
-less ./bin/.openssl-post-link.sh
-less cmd
-less common.txt 
+less build-zsh.sh
 less conda_updat
 less conda_update.sh
-less csv3
-less /etc/bash.bash_aliases 
+less /etc/apt/sources.list
 less gitbk.sh
 less _git_delete_branch
-less .git/rebase-apply/patch
-less gits.sh
-less ../h1020.csv
-less h1020.csv 
-less ../h2010.csv
-less h2010.csv
 less install_marker.sh
 less install.sh
-less install.sh 
-less log
 less mcd
 less nbssh.sh
-less nohup
+less NERDTree.txt
 less nohup.out
-less nohup.out 
-less osx.txt
 less prompt.zsh
-less rcrc
 less README.md
-less /root/.bash_aliases|fzy
-less /root/.bash_history
-less /root/.bashrc|fzy
-less /root/.git/rebase-apply/patch
-less ssh.sh
-less sshs.sh
-less submission.csv 
-less taglist.txt|fzy
-less tc_climate_temp_train.py
-less tc_run11.log
-less tc_run13.log
-less tc_run1.log
-less tc_run1.py
-less tc_run20.log
-less temp0
-less temp1
-less testlog
-less tf_run11.log
-less usage
-less usage 
-less /usr/local/bin/dl.sh
+less /root/libevent_install.sh
+less /root/.zsh/functions/hgss
+less vimrc
 less .vimrc
-less /win3/marker/bin/marker.sh
-# List of applications you want to explicitly sync
-# List of applications you want to ignore
+less .zhistory
 lls
-llt 
 llt .
 llt .*
-llt 1*
-llt *20.csv
-llt 5_*
-llt 5_1.csv
-llt 6_*
-llt .bash*
-llt bash*
+llt *
+llt*
 llt .bash_history_summary
-llt *_*.csv
-llt *.csv
+llt bin
+llt .c*
+llt cat
+llt -d
 llt -d .*
+llt -d bin
+llt -d .c*
 llt -f .*
 llt|ffzy
-llt -h
-llt -h 
-llt -h *d.csv
-llt -h tc_climate
 llt install
 llt *install.sh
 llt install.sh
-llt local
-llt *local*
+llt marker
+llt n*
 llt nbssh.sh
-llt *.py
+llt /root/.bin
 llt .sh
 llt *.sh
-llt tpot
+llt test_rmlater
+llt *tmux*
+llt /usr/lib|fzf
 llt vim
+llt .vim*
+llt *vim
+llt *vim*
+llt vim*
+llt vimrc
+llt .vimrc
+llt .vimrc*
 llt .z
 llt .z*
 llt .zsh
+llt .zsh*
 llt .zshrc
-ln -s /data/dotfiles/zshrc .zshrc
-ln -s /data/dotfiles/zsh .zsh
+ln -s /bin/zsh /usr/bin/zsh
+ln -s ./d.dotfiles/tmux.conf .tmux.conf.local
+ln -s ./dotfiles/tmux.conf .tmux.conf
 ln -s dotfiles/vimrc.bundles .vimrc.bundles
 ln -s dotfiles/vimrc .vimrc
 ln -s dotfiles/vim .vim
 ln -s dotfiles/vim/ .vim
-ln -sf /data/dotfiles/zshrc .zshrc
+ln -s dotfiles/zshenv .zshenv
+ln -s dotfiles/zsh .zsh
+ln -sf /dev/null  .zshrc.local
+ln -sf ./dotfiles/tmux.conf .tmux.conf
+ln -sf ./.dotfiles/tmux.conf .tmux.conf.local
+ln -sf ./.dotfiles/tmux/tmux.conf.symlink .tmux.conf.local
+ln -sf .dotfiles/tmux/tmux.conf.symlink .tmux.conf.local
+ln -sf ./.dotfiles/tmux/tmux.conf .tmux.conf.local
 ln -sf dotfiles/vim/ .vim
+ln -sf dotfiles/zshrc .zshrc
+ln -sf dotfiles/zsh .zsh
+ln -sf n.dotfiles/tmux/tmux.conf.symlink .tmux.conff.local
+ln -sf nicknisi_dotfiles/tmux/tmux.conf.symlink .tmux.conf
+ln -sf null .tmux.conf.local
+ln -sf null .tmux.conf.local 
+ln -sf .tmux.conf ./dotfiles/tmux.conf
+ln -sf zsh .
+ln -s   n
+ln -s nicknisi_dotfiles/ .dotfiles
+ln -s nicknisi_dotfiles/tmux/tmux.conf.symlink .tmux.conf
+ln -s null .tmux.conf.local
+ln -s null .tmux.conf.local 
 ln -s /root/.fzf/bin/fzf fzf
+ln -s /root/marker.sh marker.sh
+ln -s .tmux.conf ./dotfiles/tmux.conf
+ln -s .tmux.conf nicknisi_dotfiles/tmux/tmux.conf.symlink
+ln -s /usr/bin/zsh /bin/zsh
+ln -s /usr/lib/libevent-2.1.so.6 /usr/lib64/libevent-2.1.so.6
+ln -s /usr/lib/libevent-2.1.so.6 /usr/local/lib/libevent-2.1.so.6
+ln -s /usr/local/lib/libevent-2.1.so.6 /usr/lib/libevent-2.1.so.6
+ln -s . zsh
 locate
 locate /
 locate /|fzf
@@ -1372,524 +924,198 @@ locate /|fzf -q "$LBUFFER"
 locate /|fzf -q $LBUFFER
 locate insert-last-command-ouput
 locate insert-last-command-output
+log
+log out
 ls
-ls 
-ls .
-ls .*
-ls 5*
+ls *
+LS
 ls .bash*
-ls .bashrc.swp
-ls ch*
-ls chunck_test*
+ls build*
 ls conda
-ls *_*.csv
-ls *.csv
-ls csv2|wc -l
-ls *.csv|wc -l
-ls -d .*
-ls /data/dotfiles/
-ls /data/github
-ls *d.csv
-ls -d data
-ls -d github
-ls -d hu*
-ls|fzy
+ls ctags.
+ls ctags.*
+ls /etc/shells
+ls /etc/shells/*
+ls -f tm*
+ls -f tm*.tar
+ls|fzf
 ls .git
-ls .git*
-ls git*
-ls Git*
-ls|grep -
-ls h*
 ls --help|ffzy
 ls --help|fzy
-ls hu*
-ls in*
-ls .m*
-ls .mack*
-ls *.py
-ls .rc*
-ls /root/.vim
+ls input*
+ls ma*
+ls make
+ls make*
 ls *.sh
-ls *.swp
-ls .t*
-ls tc_climate
-ls temp*
-ls tempd2
-ls /usr/local/bin/pro*
+ls tmux
+ls *tmux
+ls *tmux*
+ls tmux*
+ls .tmux.config
+ls /usr/bin/
+ls /usr/bin/zsh
+ls /usr/lib|fzf
+ls /usr/local/lib|fzf
 ls vim
-ls /win4/
-ls .z
-ls .z*
-ls .zsh
+ls .vim*
 ls .zshrc
-lt
-luarocks install 
-luarocks install --help
-luarocks install luacrypto
-luarocks install uuid
-luarocks make 
-mack
-mack restore
-mackup
-mackup 
-mackup backup
-mackup --help
-mackup -h|fzy
-mackup list
-mackup restore
 make
+make CMAKE_BUILD_TYPE=Release
 make distclean
-make && make install
-maker
-maker get
-man bash
-man bash|ahat
-man bash|fzy
-man bind|fzy
-man bind remove
-man emac|fzy
-man emacs|fzy
+make install
+make verify
 man fzf|fzf
 man fzy|fzf
-man -k emac|fzy
-man kill(2)|fzy
-man kill|fzy
 man locate
-man ncdu
-man remove|fzy
-man tput
-man vi|fzy
-man vim
+man tmux
 man Vim
-man vim|fzy
 man Vim|fzy
 man zle
 man zsh|fzf
 man zsh|fzy
-markeer
-marker get
-marker -h
-marker --help|fzy
-$MARKER_HOME
-marker mark
+_marker_
  marker mark --command=''
  marker mark --command='cat /root/.bash_history_summary|fzf --multi --bind "f1:execute(echo {} >> {{conda_update.sh}}),f2:execute(less {{conda_update.sh}})"'
  marker mark --command='cat /root/.bash_history_summary|fzf --multi --bind "f1:execute(echo {} >> conda_update.sh),f2:execute(less conda_update.sh)"'
- marker mark --command='cat /root/.bash_history_summary|sort -k1|uniq -f1 > /win3/marker/tldr/osx.txt '
- marker mark --command='cd'
- marker mark --command='cd $(dirname $(which mackup))'
- marker mark --command='d=$(find -type d|fzy)&&cd $d'
- marker mark --command='dkjf'
  marker mark --command='dklf'
- marker mark --command='FILE=$(ag -G . '"'"'common'"'"' | fzy) && a1=$(echo "$FILE"|cut -d '"'"':'"'"' -f 1)&&a2=$(echo "$FILE"|cut -d '"'"':'"'"' -f 2)&&vim +$a2 &a1'
- marker mark --command='FILE=$(ag -G . '"'"'placeholder'"'"' | fzy) && a1=$(echo "$FILE"|cut -d '"'"':'"'"' -f 1)&&a2=$(echo "$FILE"|cut -d '"'"':'"'"' -f 2)&&vim +$a2 $a1'
- marker mark --command='FILE=$(ag -G . {{'"'"'placeholder'"'"'}} | fzy) && a1=$(echo "$FILE"|cut -d '"'"':'"'"' -f 1)&&a2=$(echo "$FILE"|cut -d '"'"':'"'"' -f 2)&&vim +$a2 $a1'
- marker mark --command='FILE=$(ag -l -g '"'"''"'"' | fzy) && vim "$FILE'
- marker mark --command='FILE=$(ag -l -G .py '"'"'show_pool'"'"' | fzy) && vim "$FILE"'
- marker mark --command='file=$(ffzy)&&vim $file'
- marker mark --command='file=$(ps aux|fzy)&&a=$(echo $file|cut -c5-10)&&kill $a'
- marker mark --command='file=$(ps aux|grep {{}})&&echo $file|cut -c5-10'
  marker mark --command='fzf --bind "f1:execute(cat {} >> conda_update.sh)+abort"'
  marker mark --command='git log --oneline | fzf --multi --preview '"'"'git show {+1}'
  marker mark --command='git log --oneline | fzf --multi --preview '"'"'git show {+1}'"'"''
  marker mark --command='git ls-tree -r master --name-only|fzf --multi --preview '"'"'git diff {+1}'"'"''
- marker mark --command='hg'
- marker mark --command='ls -'
- marker mark --command='ls|grep -'
- marker mark --command='nohup jupyter notebook --allow-root --ip=* . &'
- marker mark --command='nohup jupyter notebook --ip=* . &'
- marker mark --command='source activate patent-landscape'
- marker mark --command='source ./.bashrc'
- marker mark --command='ssh-copy-id -i /root/.ssh/id_ecdsa.pub  git@47.94.205.80'
- marker mark --command='usermod -s /bin/bash git'
- marker mark --command='vim +7 /win3/marker/bin/marker.sh'
- marker mark --command='vim /win3/marker/bin/marker.sh'
+ marker mark --command='let g:ctrlp_cmd='"'"'CtrlP :pwd'"'"''
+ marker mark --command='proxychains curl --cacert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg'
  marker mark --command='whence -f insert-last-command-output'
-marker mark git diff .bash_aliases 
 marker remove
-mark get
-mark git diff .bash_aliases 
-mark --help|fzy
-mkdir
-mkdir backup
-mkdir bashscript
-mkdir csv
-mkdir csv0
-mkdir csv15
-mkdir csv2
-mkdir csv3
-mkdir ../csv4
-mkdir git
-mkdir -p /backup/win3/data
-mkdir -p /data/dotfiles/
-mkdir -p /data/home/yan
+mkdir autoload
+mkdir nvim
 mkdir -p /root/bin
-mkdir -p /root/.vim/plugin
-mkdir -p /var/data
-mkdir -p var/data
-mkdir scripts
-mkdir tc_climate
-mkdir tc_git_climate
 mkdir test
-mkdir ts_IEEE
-mkdir wiki
-mkdri /var/data
-mkrc
-mount backup2
-mount /backup2 /dev/sdd
-mount backup2 /dev/sdd
-mount backup2 sdd
-mount /dev/sdd /backup2
-mount -t ntfs /dev/sdd1 /backup2 
-mount -t ntfs /dev/sdd /backup2 
-mount -type ntfs /dev/sdd /backup2 
-mv airportscan/ ../
-mv bash1.sh gits.sh
-mv fzy_0.9-1_amd64.deb /data
+mkdir .vimdot
 mv fzy_locate hgss
-mv inception_resnet/
+mv google-cloud-sdk.list.backup /opt
+mv google-cloud-sdk.list.save.backup /opt
+mv init.vim init__.vim
 mv last_command.zsh last_command
-mv -prd tempdir/ /data/var/
-mv -r airportscan/ ../
-mv -rd tempdir/ /data/var/
-mv -r tempdir/ /data/var/
-mv ts_IEEE/ ts_ieee
+mv marker.sh marker.sh.backup
+mv /root/.oh-my-zsh /root/.pre-oh-my-zsh
+mv -r /root/.oh-my-zsh /root/.pre-oh-my-zsh
+mv -r zsh zsh_backup
+mv test_rmlater
+mv test test_rmlater
 mv .vim .vim.backup
-ncdu
-ncdu /
-ncdu --exclude /run
-ncdu --exclude /runji
-ncdu / --exclude /run/ -o /data/ncdu_export
-ncdu --exculde /run/ -o /data/ncdu_export
-ncdu / --exculde /run/ -o /data/ncdu_export
+mv zsh zsh_backup
+n
 ncdu -f /data/ncdu_export 
-ncdu --help
-ncdu / -o /data/
-ncdu / -o /data/ncdu_export
-ncdu / -o --exculde /run /data/ncdu_export
-ncdu / -o --exculde /run/ /data/ncdu_export
-netstat -a
-netstat -a|fzy
-netstat -a|grep 8890
-netstat -ano
-netstat -ano|fzy
-netstat ano|fzy
+neovim
+nethogs eth2
+nethogs --help
+nethogs -t eth2
 netstat -ano|grep 7778
 netstat -ano|grep 8888
-netstat -ano|grep 8890
 netstat -anop|fzf
 netstat -anop|fzy
-netstat anop|fzy
-netstat ap|fzy
-netstat|fzy
-netstat --help
-netstat --help|fzy
-netstat -i
-netstats -ano
-netstats -anop|fzy
-netstats -aux
-netstats --help|fzy
-node
-nohup --allow-root jupyter notebook --ip=* . &
- nohup bash /usr/local/bin/dl.sh &
-nohup bypy upload csv15 csv &
-nohup bypy upload csv15/*_*.csv csv &
-nohup bypy upload *_*.csv csv &
-nohup itorch notebook --ip=* &
-nohup jupyter notebook --allow-root --ip=* . &
-nohup jupyter notebook --ip=* . &
-nohup jupyter notebook --ip=* --allow-root &
-nohup python filter_test.py &
+nhop
 nohup python -m http.server 7778 &
-npm install --global brew
-# One application name per line
-# # or
-ossfs 
-ossfs oss://tbxy09test
-ossfs oss://tbxy09test /oss
-ossfs tbxy09test /oss
-ossfs tbxy09test /oss --ourl=http://oss-cn-beijing-internal.aliyuncs.com
-ossfs tbxy09test /oss -ourl=http://oss-cn-beijing-internal.aliyuncs.com
-ossfs tbxy09test /oss ourl=http://oss-cn-beijing-internal.aliyuncs.com
-ossutil64 --bigfile-threshold
-ossutil64 --bigfile-threshold 524288000
-ossutil64 --bigfile-threshold 524288000 -fr 
-ossutil64 --bigfile-threshold 524288000 -fr tc_climate oss://tbxy09test/tc_climate/
-ossutil64 --bigfile-threshold 9223372036854775807  cp ForecastDataforTraining_201712.csv oss://tbxy09test/tc_climate/
-ossutil64 --big-threshold
-ossutil64 --big-thresholder
-ossutil64 cp --bigfile-threshold 524288000 -fr tc_climate oss://tbxy09test/tc_climate/
-ossutil64 cp --bigfile-threshold 5242 oss://tbxy09test/tc_climate/
-ossutil64 cp --bigfile-threshold 9223372036854775807 -fr tc_climate oss://tbxy09test/tc_climate/
-ossutil64 cp count_tp_test.py oss://tbxy09test/tc_climate
-ossutil64 cp count_tp_test.py oss://tbxy09test/tc_climate/
-ossutil64 cp filter_test.py oss://tbxy09test/tc_climate/
-ossutil64 cp filter_test.py.py oss://tbxy09test/tc_climate/
-ossutil64 cp In_situMeasurementforTraining_201712.csv oss://tbxy09test/tc_climate/
-ossutil64 cp In_situMeasurementforTraining_201712.tar oss://tbxy09test/tc_climate/
-ossutil64 cp -r csv3 oss://tbxy09test/csv/
-ossutil64 cp tc_climate_temp_train.py  oss://tbxy09test/tc_climate
-ossutil64 cp tc_climate_temp_train.py  oss://tbxy09test/tc_climate/
-ossutil64 cp tc_climate_temp_train.py oss://tbxy09test/tc_climate/
-ossutil64 cp tc_run20.py oss://tbxy09test/tc_climate/
-ossutil64 cp tc_run20_single_run.py  oss://tbxy09test/tc_climate/
-ossutil64 cp tc_run20_single_run.py oss://tbxy09test/tc_climate/
-ossutil64 help bigfilethredsholder
-ossutil64 help help
-ossutil cp -r csv3 oss://tbxy09test/csv/
-# out where your Copy folder is and store your configuration files in it.
-# out where your Google Drive is and store your configuration files in it.
-parted -l
-passwd
-passwd git
-$PATH
-# path = some/folder/in/your/home
-# path = /some/folder/in/your/root
+nop
+nvim init.vim
+nvim init.vim.backup
+nvim -version
+nvim --version
+$path
+pgrep tmux
 ping baidu.com
-pip install bash_kernel
-pip install lupa
-pip install mackup
-progress -c http
-progress -c httpd
-progress -w
-proxychains curl facebook
-proxychains curl facebook.com
-proxychains curl  www.google.com
-proxychains curl www.google.com
-proxychains luarocks install luacrypto
-proxychains luarocks install uuid
+ping -v baidu.com
+/proc/2606/exe attach
+proxychains apt-get update
+proxychains curl --cacert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg
+proxychains curl --cacert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg|sudo apt-key add-
+proxychains curl --catcert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg
+proxychains curl http://packages.cloud.google.com/apt/doc/apt-key.gpg
+proxychains curl https://packages.cloud.google.com/apt/doc/apt-key.gpg
+proxychains curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+proxychains make CMAKE_BUILD_TYPE=Release
 proxychains /root/.fzf/install
-proxychains wget google.com
-proxychains wget www.google.com
-PS1='[PEXP\[\]ECT_PROMPT>' PS2='[PEXP\[\]ECT_PROMPT+' PROMPT_COMMAND=''
-ps aus|grep dl
-ps aux
-ps aux|grep 1080
-ps aux|grep 22|cut -c 10-16
-ps aux|grep 7777
 ps aux|grep 7778
-ps aux|grep 8887
-ps aux|grep 8887|cut -c 10-16
-ps aux|grep 8887|cut -c 10-16|wc -l
-ps aux|grep 8887|cut -c 1-10
-ps aux|grep 8887|cut -c 1-10|wc -l
-ps aux|grep 8887|cut -c 9-16
-ps aux|grep 8888
-ps aux|grep 8888|cut -c 10-15
-ps aux|grep 8888|cut -c 10-16
-ps aux|grep 8888|cut -c 10-18
-ps aux|grep 8888|cut -c 15
-ps aux|grep 8888|cut -c 34
-ps aux|grep 8888|cut -c-5
-ps aux|grep 8888|cut -c8-
-ps aux|grep 8888|cut -c8-15
-ps aux|grep 8888|cut -c -c-5
-ps aux|grep 8888|cut -d -c15
-ps aux|grep 8888|cut -d " " -f 2
-ps aux|grep 8888|cut -d "root" -f 1
-ps aux|grep 8888|cut -f 2
-ps aux|grep 8888|cut -f 2-10
-ps aux|grep 8888|cut -f 2-3
-ps aux|grep 8888|cut -p " " -f 2
-ps aux|grep 8888|cut -s " " -f 2
-ps aux|grep bypy
-ps aux|grep dl
-ps aux | grep dl
-ps aux|grep http
-ps aux|grep jupyter
-ps aux|grep nohup
-ps aux|grep notebook
-ps aux|grep python
-ps aux|grep ssh
-ps aux|grep ssh|cut -c 10-16
-ps axu | fzf
+ps aux|grep tmux
 pwd
-pyhton test.py 
-python
-python count_tp_test.py 
-python ../filter_test.py
-python ../filter_test.py 
-python filter_test.py
-python filter_test.py 
 python inputs_pre.py
-python inputs_pre.py 
 python install.py
-python install.py 
-python -m bash_kernel.install
-python -m http.server 7777
 python -m http.server 7778
-python -m pudb
-python -m pudb marker
-python -m pudb marker get
-python tc_run1.py
-python tc_run1.py> tc_run11.log
-python tc_run1.py >> tc_run12.log
-python tc_run1.py >> tc_run13.log
-python tc_run1.py >> tc_run1.log
-python tc_run1.py > tc_run1.log
-python tc_run20.py
-python tc_run20.py > tc_run20.log
-python test.py
-python test.py 
 q
-remove _ssh_suit
-re-source /root/.bashrc
-rew
-rm *
-rm Anaconda-2.3.0-Linux-x86_64.sh
-rm Anaconda-2.3.0-Linux-x86_64.sh.1 
-rm .bash_aliases 
-rm .bashrc.swp
-rm *_*.csv
-rm easy-navigate.vim 
-rm ForecastDataforTesting_201712.csv 
 rm .git
-rmi
-rmi *
-rmi .git
-rm inception_resnet_v2_2016_08_30.ckpt 
-rm index.html.1
-rm *.ipynb
-rmi -r *
-rmi -r data
-rm -iv *d.csv
-rm key_1.csv.zip 
-rm key_2.csv.zip 
-rm marker.git 
-rm ncdu
-rm ncdu 
-rm *.py
-rm qt-unified-linux-x64-online.run
-rm qt-unified-linux-x64-online.run.1
-rm qt-unified-linux-x64-online.run.2 
-rm -r *
-rm -r data
+rm google-cloud-sdk.list
+rm google-cloud-sdk.list.save
+rm init.vim
+rm ls
+rm n
 rm -r .git
-rm -r ./.git
-rm -r github
-rm -r  inception_resnet/
-rm -r marker/
-rm -r tc_climate/
-rm -r tensorflow/
-rm sample_submission*
-rm sample_submission.7z
-rm sample_submission.7z.1
-rm sample_submission.7z.2
-rm sample_submission.7z.3
-rm sample_submission.7z.4
-rm sample_submission.7z.5
-rm _ssh_suit
-rm stage1_a3daps.tar.gz 
-rm stage1_aps.tar.gz 
-rm stage2_aps.tar.gz 
-rm tc_climate/
-rm test-tif-v2.tar.7z 
-rm test.zip
-rm test.zip1
-rm test.zip.1 
-rm train_2.csv.zip 
-rm train2.csv.zip
-rm train.7z 
-rm train_masks.csv.zip 
-rm train-tif-v2.tar.7z 
-rm -v *d.csv
-rmvi
+rm -r nvim
+rm -r  test_rmlater
+rm -r zsh
+rm -r zsh_backup
+rm .tmux.conff.local
+rm .tmux.conf.local
 rm .vimrc.bundles
 rm vimrc.bundles
-rm -vir *
-rm -vir .git
-/root/.fzf/install
-# Sample Mackup configuration file
-sap3
-scrip /bootstrap
-servce dockerd
+rm zsh
+rm .zsh
+rm zsh_backup
+/root/.bin/cat
 service docker
-service dockerd
-service docker status
 service docker stop
 service --full-restart
 service list
-service --list
 service rc.local --full-restart
 service rc.local restart
 service rc.local start
 service --status-all
-service --status-all|fzy
-service stop docker
 set
-set|grep Qt
 setopt xtrace
 set -x
+sh autogen.sh
+sh build-zsh.sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 shopt -s extdebug
 sjif
-sort --help
-sort --help|ahat
-sort --help|aha >/win3/ls-with-colors.html
-source
 source activate
-source activate patent-landscape
-source activate root
-source activate sshs.sh
-source .bashrc
-source ./.bashrc
-source deactivate
-source deavtivate
-source gits.sh
-source --help
-source --help|fzy
- source /root/.bashrc
-source sshs.sh
-source sshs.sh 
-source /win3/marker/bin/marker.sh
-ssh
-ssh-copy-id -i /root/.ssh/id_ecdsa.pub  git@47.94.205.80
-ssh -p 22 47.94.205.80
-ssh -p 22 47.94.205.80 git status
-ssh -p 22 47.94.205.80rint
-ssh -p 27712 65.218.133.93
-ssh -p 27712 67.218.133.93
-ssh -p 277212
-_ssh_suit
-ssh_suit 
+  source ~/.init.local\
+source theme.sh
+source .tmux.conf
+  source ~/.vimrc.local
+  source ~/.vimrc.local\
 start7778
-# [storage]
-su
-sudo apt-get install bre
-sudo apt-get install brew
-sudo apt-get install libzmq3-dev libssl-dev python-zmq
-sudo apt-get install rcm
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo add-apt-repository -r ppa:neovim-ppa/stable
+sudo apt-get dowload neovim
+sudo apt-get download neovim
+sudo apt-get install ctags
+sudo apt-get install neovim
+sudo apt-get install NeoVim
+sudo apt-get install software-properties-common
+sudo apt-get install update
+sudo apt-get neovim
+sudo apt-get remove google-cloud-sdk
+sudo apt-get search neovim
 sudo apt-get update
+sudo checkinstall -y --pkgname=zsh --pkgversion=$ZSH_VERSION --pkglicense=MIT make install install.info 
+sudo chsh
 sudo make install
-sudo npm install --global brew
+sudo nethogs docker0
+sudo nethogs eth2
 sudo proxychains apt-get update
-sudo useradd -m -d /var/git -s /bin/bash git
-su git
-su --help
+sudo proxychains curl --cacert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg|sudo apt-key add -
+sudo proxychains curl --cacert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg|sudo apt-key add-
 supervisor
 su root
 su yan
-tail -f  .bash_history 
-tail -n20 .bash_history
-tail -n20 /root/.bash_history
-tar
-tar cvf In_situMeasurementforTraining_201712.tar In_situMeasurementforTraining_201712
-tar cvf In_situMeasurementforTraining_201712.tar In_situMeasurementforTraining_201712.csv 
-tar -f
-tar -ft
-tar -f --test stage2_aps.tar.gz
-tar -ft stage2_aps.tar.gz
-tar -test stage2_aps.tar.gz
-tar -tf ncdu-linux-arm-1.13.tar.gz 
-tar -tf stage2_aps.tar.gz
-tar -t stage2_aps.tar.gz
-tar -xvf ncdu-linux-arm-1.13.tar.gz 
+./taat
+tar xf libevent-2.1.8-stable.tar.gz  libevent-2.1.8-stable
 tar xvzf zsh-5.4.2.tar.gz
 tar xzf zsh-5.4.2.tar.gz
 tar xzf zsh-5.4.2.tar.gz .
-# The "path" can be absolute (from the / of your drive) or relative to your
-# The "path" setting is mandatory when using the "file_system" engine.
-tldr
+tat
 tldr -
 tldr clear
 tldr conda_update
@@ -1931,17 +1157,81 @@ tldr --update
 tldr upstart
 tldr vim
 tldr xclip
+tmux
+tmux 
+tmux a
+tmux -a
+tmux a -t 0
+tmux a -t 1
+tmux a -t {{name}}
+tmux attach
+tmux a -t today
+tmux a -t w1
+tmux a -t workdir
+tmux a workdir
+tmux bind-key
+tmux bind-key list
+tmux bind-key ls
+./.tmux.conf
+tmux -c source tmux.conf.symlink
+tmux -c term
+tmux -c $term
+tmux -f aliases
+tmux kill-sesion 2
+tmux kill-session
+tmux kill-session 0
+tmux kill-session 2
+tmux kill-session 3
+tmux kill-session 4
+tmux kill-session a -t 2
+tmux kill-sessions
+tmux kill-session -t 0
+tmux kill-session -t 2
+tmux kill-session -t 3
+tmux kill-session -t 4
+tmux kill-session -t 5
+tmux list
+tmux list-sessio
+tmux list-session
+tmux list-sessions
+tmux list-windows
+tmux ls
+tmux --L test
+tmux new-session 
+tmux new-session -n today
+tmux new-session -n w1
+tmux new-session today
+tmux new -s today
+tmux new -s workdir
+tmux new-window -kn w1
+tmux new-window -n w1
+tmux source
+tmux source ./dotfiles/tmux.conf
+tmux source-file ./.tmux.conf
+tmux source-file .tmux.conf
+tmux source /root/.tum.config
+tmux source /root/.tumx.config
+tmux source .thumbnails
+tmux source ./.tmux.conf
+tmux source .tmux.conf
+tmux-source .tmux.conf
+tmux source ./.tmux.conf.local
+tmux source .tmux.conf.local
+tmux source ./tmux.conf.symlink
+tmux source tmux.conf.symlink
+tmux swap-p
+tmux swap-pane
+tmux swapp -s
+tmux switch-client
+tmux term
+tmux --term
+./tmux/tmux
+tmux -v
+tmux -version
+tmux --version
+tmux -v source tmux.conf.symlink
+tmux -vsource tmux.conf.symlink
 top
-# To see a list of supported application names, launch mackup list
-touch m.log
-tput
-tput cup
-tput cup $1
-tput cup &1
-tput cup $2
-tput cup $a
-tput "think"
-tput -T sj
 type -a insert-last-command-output
 type /data/src/vim
 type /data/vim/src/vim
@@ -1952,133 +1242,106 @@ typeset -ft insert-last-command-output
 typeset +ft insert-last-command-output
 type vim
 type .zsh
-uniq --help|ahat
-unzip ForecastDataforTesting_20171205.zip 
-unzip ForecastDataforTraining_20171205.zip 
-uptime
-useradd -m -d /var/git -s /bin/bash git
+unzip -t ctags58.zip
+unzip -x ctags58.zip 
+us
 useradd -s /bin/zsh-beta root
-useradd -s /bin/zsh root
-usermod 
-usermod git -s
-usermod -s /bin/bash git
+usermod
 usermod -s /bin/bash root
-usermod -s /bin/bash yan
 usermod -s /bin/zsh-beta root
-usermod -s /bin/zsh git
 usermod -s /bin/zsh root
-usermod  -s git /bin/bash
-usermod -s /usr/bin/zsh
-usermod -s /usr/bin/zsh git
-usermod -s /usr/bin/zsh root
-# Use the names listed below.
 /usr/bin/vim --version
-uuid
-vi +61 marker/core.py
-vi 61 marker/core.py
-vi +7 bin/marker.sh
-vim
+/usr/bin/zsh
+uzip -t ctags58.zip
+vf
 vim 
+vim .
 vim +10 history.zsh
+vim +112 vimrc
 vim +11 history.zsh
 vim +16 .zshrc
-vim 5_20.csv 
+vim +17 /root/dotfiles/vimrc.bundles
 vim +54 .bash_aliases
 vim +5 history.zsh
 vim +5 /root/.zshrc
-vim +7 bin/marker.sh
 vim +8 .zshrc
 vim +9 history.zsh
-vi ~/.mackup.cfg
-vim bash1.sh
 vim .bash_aliases
-vim .bash_history 
-vim .bashrc
 vim completion.zsh
 vim conda_update.md
-vim config.py 
-vim count_tp_test.py 
-vim /etc/bash.bashrc 
+vim ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+.vimdot
+vim dotfiles/vimrc.bundles
+vim /etc/apt/sources.list
 vim /etc/rc.local
-vim ../filter_test.py
-vim filter_test.py
-vim filter_test.py 
 vim .fzf.zsh
-vim fzy
 vim fzy_locate
 vim gits.sh
-vim gits.sh 
-vim --help
 vim --help|fzy
 vim hgss
 vim history.zsh
 vim index.json
-vim inputs_pre
-vim inputs_pre.py
+vim init.vim
+vim install
 vim install_marker.sh
-vim ipython_kernel_config.py 
+vim install.sh
 vim last_command
 vim last_command.zsh
-vim .mack
-vim .mackup.cfg
-vim mackup.py 
-vim main.py 
-vim osx.txt
-vim osx.txt 
+vim libevent_install.sh
+vim marker.sh
+vim nvim
+vim path_local.zsh
 vim path.zsh
 vim rc.local
 vim README
-vim /root/.bash_aliases 
-vim /root/.bash_profile
-vim /root/.bashrc
-vim /root/.mackup.cfg
+vim renderer.py
+vim /root/dotfiles
+vim /root/dotfiles/vimrc.bundles
 vim /root/.zshrc
-vim sshs.sh
-vim tcclimate.py
-vim tc_climate_temp.py
-vim tc_climate_temp_train.py
-vim tc_climate_temp_train.py 
-vim tc_run11.py
-vim tc_run1.py
-vim tc_run20.py
-vim tf_flags.py
-vim tf_flags.py 
-vim tftry.py
-vim /usr/local/bin/dl.sh
+vim tags
+vim theme.sh
+vim .tmux.conf
+vim tmux.conf
+vim .tmux.conf.loal
+vim .tmux.conf.local
 vim --version
+vim vimrc
 vim .vimrc
+vim .vimrc.bundles
 vim vimrc.bundles
 vim /win3/bashscript/sshs.sh
-vim /win3/marker/bin/marker.sh
 vim .zhistory
 vim .zhrc
 vim .zsh
 vim zshrc
 vim .zshrc
-vncpasswd 
-vncserver
-watch -help
-watch -n1
-watch -n1 "tail -n20 .bash_history
-watch -n1 "tail -n20 .bash_history"
-watch progress -q
-watch "tail -n20 .bash_history"
-watch "tail -n2 .bash_history"
-watch "tail -n5 .bash_history"
-wget -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-wget https://github.com/pindexis/marker.git
-wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+vim ../.zshrc
+vim .zshrc.local
+vnc
+wget http://baidu.com
+wget https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz
+wget https://packages.cloud.google.com/apt/doc/apt-key.gpg
+wget  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 wget https://www.anaconda.com/blog/developer-blog/how-to-get-ready-for-the-release-of-conda-4-4/
-wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
+wget rawgit.com/transcode-open/apt-cyg/master/apt-cyg
 whence -a insert-last-command-output
 whence -f fzf-file-widget
-whence -f  insert-last-command-output
 whence -f insert-last-command-output
 whence -f PATH
+whence -f tmux
+whence fzf
 whence  insert-last-command-output
+whence neovim
 whence PATH
+whence python
+whence python2
+whence python3
+whence tmux
+whence -t neovim
 whence -v adduser
 whence -v bindkey
+whence -v fzf
 whence -v fzf-cd-widget
 whence -v fzf-cd-widget path
 whence -v _fzf_complete_export
@@ -2096,14 +1359,22 @@ whence -v HISTFILES
 whence -v history-search-backward
 whence -v insert-last-command-output
 whence -v _marker_get
+whence -v neovim
+whence -v nvim
 whence -v PATH
 whence -v $PATH
+whence -v python3
+whence -v tmux
 whence -v zle
 whence -v _zsh-mime-handler
 whence -v ZSH_NAME
 whence -v ZSH_VERSION
 whence ZSH_VERSION
+When nethogs is running, press:
+where
 where accept-and-hold
+where cat
+where ctags
 where -f fzf-file-widget
 where  fzf-file-widget
 where  insert-last-command-output
@@ -2117,38 +1388,29 @@ where ZSH_VERSION
 which
 which -a insert-last-command-output
 which -ap insert-last-command-output
-which bash
 which-command insert-last-command-output
-which cp
 which fzf
 which fzy
 which insert-last-command-output
 which insert-last-command-output()
-$('which mackup')
-$(which mackup)
-which mackup
-which mackup|cd
-which mackup|cd $
-which mackup&&cd $
-which marker
 which PATH
 which -p insert-last-command-output
 which tldr
+which tmux
 which zle
 which zsh
 who $HSLINES
 whO PATH
 whos
 who vim
-# With the "dropbox" storage engine, Mackup will automatically figure out your
+x
+ x
 xclip
 xclip --help
 xclip --hep
-xemacs
+xcode
 "^X" insert-last-command-output
-# You can customize the directory name in which Mackup stores your file. By
-# You can specify the storage type Mackup will use to store your configuration
-zhg
+xterm
 zle 
 ZLE
 zle accept-line
@@ -2165,6 +1427,7 @@ zle -R '' $display
 zle read-command
 zle redisplay
 zle .redisplay
+zle reload
 zle reset-prompt
 zless
 zmoload zle
@@ -2180,6 +1443,8 @@ zsh -**|fzy
 .zsh gitbk.sh
 zsh --help|fzf
 ZSH_NAME
+zsh /.tmux.conf
+zsh .tmux.conf
 zsh -v
 zsh --v
 zsh --verbose
