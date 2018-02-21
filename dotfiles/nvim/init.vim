@@ -24,9 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
 	set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 	if (has('nvim'))
-		let g:python_host_prog = '/root/anaconda/bin/python2'
-"		let g:python3_host_prog = '/u/root/anaconda/envs/patent-landscape/bin/python3'
-                  let g:python3_host_prog = '/usr/local/bin/python3'
+	    let g:python_host_prog='/root/anaconda/bin/python2'
 		" show results of substition as they're happening
 		" but don't open a split
 		set inccommand=nosplit
@@ -564,4 +562,16 @@ let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:ctrlp_cmd='CtrlP :pwd'
 noremap <leader>b :CtrlPBuffer<CR>
 nmap <F8> :TagbarToggle<CR>
+Plug 'tpope/vim-bundler'
+
+
+"if (filereadable(expand(~/.config/nvim/plugins.vim)))
+"if empty(glob(~/.config/nvim/plugins.vim))
+"    source ~/.config/nvim/plugins.vim
+"endif
+
+" Settings
+"if (filereadable(expand(~/.config/nvim/settings.vim)))
+"    source ~/.config/nvim/settings.vim
+"endif
 
