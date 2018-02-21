@@ -1,0 +1,22 @@
+vim /root/.bashrc##vrc
+ssh-copy-id -i /root/.ssh/id_ecdsa.pub  git@47.94.205.80##ssh-copy-id -i aliyun alisec aliesc
+FILE=$(ag -l -g '' | fzy) && vim "$FILE##ag and vim into
+FILE=$(ag -l -G .py 'show_pool' | fzy) && vim "$FILE"##ag and vim into
+nohup jupyter notebook --ip=* . &##start jupyter ipython
+file=$(ffzy)&&vim $file##ffzyvim
+source activate patent-landscape##sappl
+file=$(ps aux|grep {{}})&&echo $file|cut -c5-10##kill pid in
+file=$(ps aux|fzy)&&a=$(echo $file|cut -c5-10)&&kill $a##kill the process
+FILE=$(ag -G . {{'placeholder'}} | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1##ag and vim into
+nohup jupyter notebook --allow-root --ip=* . &##jupyter start with root
+d=$(find -type d|fzy)&&cd $d##dfzy
+cd $(dirname $(which mackup))##cd dirname
+usermod -s /bin/bash git##change shell
+whence -f insert-last-command-output##where is defined
+git log --oneline | fzf --multi --preview 'git show {+1}'##fzf multi choice
+fzf --bind "f1:execute(cat {} >> conda_update.sh)+abort"##fzf bind
+git ls-tree -r master --name-only|fzf --multi --preview 'git diff {+1}'##git preview diff
+cat /root/.bash_history_summary|fzf --multi --bind "f1:execute(echo {} >> {{conda_update.sh}}),f2:execute(less {{conda_update.sh}})"##create sh from history command fzf multi bind execute bash_history_summary
+proxychains curl --cacert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg##curl ca
+let g:ctrlp_cmd='CtrlP :pwd'##add the call changes of CtrlP to the /bundler/ctrlp/plugin
+tmux list-buffers|fzf##tmux clip copy
