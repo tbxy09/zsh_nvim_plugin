@@ -55,3 +55,7 @@ alias sap34="conda activate python34"
 alias sap2="conda activate patent-landscape"
 alias start8888="nohup jupyter notebook --ip=* --allow-root &"
 alias start7778='nohup python -m http.server 7778 &'
+alias ta='tmux attach'
+alias tls='tmux ls'
+alias tat='tmux attach -t'
+alias tns='tmux new-session -s'

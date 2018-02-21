@@ -16,8 +16,11 @@ ag airline ./*|fzf
 ag airlinetoggle
 ag airlinetoggle ./*
 ag .bash_history_summary
+ag bind /*|fzf
 ag bindkey
 ag bindkey|fzf
+ag bindkey /*|fzf
+ag bindkey ./*|fzf
 ag bundles
 ag "C-"
 ag "C-["
@@ -32,6 +35,9 @@ ag cnext ./*|fzy
 ag cnext map
 ag cnext&&map
 ag cn ./*|fzf
+ag command
+ag command /*
+ag command /*|fzf
 ag $ conda
 ag "$ conda" index.html
 ag "$conda" index.html
@@ -46,6 +52,7 @@ ag ctag
 ag ctags
 ag ctag .vimrc
 ag ctag .vimrc.bundles
+ag C-T /*|fzf
 ag CtrlP
 ag ctrlp_cmd
 ag CtrlPpath
@@ -96,6 +103,8 @@ ag -G focus .
 ag -G focus .vim
 ag git_prompt_info
 ag Glog
+ag GOPath
+ag GOPATH
 ag -G .py ProgressBar .
 ag -G .py read_csv ./*
 ag -G .py read_csv ./*|ahat
@@ -106,10 +115,16 @@ ag -G .vim focus ./*
 ag -G .vim "$HSLINES" .
 ag --help
 ag hgss
+ag --hidden export
+ag --hidden export|fzf
+ag --hidden GOPath
+ag -hidden GOPath
 ag --hidden "$HSLINES" .
 ag --hidden "HSLINES" .
 ag --hidden --ignore-dir anaconda/ runtimepath|fzy
 ag hooks
+ag HSLINE|fzf
+ag HSLINES
 ag "$HSLINES"
 ag "$HSLINES" .
 ag "HSLINES"
@@ -134,10 +149,24 @@ ag -i nerdfocus ./*
 ag -i nerdfocus ./vim
 ag -i nerdtreefocus ./*
 ag -i "nmap"|fzf
+ag _insert ./*
+ag insert ./*
+ag insert_
+ag _insert ./*|fzf
+ag insert_last ./*
+ag insert-last
+ag insert-last-
+ag insert-last-command-
+ag insert-last-command-ouput
+ag insert-last-command-ouput ./*
 ag insert-last-command-output
+ag insert_last ./*|fzf
+ag insert_last_word
+ag insert-last-word
 ag "let g:"
 ag map ./*
 ag map ./*|fzf
+ag _move_cursor ./*
 ag nerd
 ag NERD
 ag NERDF
@@ -148,12 +177,16 @@ ag nmap ./*
 ag nmap ./*|fzf
 ag noremap
 ag normap
+ag output
+ag output ./*|fzf
 ag PATH
 ag $PATH
 ag Plug
 ag plug .vimrc.bundles
 ag Plug .vimrc.bundles
 ag ProgressBar
+ag PyPI
+ag PyPI| fzf --multi --preview 'less {+1}'
 ag quickfix
 ag -r ctag
 ag -r ctags
@@ -172,6 +205,8 @@ ag tag
 ag tagbar
 ag taglist
 ag tagsbar
+ag ^T /*|fzf
+ag ^T ./*|fzf
 ag tmux
 ag tmux ./*
 ag tmux.conf
@@ -236,8 +271,12 @@ bash install-sh
 .bashrc
 bash -x insert-last-command-output
 bind
+bindkey|fzf -q insert-last-word
+bindkey|fzy
  c
 cat
+cat answer_sample_a_20180117.csv|wc -l
+cat answer_sample_b_20180117.csv|wc -l
 cat .bash_history|fzf
 cat .bash_history_summary
 cat .bash_history_summary|fzf
@@ -248,6 +287,7 @@ cat .bash_history_summary|wc -l
 cat>/dev/null
 cat /etc/shells|fzf
 cat install_marker.sh|fzf
+cat new_fusai_answer_a_20180127.csv|wc -l
 cat plug.vim|fzf
 cat README|ahat
 cat /root/.bash_history|sort -k1|uniq -f1 >> /root/.bash_history_summary
@@ -275,12 +315,16 @@ cat /root/.zhistory|wc -l
 cat /root/.zshrc|fzf --multi --bind "f1:execute(echo {} >> .bash_aliases),f2:execute(less .bash_aliases)"
 cat tags-cn|fzf
 cat tags|fzf
+cat testA_20180117.xlsx |wc -l
+cat testA_20180117.xlsx  |wc -l
 cat .vimrc|ahat
 cat .vimrc|aht
+cat {{}} |wc -l
 cat .zhistory|fzy
 cat .zhistory|wc -l
 cat .zsh_history
 cat .zsh_history|wc -l
+cat .zshrc|fzf
 cd
 cd 
 cd .
@@ -296,11 +340,14 @@ cd bin
 cd /bin
 cd .bin
 cd bundle
+cd code
 cd common
+cd .conf
 cd config
 cd .config
 cd configs
 cd .continuum
+cd csv
 cd ctags58
 cd ctrlp.vim
 cdd
@@ -321,6 +368,7 @@ cd ftplugin
 cd functions
 cd .fzf
 cd .fzf/shell
+cd $HOME/.local/share/marker
 cd lib
 cd libevent-2.1.8-stable
 cd libevent-2.1.8-stable.tar.gz
@@ -354,6 +402,7 @@ cd /root/.bin
 cd /root/.confg/tldr
 cd /root/.config/tldr
 cd /root/dotfiles
+cd /root/dotfiles/zsh/functions/
 cd /root/.fzf
 cd shell
 cd site-packages
@@ -361,7 +410,9 @@ cd sources.list
 cd sources.list.d
 cd sources.list..d
 cd src
+cd tc_carid
 cd tc_carretail
+cd tc_industryAI
 cd test_rmlater
 cd themes
 cd tldr
@@ -398,6 +449,7 @@ conda activate **
 conda activate patent
 conda activate patent-landscape
 conda activate python34
+conda activate root
 conda config --add channels conda-canary
 conda config --system --add pinned_packages conda-canary::conda
 conda deactivate
@@ -421,6 +473,7 @@ cp google-cloud-sdk.list.save google-cloud-sdk.list.save.backup
 cp init.vim ../
 cp init.vim.backup init.vim
 cp init.vim init.vim.backup
+cp last_command /root/dotfiles/zsh/functions/
 cp marker.sh /root/
 cp -prd /data/dotfiles/* .
 cp -prd /root/.bin /opt/
@@ -431,12 +484,15 @@ cp -prd /root/dotfiles/* .
 cp -prd /root/nicknisi_dotfiles/config/nvim/* .
 cp -prd /win3/nicknisi_dotfiles .
 cp -r /data/dotfiles/zsh dotfiles/zsh
+cp /root/.config/nvim/init.vim /root/dotfiles/init.vim
+cp /root/.config/nvim/init.vim /root/dotfiles/nvim/init.vim
 cp tldr /usr/bin
 cp tmux /usr/local/bin
 cp vim /usr/bin/
 cp /win3/n
 ctag
 ctags .
+ctags -R
 ctags -R .
 ctrl-b
 ctrl-b n
@@ -462,7 +518,9 @@ curl ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/j
 curl www.baidu.com
  c\\va
 /data/src/vim --version
+decale -f insert-last-word
 declare accept-and-hold
+declare -d kill-line
 declare -f accept-and-hold
 declare -f fzf-cd-widget
 declare -f fzf-file-widget
@@ -471,10 +529,14 @@ declare -f fzf-history-widget|ahat
 declare -f git_prompt_info
 declare -f hgss
 declare -f insert-last-command-output
+declare -f insert-last-word
+declare -f kill-line
 declare -f  PATH
 declare -f ZSH_NAME
 declare -f ZSH_VERSION
 declare hgss
+declare insert-last-word
+declare kill-line
 declare ZSH_VERSION
 dfas
 df -lh
@@ -484,6 +546,7 @@ dpkg --help|fzf
 dpkg -i /data/zsh/zsh_5.4.2-1_amd64.deb
 dpkg -r vim
 e
+echo '\
 echo "\
 echo **
 echo 3
@@ -516,6 +579,7 @@ echo "if filereadable($HOME . "/.vimrc.local")"
 echo jfe
 echo "let g:ctrlp_cmd='CtrlP :pwd'" >> /root/.vimrc
 echo $LINES
+echo "noremap <leader>, :gfILES"
 echo $OPT
 echo $PATH
 echo ". /root/anaconda/etc/profile.d/conda.sh">>.zshrc
@@ -524,7 +588,10 @@ echo sfd
 echo $shell
 echo $SHELL
 echo $term
-endif\
+echo yes|xclip
+echo yes|xclip -i
+echo yes|xclip -I
+end
 $ENHANCD_DIR 
 ethogs eth2
 exit
@@ -607,12 +674,17 @@ fzf --bind "f1:execute(cat {} >> conda_update.sh)+abort"
 fzf -bind "f1:execute(cat {} >> conda_update.sh)+abort"
 fzf-completion
 fzy -q
+ga dotfiles/nvim/tags 
+ga dotfiles/tags 
+ga dotfiles/vim/tags 
 ga -i
+ga /root/dotfiles/nvim/init.vim
 gc "correct the history.zh and sync to the previous /data/dotfiles, and add the zsh.local as the oh-my-zsh"
 gc git@github.com:neovim/neovim.git
 gc git@github.com:nicknisi/dotfiles.git
 gc git@github.com:nicknisi/dotfiles.git nicknisi_dotfiles
 gc -m "correct the history.zh and sync to the previous /data/dotfiles, and add the zsh.local as the oh-my-zsh"
+gdiff
 getent services
 getent services|fzf
 getent services|fzy
@@ -637,10 +709,13 @@ git add ./dotfiles/zsh/functions
 git add ./dotfiles/zsh/functions/hgss
 git add dotkfjia
 git add $files
+git add "&Gcommit"
 git add -i
+git add -i|fzf
 git add in
 git add init.vim
 git add install_marker.sh
+git add last_command
 git add lll
 git add marker
 git add marker.sh
@@ -649,7 +724,9 @@ git add  ./nvim
 git add  ./nvim/
 git add ./nvim
 git add -r ./nvim
+git add /root/dotfiles/init.vim
 git add .tmux.conf
+git add user_commands.txt
 git add .vimrc
 git add .vimrc.bundles
 git add .zhistory
@@ -677,6 +754,7 @@ git commit 'add the symbolink .zshrc .zsh'
 git commit -m "add the dotfiles init.vim"
 git commit -m "add the hgss"
 git commit -m "add the init.vim"
+git commit -m "add the init.vim in dotfiles"
 git commit -m "add the marker"
 git commit -m 'add the symbolink .zshrc .zsh'
 git commit -m "add the .tmux.conf"
@@ -703,6 +781,7 @@ git diff dotfiles/vimrc
 git diff dotfiles/zshrc
 git diff dotfiles/.zshrc
 git diff-files
+git diff hgss
 git diff init.vim
 git diff /root/.bash_aliases
 git diff .vimrc
@@ -710,6 +789,8 @@ git diff .zshrc
 git diff.zshrc
 git init
 git log
+git log functions
+git log functions/
 git log|fzf
 git log --oneline | fzf --multi --preview 'git show'
 git log --oneline | fzf --multi --preview 'git show {+1}'
@@ -747,11 +828,13 @@ git ls-tree master
 git ls-tree master|fzf
 git ls-tree  master --name-only
 git ls-tree -r master
+git ls-tree -r master|fzf
 git ls-tree -r master --name-only
 git ls-tree -r master -name-only
 git ls-tree -r master --name-only|fpp
 git ls-tree -r master --name-only|fzf --multi --preview 'git diff {+1}'
 git ls-tree -r master --name-only|fzf --multi --preview 'less {+1}'
+git ls-tree *-stage
 git push orgin master
 git push origin master
 git reflog
@@ -777,11 +860,13 @@ git rm -r ./nvim/*
 git rm -r ./nvim/*|fzf
 git-shell
 git show HEAD~0 --stat
+git show HEAD~0 --stat functions/
 git show HEAD~10 --stat
 git show HEAD~1 --stat
 git show master
 git show master --stat
 git show  --stat
+git show  --stat functions/
 git status
 git status|
 git status .bash_history_summary
@@ -790,9 +875,13 @@ git status|fzy
 git status -s
 git status --short
 gm "add conda_update.sh"
+gm "add the last_command ,no idea where it comes from"
+gm "add the MRU ones in nvim the init.vim"
+gm "add the user_commands"
 gm "change the bin/marker.sh to a link type, so I can include all configure files into the root"
 gm "correct the history.zh and sync to the previous /data/dotfiles, and add the zsh.local as the oh-my-zsh"
 gm "cp the cur dot"
+gm -m "add the MRU ones in nvim the init.vim"
 gm -m "i change the bin/marker.sh to a link, because I want to include all the sh files into the root"
 gm -m "update the .bash_history_summary"
 gm "update the .bash_history_summary"
@@ -808,6 +897,8 @@ history -n
 HISTSZIE
 h j k
 hop
+if filereadable(expand('~/.config/nvim/plugins.vim'))\
+if filereadable(expand('~/.config/nvim/settings.vim'))\
 if filereadable($HOME . "/.vimrc.local")\
 if filereadable( . "init.local")\
 " >> init.vim
@@ -820,10 +911,12 @@ killall tmux
 killtmux
 lc ..
 less
+less answer_sample_a_20180117.csv
 less build-zsh.sh
 less conda_updat
 less conda_update.sh
 less /etc/apt/sources.list
+less &Gcommit
 less gitbk.sh
 less _git_delete_branch
 less install_marker.sh
@@ -835,7 +928,10 @@ less nohup.out
 less prompt.zsh
 less README.md
 less /root/libevent_install.sh
+less /root/.zhrc
 less /root/.zsh/functions/hgss
+less /root/.zshrc
+less tags
 less vimrc
 less .vimrc
 less .zhistory
@@ -860,6 +956,7 @@ llt install.sh
 llt marker
 llt n*
 llt nbssh.sh
+llt py*
 llt /root/.bin
 llt .sh
 llt *.sh
@@ -901,6 +998,8 @@ ln -sf n.dotfiles/tmux/tmux.conf.symlink .tmux.conff.local
 ln -sf nicknisi_dotfiles/tmux/tmux.conf.symlink .tmux.conf
 ln -sf null .tmux.conf.local
 ln -sf null .tmux.conf.local 
+ln -sf /root/dotfiles/init.vim /root/.config/nvim/init.vim
+ln -sf /root/dotfiles/nvim/init.vim /root/.config/nvim/init.vim
 ln -sf .tmux.conf ./dotfiles/tmux.conf
 ln -sf zsh .
 ln -s   n
@@ -908,6 +1007,7 @@ ln -s nicknisi_dotfiles/ .dotfiles
 ln -s nicknisi_dotfiles/tmux/tmux.conf.symlink .tmux.conf
 ln -s null .tmux.conf.local
 ln -s null .tmux.conf.local 
+ln -s /root/dotfiles/nvim/init.vim /root/.config/nvim/init.vim
 ln -s /root/.fzf/bin/fzf fzf
 ln -s /root/marker.sh marker.sh
 ln -s .tmux.conf ./dotfiles/tmux.conf
@@ -923,7 +1023,10 @@ locate /|fzf
 locate /|fzf -q "$LBUFFER"
 locate /|fzf -q $LBUFFER
 locate insert-last-command-ouput
+locate  insert-last-command-output
 locate insert-last-command-output
+locate  insert-last-word
+locate kill-line
 log
 log out
 ls
@@ -932,6 +1035,7 @@ LS
 ls .bash*
 ls build*
 ls conda
+ls *csv
 ls ctags.
 ls ctags.*
 ls /etc/shells
@@ -939,6 +1043,8 @@ ls /etc/shells/*
 ls -f tm*
 ls -f tm*.tar
 ls|fzf
+ls "&Gcommit"
+ls &Gcommit
 ls .git
 ls --help|ffzy
 ls --help|fzy
@@ -959,6 +1065,7 @@ ls /usr/local/lib|fzf
 ls vim
 ls .vim*
 ls .zshrc
+ls æµƒ«è¯ƒµA_20180117.xlsx
 make
 make CMAKE_BUILD_TYPE=Release
 make distclean
@@ -984,6 +1091,7 @@ _marker_
  marker mark --command='git ls-tree -r master --name-only|fzf --multi --preview '"'"'git diff {+1}'"'"''
  marker mark --command='let g:ctrlp_cmd='"'"'CtrlP :pwd'"'"''
  marker mark --command='proxychains curl --cacert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg'
+ marker mark --command='tmux list-buffers|fzf'
  marker mark --command='whence -f insert-last-command-output'
 marker remove
 mkdir autoload
@@ -997,13 +1105,18 @@ mv google-cloud-sdk.list.save.backup /opt
 mv init.vim init__.vim
 mv last_command.zsh last_command
 mv marker.sh marker.sh.backup
+mv \[new\]\ fusai_answer_a_20180127.csv new_fusai_answer_a_20180127.csv
 mv /root/.oh-my-zsh /root/.pre-oh-my-zsh
 mv -r /root/.oh-my-zsh /root/.pre-oh-my-zsh
 mv -r zsh zsh_backup
+mv test_20180117.xlsx train_20180117.xlsx 
 mv test_rmlater
 mv test test_rmlater
 mv .vim .vim.backup
 mv zsh zsh_backup
+mv æµƒ«è¯ƒµA_20180117.xlsx testA_20180117.xlsx 
+mv æµƒ«è¯ƒµB_20180117.xlsx testB_20180117.xlsx 
+mv è®­ç»ƒ£_20180117.xlsx test_20180117.xlsx 
 n
 ncdu -f /data/ncdu_export 
 neovim
@@ -1017,14 +1130,19 @@ netstat -anop|fzy
 nhop
 nohup python -m http.server 7778 &
 nop
+nvim dotfiles/zsh/configs/history.zsh
+nvim functions
 nvim init.vim
 nvim init.vim.backup
+nvim marker.sh 
+nvim ~/.tmux.conf
 nvim -version
 nvim --version
 $path
 pgrep tmux
 ping baidu.com
 ping -v baidu.com
+pip install neovim
 /proc/2606/exe attach
 proxychains apt-get update
 proxychains curl --cacert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg
@@ -1042,6 +1160,7 @@ python inputs_pre.py
 python install.py
 python -m http.server 7778
 q
+rm "&Gcommit"
 rm .git
 rm google-cloud-sdk.list
 rm google-cloud-sdk.list.save
@@ -1061,6 +1180,8 @@ rm zsh
 rm .zsh
 rm zsh_backup
 /root/.bin/cat
+'>> /root/dotfiles/nvim/init.vim
+/root/.fzf/install
 service docker
 service docker stop
 service --full-restart
@@ -1071,14 +1192,22 @@ service rc.local start
 service --status-all
 set
 setopt xtrace
+" Settings
+" Settings\
 set -x
 sh autogen.sh
 sh build-zsh.sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh marker.sh 
 shopt -s extdebug
 sjif
 source activate
+source activate root
+    source ~/.config/nvim/plugins.vim\
+    source ~/.config/nvim/settings.vim
+    source ~/.config/nvim/settings.vim\
+source deactivate
   source ~/.init.local\
 source theme.sh
 source .tmux.conf
@@ -1107,6 +1236,7 @@ sudo nethogs eth2
 sudo proxychains apt-get update
 sudo proxychains curl --cacert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg|sudo apt-key add -
 sudo proxychains curl --cacert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg|sudo apt-key add-
+su marker.sh 
 supervisor
 su root
 su yan
@@ -1191,6 +1321,8 @@ tmux kill-session -t 3
 tmux kill-session -t 4
 tmux kill-session -t 5
 tmux list
+tmux list-buffers
+tmux list-buffers|fzf
 tmux list-sessio
 tmux list-session
 tmux list-sessions
@@ -1212,6 +1344,7 @@ tmux source-file .tmux.conf
 tmux source /root/.tum.config
 tmux source /root/.tumx.config
 tmux source .thumbnails
+tmux source ~/.tmux.conf
 tmux source ./.tmux.conf
 tmux source .tmux.conf
 tmux-source .tmux.conf
@@ -1274,6 +1407,7 @@ vim ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 vim dotfiles/vimrc.bundles
 vim /etc/apt/sources.list
 vim /etc/rc.local
+vim functions
 vim .fzf.zsh
 vim fzy_locate
 vim gits.sh
@@ -1327,11 +1461,15 @@ wget https://www.anaconda.com/blog/developer-blog/how-to-get-ready-for-the-relea
 wget rawgit.com/transcode-open/apt-cyg/master/apt-cyg
 whence -a insert-last-command-output
 whence -f fzf-file-widget
+whence -f hgss
 whence -f insert-last-command-output
+whence -f insert-last-word
+whence -f kill-line
 whence -f PATH
 whence -f tmux
 whence fzf
 whence  insert-last-command-output
+whence insert-last-word
 whence neovim
 whence PATH
 whence python
@@ -1357,12 +1495,18 @@ whence -v $HISTFILE
 whence -v &HISTFILE
 whence -v HISTFILES
 whence -v history-search-backward
+whence -v  insert-last-command-output
 whence -v insert-last-command-output
+whence -v  insert-last-word
+whence -v insert-last-word
+whence -v kill-line
+whence -v locate
 whence -v _marker_get
 whence -v neovim
 whence -v nvim
 whence -v PATH
 whence -v $PATH
+whence -v python
 whence -v python3
 whence -v tmux
 whence -v zle
@@ -1375,14 +1519,19 @@ where
 where accept-and-hold
 where cat
 where ctags
+where declare
 where -f fzf-file-widget
 where  fzf-file-widget
 where  insert-last-command-output
+where insert-last-word
+whereis  insert-last-command-output
 whereis PATH
 whereis $PATH
 whereis ZSH_VERSION
+where kill-line
 where vim
 where whence
+where xclip
 where zsh-beta
 where ZSH_VERSION
 which
@@ -1408,9 +1557,10 @@ who vim
 xclip
 xclip --help
 xclip --hep
+xclip -o
 xcode
 "^X" insert-last-command-output
-xterm
+xlip
 zle 
 ZLE
 zle accept-line
