@@ -344,6 +344,10 @@ alias gits="bash /win3/bashscript/gits.sh"
 alias gits=/win3/bashscript/gits.sh
 alias hg="history|fzy"
 alias hg=history|fzy
+alias tat='tmux attach -t'
+alias tls='tmux ls'
+alias tns='tmux new-session -s'" >>/root/.bash_aliases
+alias tns='tmux new-session -s'" >>/root/temp
 alias zhg='cat /root/.zhistory|fzy'
 alis
 # allowed in the [Allowed Applications].
@@ -368,6 +372,8 @@ apt-get install ncdu
 apt-get install neovim
 apt-get install NeoVim
 apt-get install pbcopy
+apt-get install pv
+apt-get install sponge
 apt-get install tmux
 apt-get install vim
 apt-get install Vim8
@@ -395,6 +401,9 @@ a='$("which mackup")'
 a='$(which mackup)'
 a=$('which mackup')
 a=$(which mackup)
+awk '!seen[$0]++' .bash_history_summary&& git checkout .bash_history_summary
+awk '!seen[$0]++' .bash_history_summary&& git diff --stat .bash_history_summary
+awk '!seen[$0]++' .bash_history_summary|wc -l && git diff --stat .bash_history_summary
 .bas
 basedir($(which mackup))
 basedir(which mackup)
@@ -418,7 +427,6 @@ bind
 bind 
 bind -
 bind -C
-bind '"\er": redraw-current-line'
 bindkey
 bindkey|fzf -q insert-last-word
 bindkey|fzy
@@ -427,6 +435,7 @@ bind remove
 bind remove --help
 bind remove _ssh_suit
 bind r marker_mark
+bind '"r": redraw-current-line'
 bind -r _ssh_suit
 bind -x
 bind -X
@@ -437,6 +446,7 @@ $BUFFER
 bypy upload csv15
 bypy upload csv15 csv
  c
+ ca
 ""call fzf#vim#tags(expand("<cword>"))\
 "call fzf#vim#tags(expand('<cword>'))
 "call fzf#vim#tags(expand('<cword>'))\
@@ -487,8 +497,12 @@ cat /root/.bash_history_summary|fzf --multi excute('echo{+1} >>conda_update')
 cat /root/.bash_history_summary|fzf --multi excute!('echo >>conda_update')
 cat /root/.bash_history_summary|fzf --multi excute('echo >>conda_update')
 cat /root/.bash_history_summary|fzy
+cat /root/.bash_history_summary|sort -k1|uniq -f1 
 cat /root/.bash_history_summary|sort -k1|uniq -f1 >> /root/.bash_history_summary
 cat /root/.bash_history_summary|sort -k1|uniq -f1 > /root/.bash_history_summary
+cat /root/.bash_history_summary|sort -k1|uniq -f1 > /root/.bash_history_summary&& git diff --stat .bash_history_summary
+cat /root/.bash_history_summary|sort -k1|uniq -f1 > /root/.bash_history_summary_temp&& git diff --stat .bash_history_summary
+cat /root/.bash_history_summary|sort -k1|uniq -f1|wc -l
 cat /root/.bash_history_summary|wc -l
 cat /root/.bash_history|wc -l
 cat /root/bash_history|wc -l
@@ -945,9 +959,9 @@ curl-config
 curl-config --ca
 curl-config --ca ./ssl/certs/ca-certificates.crt
 curl-config -ca ./ssl/certs/ca-certificates.crt
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \\
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \~/.local/share/nvim/site/autoload/plug.vim --create-dirs \\
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \\
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\
 curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh install.sh
@@ -967,9 +981,9 @@ cut --help|aha --black --title 'ls-with-colors' > ls-with-colors.html
 cut --help|aha --title 'ls-with-colors' 
 cut --help|aha --title 'ls-with-colors' > ls-with-colors.html
 cut --help|aha --white --title 'ls-with-colors' > ls-with-colors.html
- c\\va
 /data/src/vim --version
 dd --help
+dd if=.bash_history_summary bs=1048576|sort -k1|uniq -f1 > .bash_history_summary
 decale -f insert-last-word
 declare accept-and-hold
 declare -d kill-line
@@ -1056,8 +1070,7 @@ echo 'alias sap34="conda activate python34"
 echo 'alias sap34="conda activate python34"' >> /root/.bash_aliases
 echo "alias start7778='nohup python -m http.server 7778 &'" >> /root/.zshrc
 echo 'alias start8888="nohup jupyter notebook --ip=* --allow-root &"' >> /root/.zshrc
-echo "alias ta='tmux attach'\012alias tls='tmux ls'\012alias tat='tmux attach -t'\012alias tns='tmux new-session -s'" >>/root/.bash_aliases
-echo "alias ta='tmux attach'\012alias tls='tmux ls'\012alias tat='tmux attach -t'\012alias tns='tmux new-session -s'" >>/root/temp
+echo "alias ta='tmux attach'
 echo 'alias zhg='cat /root/.zhistory|fzy''>>/root/.bash_aliases
 echo "alias zhg='cat /root/.zhistory|fzy'">>/root/.bash_aliases
 echo alisec
@@ -1068,22 +1081,24 @@ echo '"call fzf#vim#tags({'options': '-q '.shellescape(expand('<cword>'))})' >> 
 echo "call fzf#vim#tags({'options': '-q '.shellescape(expand('<cword>'))})" >> nvim/plugged/fzf.vim 
 echo "call fzf#vim#tags({'options': '-q '.shellescape(expand('<cword>'))})" >> nvim/plugged/fzf.vim/plugin/fzf.vim 
 echo "call fzf#vim#tags({'options': '-q '.shellescape(expand('<cword>'))})" >> plugged/fzf.vim/plugin/fzf.vim
+   echo "$(cat /root/.bash_history_summary|sort -k1|uniq -f1)" > /root/.bash_history_summary
+   echo "$(cat /root/.bash_history_summary|sort -k1|uniq -f1)" > /root/.bash_history_summary&& git diff --stat /root/.bash_history_summary
 echo "command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)" >> plugged/fzf.vim/plugin/fzf.vim 
 echo "conda config --add channels conda-canary" >> conda_updata.sh
 echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
 <echo"df"
 echo "dfa">m.log
 echo 'dfwwf '</dev/tty
-echo -en "\003[6n" > /dev/tty
-echo -en "\033[6n" > /dev/tty
-echo -en "\033[6n" > /dev/tty&&echo "thinks"
-echo -en "\033[6ner" > /dev/tty
-echo -en "\033[6nsjfieaf" > /dev/tty&&echo "thinks"
 echo -en "\6n" > /dev/tty
+echo -en "[6n" > /dev/tty
+echo -en "[6n" > /dev/tty
 echo -en "6n" > /dev/tty
+echo -en "[6n" > /dev/tty&&echo "thinks"
+echo -en "[6ner" > /dev/tty
+echo -en "[6nsjfieaf" > /dev/tty&&echo "thinks"
 echo -en "" > /dev/tty
-echo -en "\er" > /dev/tty
 echo $ENHANCD_DIR 
+echo -en "r" > /dev/tty
 echo -en "thinks" > /dev/tty
 echo "export $OPT=/opt/" >> .zshrc
 echo "export $OPT='/opt/'" >> .zshrc
@@ -1151,9 +1166,9 @@ echo '"test' >> nvim/plugged/fzf.vim
 echo '"test' >>nvim/plugged/fzf.vim
 echo '"test' >>plugged/fzf.vim
 echo '"test' >>plugged/fzf.vim/plugin/fzf.vim
-echo 'thanks'>/dev/tty&&echo -en "\033[6n" > /dev/tty
-echo 'thanks'>/dev/tty&&echo -en "\033[6nef" > /dev/tty
-echo 'thinks'&&echo -en "\033[6n" > /dev/tty
+echo 'thanks'>/dev/tty&&echo -en "[6n" > /dev/tty
+echo 'thanks'>/dev/tty&&echo -en "[6nef" > /dev/tty
+echo 'thinks'&&echo -en "[6n" > /dev/tty
 echo $(which bash)
 echo $(which bash)|dirname
 echo yes|xclip
@@ -1580,6 +1595,7 @@ git diff /root/.bash_aliases
 git diff /root/.config/nvim/init.vim
 git diff /root/dotfiles/nvim/init.vim
 git diff --stat
+git diff --stat .bash_history_summary
 git diff .tmux.conf
 git diff .vimrc
 git diff .zshrc
@@ -2249,6 +2265,8 @@ man kill(2)|fzy
 man kill|fzy
 man locate
 man ncdu
+man pipe
+man pipe|fzf
 man remove|fzy
 man tmux
 man tput
@@ -2498,6 +2516,7 @@ pip install mackup
 pip install neovim
 pip install pycscope
 pip install pyscope
+pip install sponge
 pp
 /proc/2606/exe attach
 progress -c http
@@ -2563,6 +2582,17 @@ ps aux|grep ssh
 ps aux|grep ssh|cut -c 10-16
 ps aux|grep tmux
 ps axu | fzf
+pv awk '!seen[$0]++' .bash_history_summary|wc -l && git diff --stat .bash_history_summary
+pv -B 1m /root/.bash_history_summary|sort -k1|uniq -f1 > /root/.bash_history_summary
+pv -B 1m /root/.bash_history_summary|sort -k1|uniq -f1|wc -l
+pv -B 2m  /root/.bash_history_summary|sort -k1|uniq -f1 > /root/.bash_history_summary
+pv -B 2m  /root/.bash_history_summary|sort -k1|uniq -f1|wc -l
+pv -B 30k /root/.bash_history_summary|sort -k1|uniq -f1 > /root/.bash_history_summary
+pv /root/.bash_history_summary|sort -k1|uniq -f1 
+pv /root/.bash_history_summary|sort -k1|uniq -f1 > /root/.bash_history_summary
+pv /root/.bash_history_summary|sort -k1|uniq -f1 > /root/.bash_history_summary|git diff --stat .bash_history_summary
+pv /root/.bash_history_summary|sort -k1|uniq -f1 > /root/.bash_history_summary&& git diff --stat .bash_history_summary
+pv /root/.bash_history_summary|sort -k1|uniq -f1|wc -l
 pwd
 pycscope ./cscope.files
 pycscope -i ./cscope.files
@@ -2973,6 +3003,8 @@ type insert-last-command-output
 typeset -ft fzf-completion
 typeset -ft insert-last-command-output
 typeset +ft insert-last-command-output
+typeset -ft pv
+typeset +ft pv
 type vim
 type .zsh
 uniq --help|ahat
