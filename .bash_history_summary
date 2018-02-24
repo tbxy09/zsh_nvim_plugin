@@ -53,6 +53,7 @@ ag cnext ./*|fzy
 ag cnext map
 ag cnext&&map
 ag cn ./*|fzf
+ag color|fzf
 ag command
 ag command /*
 ag command /*|fzf
@@ -65,6 +66,7 @@ ag "conda " index.html|fzf
 ag <c-p>
 ag c-p
 ag cprevious ./*|fzf
+ag cscope
 ag C-t
 ag ctag
 ag ctags
@@ -98,6 +100,7 @@ ag --depth=7 -G .vim focus .
 ag --depth=7 -G .vim focus ./*
 ag --depth=8 -G .vim focus .
 ag df_g
+ag DMatrix
 ag --d tc_ |fzf
 ag -d tc_ |fzf
 ag E6
@@ -144,11 +147,15 @@ ag -G marker
 ag -G . marker
 ag -G  marker|fzy
 ag -G . marker|fzy
+ag -G .md DMatrix
+ag -G .md xgboost
 ag GOPath
 ag GOPATH
 ag -G . osx|fzy
 ag -G . osx.txt|fzy
 ag -G .py 
+ag -G .py ' '
+ag -G .py ''
 ag -G .py category
 ag -G .py 'category'
 ag -G .py daterange
@@ -157,8 +164,11 @@ ag -G .py datetime
 ag -G .py date.time
 ag -G .py df_city
 ag -G .py df_g
+ag -G .py DMatrix
 ag -G .py evaluate
 ag -G .py fitness
+ag -G .py|fzf
+ag -G .py ''|fzf
 ag -G .py g.append 
 ag -G .py gen_ds_all
 ag -G .py 'group'
@@ -173,6 +183,7 @@ ag -G .py read_csv ./*|ahat
 ag -G .py seed
 ag -G .py show_pool|fzy
 ag -G .py sns
+ag -G .py xgboost
 ag -G . summary|fzy
 ag -G . tldr|fzy
 ag -G .vim focus
@@ -246,6 +257,8 @@ ag insert-last-word
 ag label15
 ag "let g:"
 ag -l -G . C-k
+ag -l .py
+ag -l .py |fzf
 ag map ./*
 ag map ./*|fzf
 ag marker
@@ -285,6 +298,9 @@ ag -r ctags
 ag -r ctrlp
 ag -r CtrlP
 ag read_csv
+ag read_csv -G .py
+ag read_csv -G .py|fzf
+ag read_csv .py
 ag -r focus
 ag -r git_prompt_info
 ag -rgit_prompt_info
@@ -342,6 +358,7 @@ apt-get
 apt-get install aha
 apt-get install clipcopy
 apt-get install copyclip
+apt-get install cscope
 apt-get install --help|fzf
 apt-get install kconsole
 apt-get install konsole
@@ -420,6 +437,10 @@ $BUFFER
 bypy upload csv15
 bypy upload csv15 csv
  c
+""call fzf#vim#tags(expand("<cword>"))\
+"call fzf#vim#tags(expand('<cword>'))
+"call fzf#vim#tags(expand('<cword>'))\
+call fzf#vim#tags({'options': '-q '.shellescape(expand('<cword>'))})\
 cat
 cat 5_19.csv|wc -l
 cat 5_20.csv|wc -l
@@ -443,6 +464,7 @@ cat $(ffzy)
 cat glog_bash_history_summary|wc -l
 cat install_marker.sh|fzf
 cat new_fusai_answer_a_20180127.csv|wc -l
+cat new_yancheng_train_20171226.csv |wc -l
 cat plug.vim|fzf
 cat README|ahat
 cat /root/.bash_history|aha --title history > /win3/history.html
@@ -466,6 +488,7 @@ cat /root/.bash_history_summary|fzf --multi excute!('echo >>conda_update')
 cat /root/.bash_history_summary|fzf --multi excute('echo >>conda_update')
 cat /root/.bash_history_summary|fzy
 cat /root/.bash_history_summary|sort -k1|uniq -f1 >> /root/.bash_history_summary
+cat /root/.bash_history_summary|sort -k1|uniq -f1 > /root/.bash_history_summary
 cat /root/.bash_history_summary|wc -l
 cat /root/.bash_history|wc -l
 cat /root/bash_history|wc -l
@@ -492,14 +515,22 @@ cat /root/.zhistory|fzf -q hhh
 cat /root/.zhistory|sort -k1|uniq -f1 >> /root/.bash_history_summary
 cat /root/.zhistory|wc -l
 cat /root/.zshrc|fzf --multi --bind "f1:execute(echo {} >> .bash_aliases),f2:execute(less .bash_aliases)"
+cat sample_A_20171225.txt |wc -l
+cat sample_B_20171225.txt |wc -l
 cat tags-cn|fzf
 cat tags|ffzy
 cat tags|fzf
+cat tags|wc -l
+cat test_A_20171225.txt |wc -l
 cat testA_20180117.xlsx |wc -l
 cat testA_20180117.xlsx  |wc -l
+cat test_B_20171225.txt |wc -l
+cat train_20171215.txt |wc -l
 cat .vimrc|ahat
 cat .vimrc|aht
 cat {{}} |wc -l
+cat {{x}}|wc -l
+cat yancheng_testA_20171225.csv |wc -l
 cat .zhistory|fzy
 cat .zhistory|wc -l
 cat .zsh_history
@@ -515,6 +546,7 @@ cd ...
 cd..
 cd 97
 cd 97*
+cd ack
 cd airportscan/
 cd anaconda/
 cd apt
@@ -569,6 +601,7 @@ cd $(dirname $(ffzy))
 cd $(dirname $(fzf))
 cd $(dirname $(which mackup))
 cd doc
+cd docs
 cd dotfiles
 cd dotfiles/
 cd ./dotfiles/vim/bundle/tagbar
@@ -614,6 +647,7 @@ cd neovim
 cd nicknisi_dotfiles
 cd numpy
 cd numpy-1.11.3-py34_0
+cd nv
 cd nvim
 cd ./.oh-my-zsh
 cd .oh-my-zsh
@@ -643,6 +677,7 @@ cd progress
 cd pyfiles
 cd python3.4
 cd rcrc
+cd resurrect
 cd /root
 cd /root/anaconda/bin/
 cd /root/bin
@@ -653,6 +688,7 @@ cd /root/dotfiles
 cd /root/dotfiles/zsh/functions/
 cd /root/.fzf
 cd /root/.vim/plugin
+cd save_command_strategies
 cd scripts
 cd share
 cd shell
@@ -665,6 +701,7 @@ cd src
 cd /src
 cd ssh-HaY3upZomgMp/
 cd sublimepy
+cd .t
 cd ../taglist.vim/
 cd taglist.vim/
 cd tc_carid
@@ -681,9 +718,12 @@ cd test_rmlater
 cd tftry
 cd themes
 cd tldr
+cd tmp
 cd /tmp
 cd tmux
+cd .tmux
 cd torch
+cd tpm
 cd ts_ieee/
 cd /usr
 cd /usr/
@@ -698,6 +738,7 @@ cd /var
 cd /var/
 cd /var/data
 cd /var/home
+cd video
 cd vim
 cd .vim
 cd .vim.backup
@@ -731,6 +772,7 @@ CD ZSH
 cd zsh-5.4.2
 chattr 777 tc_git_climate/
 chattr -R 777 tc_git_climate
+checkout /root/.config/nvim/init.vim
 chmod u+x nvim.appimage
 chmod +x /root/bin/tldr
 chown git:git /opt/tc_git_bashrc/
@@ -876,9 +918,22 @@ cp vim /usr/bin/
 cp /win3/mackup/doc/.mackup.cfg .
 cp /win3/n
 cp /win3/tc_climate/tempd2 .
+cscope
+cscope .
+cscope --help
+cscope --help|build
+cscope --help|fzf
+cscope --help|fzy
+cscope --help|grep out
+cscope -i .
+cscope *.py
+cscope -R
+cscope -Rb
+cscope -R *.py
 cs csv2
-ctag
+csope
 ctags .
+ctags --fields=+i -n -R -L ./cscope.files
 ctags -R
 ctags -R .
 ctrl-b
@@ -948,6 +1003,7 @@ d=$(find -type d|fzy)|echo $d
 d=$(find -type d|fzy)&&echo $d
 dfkjalf
 df -lh
+diff /root/.config/nvim/init.vim
 directory = Mackup
 dirname(echo)
 dirname(echo pwd)
@@ -1008,6 +1064,11 @@ echo alisec
 echo $alisec
 echo "">.bashrc
 echo "/bin/zsh" >> /etc/shells
+echo '"call fzf#vim#tags({'options': '-q '.shellescape(expand('<cword>'))})' >> nvim/plugged/fzf.vim 
+echo "call fzf#vim#tags({'options': '-q '.shellescape(expand('<cword>'))})" >> nvim/plugged/fzf.vim 
+echo "call fzf#vim#tags({'options': '-q '.shellescape(expand('<cword>'))})" >> nvim/plugged/fzf.vim/plugin/fzf.vim 
+echo "call fzf#vim#tags({'options': '-q '.shellescape(expand('<cword>'))})" >> plugged/fzf.vim/plugin/fzf.vim
+echo "command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)" >> plugged/fzf.vim/plugin/fzf.vim 
 echo "conda config --add channels conda-canary" >> conda_updata.sh
 echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
 <echo"df"
@@ -1026,6 +1087,9 @@ echo $ENHANCD_DIR
 echo -en "thinks" > /dev/tty
 echo "export $OPT=/opt/" >> .zshrc
 echo "export $OPT='/opt/'" >> .zshrc
+echo "$FILE"
+echo "$FILE">>DMatrix.list
+echo "$FILE" DMatrix.list
 echo $files
 echo FPATH
 echo $FPATH
@@ -1056,11 +1120,17 @@ echo "need to look into the"&&echo$pwd
 echo "need to look into the $pwd"
 echo "need to look into the" &pwd
 echo "need to look into the"&&pwd
+echo "nnoremap gf :e <cfile><CR>">> init.vim 
+echo "nnoremap gf :e <c-w><cfile><CR>">> init.vim 
+echo "nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>" >> init.vim 
 echo > nohup.out 
 echo "noremap <leader>, :gfILES"
 echo "">note
 echo $OPT
 echo $PATH
+echo 'Plug JCLiang/vim-cscope-utils' >> /root/.config/nvim/init.vim
+echo "Plug 'JCLiang/vim-cscope-utils'" >> /root/.config/nvim/init.vim
+echo "Plug 'junegunn/vim-peekaboo'" >> /root/.config/nvim/init.vim
 (echo "$READLINE_LINE" | python -c 'import sys;keyboard_input = raw_input if sys.version_info[0] == 2 else input; print(keyboard_input())')
 $(echo "$READLINE_LINE" | python -c 'import sys;keyboard_input = raw_input if sys.version_info[0] == 2 else input; print(keyboard_input())
 $(echo "$READLINE_LINE" | python -c 'import sys;keyboard_input = raw_input if sys.version_info[0] == 2 else input; print(keyboard_input())')
@@ -1077,6 +1147,10 @@ echo 'ssh-copy-id -i /root/.ssh/id_ecdsa.pub  git@47.94.205.80' >> /win3/bashscr
 echo 'ssh-copy-id -i /root/.ssh/id_ecdsa.pub  git@47.94.205.80' >> /win3/bashscript/sshs.sh 
 echo 'ssh-keygen -t rsa -b 4096 -C "{{email}}"' >> sshs.sh
 echo $term
+echo '"test' >> nvim/plugged/fzf.vim 
+echo '"test' >>nvim/plugged/fzf.vim
+echo '"test' >>plugged/fzf.vim
+echo '"test' >>plugged/fzf.vim/plugin/fzf.vim
 echo 'thanks'>/dev/tty&&echo -en "\033[6n" > /dev/tty
 echo 'thanks'>/dev/tty&&echo -en "\033[6nef" > /dev/tty
 echo 'thinks'&&echo -en "\033[6n" > /dev/tty
@@ -1088,6 +1162,7 @@ echo yes|xclip -I
 egrep -o '[0-9]+' access_log
 egrep -o 'acct_id=[0-9]+' access_log
 egrep -o 'acct_id=[0-9]+' access.log
+ehco '\
 emacs
 emacs -nw
 enchanced
@@ -1138,6 +1213,7 @@ FILE=$(ag -G . cursor | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$
 FILE=$(ag -G . CURSOR | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . cursor_previous | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . _CURSOR_PREVIOUS_LINES | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag -G . DMatrix | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&nvim +$a2 $a1
 FILE=$(ag -G . export| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . export | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . get_cursor | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
@@ -1159,6 +1235,7 @@ FILE=$(ag -G . insert- | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "
 FILE=$(ag -G . insert-output | fzf) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . $LBUFFER | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . LBUFFER | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
+FILE=$(ag -g -l -G .py DMatrix)
 FILE=$(ag -G . MACKUP_CONFIG_FILE| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . MACKUP_CONFIG_FILE | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . marker | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
@@ -1172,6 +1249,7 @@ FILE=$(ag -G . place_cursor_next_line | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 
 FILE=$(ag -G . 'placeholder' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&echo $a1
 FILE=$(ag -G . 'placeholder' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&echo $a2
 FILE=$(ag -G . 'placeholder' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&echo $a2 &a1
+FILE=$(ag -G . {{'placeholder'}} | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&nvim +$a2 $a1
 FILE=$(ag -G . 'placeholder' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . 'placeholder' | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 &a1
 FILE=$(ag -G . {{'placeholder'}} | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
@@ -1180,6 +1258,11 @@ FILE=$(ag -G .py 'common' | fzy) && echo "$FILE"
 FILE=$(ag -G .py 'common' | fzy) && echo "$FILE"|cut -c-10
 FILE=$(ag -G .py 'common' | fzy) && echo "$FILE"|cut -c-3
 FILE=$(ag -G .py 'common' | fzy) && echo "$FILE"|cut -d ':'-f-2
+FILE=$(ag -G .py DMatrix| fzf --bind "alt-a:select-all") && a1=$(echo "$FILE"|cut -d ':' -f 1)&&echo &a1
+FILE=$(ag -G .py DMatrix| fzf --bind "f1:select-all") && a1=$(echo "$FILE"|cut -d ':' -f 1)&&echo &a1
+FILE=$(ag -G .py DMatrix| fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&nvim +$a2 $a1
+FILE=$(ag -G .py DMatrix| fzy --bind "alt-a:select-all") && a1=$(echo "$FILE"|cut -d ':' -f 1)&&echo &a1
+FILE=$(ag -G .py DMatrix| fzy --bind alt-a:select-all) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&echo &a1
 FILE=$(ag -G . READLINE | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . refresh | fpp) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
 FILE=$(ag -G . refresh | fzy) && a1=$(echo "$FILE"|cut -d ':' -f 1)&&a2=$(echo "$FILE"|cut -d ':' -f 2)&&vim +$a2 $a1
@@ -1219,6 +1302,7 @@ FILE=$(ag -l -g '' | fzy) && vim "$FILE'
 FILE=$(ag -l -g '' | fzy) && vim "$FILE"
 FILE=$(ag -l -g '' | fzy) && vim "$FILErint
 FILE=$(ag -l -G .py 'common' | fzy) && echo "$FILE"
+FILE=$(ag -l -G .py DMatrix)
 FILE=$(ag -l -G .py 'show_pool' | fzy) && vim "$FILE"
 FILE=$(ag -l -G .py 'show_pool' | fzy) && vim "$FILErint
 file=$(cat .bashrc|fzy)
@@ -1275,6 +1359,7 @@ find -d|fzy
 find -d tc_ |fzf
 find -f|fzf
 find|fpp
+find . -iname "*.py"    > ./cscope.files
 find -name / lupa-1.6-cp35-cp35m-manylinux1_x86_64.whl
 find / -name  lupa-1.6-cp35-cp35m-manylinux1_x86_64.whl
 find / -name ncdu
@@ -1290,9 +1375,15 @@ find -type f|fzy
 # For now you have 3 options: "dropbox", "google_drive" and "file_system".
  fpath
 fzf -
+fzf --bind
+fzf --bind ?
 fzf --bind "f1:execute(cat {} >> conda_update.sh)+abort"
 fzf -bind "f1:execute(cat {} >> conda_update.sh)+abort"
 fzf-completion
+fzf --help
+fzf --help|fzf
+fzf --help|fzy
+fzf-locate-widget
 fzy -q
 ga .bash_aliases
 ga .bashrc
@@ -1300,6 +1391,7 @@ ga dotfiles/nvim/tags
 ga dotfiles/tags 
 ga dotfiles/vim/tags 
 ga -i
+ga /root/.bash_history_summary
 ga /root/dotfiles/nvim/init.vim
 gc "correct the history.zh and sync to the previous /data/dotfiles, and add the zsh.local as the oh-my-zsh"
 gc git@github.com:neovim/neovim.git
@@ -1310,6 +1402,7 @@ gc 'inputs_pre.py'
 gc -m "correct the history.zh and sync to the previous /data/dotfiles, and add the zsh.local as the oh-my-zsh"
 gdiff
 gdiff /root/dotfiles/nvim/init.vim
+gdiff tmux.conf
 getent services
 getent services|fzf
 getent services|fzy
@@ -1418,6 +1511,8 @@ git clone git@localhost:/opt/tc_git_climate tc_climate
 git clone https://github.com/facebook/iTorch.git
 git clone https://github.com/ipython/ipython.git
 git clone https://github.com/pindexis/marker.git
+git clone https://github.com/tmux-plugins/tpm
+git clone https://github.com/tmux-plugins/tpm.
 git clone https://github.com/tmux/tmux.git
 git clone https://github.com/vim/vim.git
 git clone -v https://github.com/pindexis/marker.git
@@ -1482,7 +1577,10 @@ git diff init.vim
 git diff inputs_pre.py
 git diff lua_def.py
 git diff /root/.bash_aliases
+git diff /root/.config/nvim/init.vim
 git diff /root/dotfiles/nvim/init.vim
+git diff --stat
+git diff .tmux.conf
 git diff .vimrc
 git diff .zshrc
 git diff.zshrc
@@ -1614,8 +1712,12 @@ gits
 git show
 git show b4921ac
 git show b4921ac --stat
+git show  .bash_history_summary
+git show .bash_history_summary --stat
+git show .bash_history_summary --status
 git show|fpp
 git show HEAD~0 --stat
+git show HEAD~0 --stat .bash_history_summary
 git show HEAD~0 --stat functions/
 git show HEAD~10 --stat
 git show HEAD~1 --stat
@@ -1624,7 +1726,10 @@ git show HEAD~2 --stat
 git show master
 git show master --stat
 git show  --stat
+git show --stat
+git show  --stat .bash_history_summary
 git show  --stat functions/
+git show  --stat master .bash_history_summary
 git status
 git status|
 git status .bash_history_summary
@@ -1646,6 +1751,7 @@ gm "add the last_command ,no idea where it comes from"
 gm "add the MRU ones in nvim the init.vim"
 gm "add the tempd2"
 gm "add the user_commands"
+gm "a reover point for the .bash_history_summary"
 gm "change the bin/marker.sh to a link type, so I can include all configure files into the root"
 gm "change the ctrl-space to ctrl-l"
 gm "correct the history.zh and sync to the previous /data/dotfiles, and add the zsh.local as the oh-my-zsh"
@@ -1671,6 +1777,7 @@ gm "update the .bashrc"
 gm "update the bash_rc"
 gm "update the bashrc"
 gm "update the init.vim under neovim"
+Goyo
 grep /zsh$ /etc/shells | wc -l
 gs
 hel emac
@@ -1805,7 +1912,7 @@ kill -f 28460
 kill --help
 killtmux
 lc ..
-less
+les
 less 10_19
 less 10_19.csv 
 less 10_20.dcsv
@@ -1834,6 +1941,10 @@ less cmd
 less common.txt 
 less conda_updat
 less conda_update.sh
+less cscope
+less cscope.
+less cscope.files
+less cscope.out
 less csv3
 less dotfiles/nvim/plugged/fzf.vim/doc/tags 
 less /etc/apt/sources.list
@@ -1940,8 +2051,11 @@ llt py*
 llt /root/.bin
 llt .sh
 llt *.sh
+llt *.swap
 llt test_rmlater
 llt *tmux*
+llt .tmux.conf
+llt tmux.conf
 llt tpot
 llt /usr/lib|fzf
 llt vim
@@ -1964,6 +2078,7 @@ ln -s /data/dotfiles/zshrc .zshrc
 ln -s /data/dotfiles/zsh .zsh
 ln -s ./d.dotfiles/tmux.conf .tmux.conf.local
 ln -s ./dotfiles/tmux.conf .tmux.conf
+ln -s dotfiles/tmux .tmux
 ln -s dotfiles/vimrc.bundles .vimrc.bundles
 ln -s dotfiles/vimrc .vimrc
 ln -s dotfiles/vim .vim
@@ -2006,6 +2121,7 @@ ln -s /usr/local/lib/libevent-2.1.so.6 /usr/lib/libevent-2.1.so.6
 ln -s . zsh
 locate
 locate /
+locate cscope
 locate /|fzf
 locate /|fzf -q "$LBUFFER"
 locate /|fzf -q $LBUFFER
@@ -2060,6 +2176,8 @@ ls --help|ffzy
 ls --help|fzy
 ls hu*
 ls in*
+ls .init.vim
+ls .init.vim*
 ls input*
 ls .m*
 ls ma*
@@ -2079,6 +2197,7 @@ ls tmux
 ls *tmux
 ls *tmux*
 ls tmux*
+ls .tmux.conf
 ls .tmux.config
 ls /usr/bin/
 ls /usr/bin/zsh
@@ -2151,6 +2270,7 @@ marker mark
  marker mark --command='cat /root/.bash_history_summary|fzf --multi --bind "f1:execute(echo {} >> {{conda_update.sh}}),f2:execute(less {{conda_update.sh}})"'
  marker mark --command='cat /root/.bash_history_summary|fzf --multi --bind "f1:execute(echo {} >> conda_update.sh),f2:execute(less conda_update.sh)"'
  marker mark --command='cat /root/.bash_history_summary|sort -k1|uniq -f1 > /win3/marker/tldr/osx.txt '
+ marker mark --command='cat {{x}}|wc -l'
  marker mark --command='cd'
  marker mark --command='cd $(dirname $(which mackup))'
  marker mark --command='d=$(find -type d|fzy)&&cd $d'
@@ -2203,6 +2323,7 @@ mkdir nvim
 mkdir -p /backup/win3/data
 mkdir -p /data/dotfiles/
 mkdir -p /data/home/yan
+mkdir plugin
 mkdir -p /root/bin
 mkdir -p /root/.vim/plugin
 mkdir -p /var/data
@@ -2211,6 +2332,7 @@ mkdir scripts
 mkdir tc_climate
 mkdir tc_git_climate
 mkdir test
+mkdir tmux
 mkdir ts_IEEE
 mkdir .vimdot
 mkdir wiki
@@ -2235,6 +2357,7 @@ mv init.vim init__.vim
 mv last_command.zsh last_command
 mv marker.sh marker.sh.backup
 mv \[new\]\ fusai_answer_a_20180127.csv new_fusai_answer_a_20180127.csv
+mv plugin plugins
 mv -prd tempdir/ /data/var/
 mv -r airportscan/ ../
 mv -rd tempdir/ /data/var/
@@ -2304,16 +2427,24 @@ nohup python filter_test.py &
 nohup python -m http.server 7778 &
 nop
 npm install --global brew
+nvim 
+nvim ackrc.symlink
 nvim .bash_history_summary
 nvim dotfiles/nvim/plugged/fzf.vim/doc 
 nvim dotfiles/zsh/configs/history.zsh
+nvim "$FILE"
+nvim $FILE
 nvim functions
 nvim init.vim
 nvim init.vim.backup
 nvim marker.sh 
+nvim plugged/fzf.vim/plugin/fzf.vim
+nvim save_dir.md
 nvim ~/.tmux.conf
+nvim tmux.conf
 nvim -version
 nvim --version
+nvim .zshrc
 # One application name per line
 # # or
 ossfs 
@@ -2360,10 +2491,14 @@ $path
 pgrep tmux
 ping baidu.com
 ping -v baidu.com
+pip3 install pycscope
 pip install bash_kernel
 pip install lupa
 pip install mackup
 pip install neovim
+pip install pycscope
+pip install pyscope
+pp
 /proc/2606/exe attach
 progress -c http
 progress -c httpd
@@ -2429,6 +2564,8 @@ ps aux|grep ssh|cut -c 10-16
 ps aux|grep tmux
 ps axu | fzf
 pwd
+pycscope ./cscope.files
+pycscope -i ./cscope.files
 pyhton test.py 
 python
 python count_tp_test.py 
@@ -2466,6 +2603,7 @@ rm Anaconda-2.3.0-Linux-x86_64.sh
 rm Anaconda-2.3.0-Linux-x86_64.sh.1 
 rm .bash_aliases 
 rm .bashrc.swp
+rm cscope.out
 rm *_*.csv
 rm easy-navigate.vim 
 rm ForecastDataforTesting_201712.csv 
@@ -2482,6 +2620,7 @@ rm init.vim
 rm *.ipynb
 rmi -r *
 rmi -r data
+rm -i *.swp
 rm -iv *d.csv
 rm key_1.csv.zip 
 rm key_2.csv.zip 
@@ -2518,6 +2657,8 @@ rm _ssh_suit
 rm stage1_a3daps.tar.gz 
 rm stage1_aps.tar.gz 
 rm stage2_aps.tar.gz 
+rm *.swap
+rm tags
 rm tc_climate/
 rm test-tif-v2.tar.7z 
 rm test.zip
@@ -2540,8 +2681,14 @@ rm zsh
 rm .zsh
 rm zsh_backup
 /root/.bin/cat
+" >> /root/.config/nvim/init.vim
+' >> /root/.config/nvim/plugged/fzf.vim/plugin/fzf.vim
 '>> /root/dotfiles/nvim/init.vim
+" >> /root/dotfiles/tmux.conf
 /root/.fzf/install
+run '~/.tmux/plugins/tpm/tpm'\
+run tpm
+;s
 # Sample Mackup configuration file
 sap3
 scrip /bootstrap
@@ -2556,10 +2703,17 @@ service --list
 service rc.local --full-restart
 service rc.local restart
 service rc.local start
+service --st
 service --status-all
 service --status-all|fzy
 service stop docker
 set
+set -g mouse on\
+set -g @plugin 'tmux-plugins/tmux-resurrect'\
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-sensible'\
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tpm'\
 set|grep Qt
 setopt xtrace
 " Settings
@@ -2624,6 +2778,7 @@ sudo apt-get install ctags
 sudo apt-get install libzmq3-dev libssl-dev python-zmq
 sudo apt-get install neovim
 sudo apt-get install NeoVim
+sudo apt-get install pycscope
 sudo apt-get install rcm
 sudo apt-get install software-properties-common
 sudo apt-get install update
@@ -2730,11 +2885,16 @@ tmux a workdir
 tmux bind-key
 tmux bind-key list
 tmux bind-key ls
+tmux choose-buffer
 ./.tmux.conf
+" >> .tmux.conf
+" >> tmux.conf
+tmux copy-mode
 tmux -c source tmux.conf.symlink
 tmux -c term
 tmux -c $term
 tmux -f aliases
+tmux kill-server
 tmux kill-sesion 2
 tmux kill-session
 tmux kill-session 0
@@ -2765,6 +2925,8 @@ tmux new -s today
 tmux new -s workdir
 tmux new-window -kn w1
 tmux new-window -n w1
+tmux paste
+tmux paste-buffer
 tmux source
 tmux source ./dotfiles/tmux.conf
 tmux source-file ./.tmux.conf
@@ -2838,6 +3000,7 @@ usermod -s /usr/bin/zsh root
 # Use the names listed below.
 /usr/bin/vim --version
 /usr/bin/zsh
+uzip -t ctags58.z
 uzip -t ctags58.zip
 vf
 vi +61 marker/core.py
@@ -2887,6 +3050,7 @@ vim --help|fzy
 vim hgss
 vim history.zsh
 vim index.json
+vim init
 vim init.vim
 vim inputs_pre
 vim inputs_pre.py
@@ -2907,6 +3071,7 @@ vim osx.txt
 vim osx.txt 
 vim path_local.zsh
 vim path.zsh
+vim plugged/fzf.vim/plugin/fzf.vim
 vim rc.local
 vim README
 vim renderer.py
@@ -2986,6 +3151,7 @@ whence  insert-last-command-output
 whence insert-last-word
 whence neovim
 whence PATH
+whence pycscope
 whence python
 whence python2
 whence python3
