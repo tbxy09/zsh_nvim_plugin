@@ -304,7 +304,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Writing in vim {{{{
 		Plug 'junegunn/limelight.vim'
-		Plug 'junegunn/goyo.vim'
+"		Plug 'junegunn/goyo.vim'
 		let g:limelight_conceal_ctermfg = 240
 	" }}}
 
@@ -320,7 +320,7 @@ call plug#begin('~/.config/nvim/plugged')
 		function! ToggleNerdTree()
 			if @% != "" && (!exists("g:NERDTree") || (g:NERDTree.ExistsForTab() && !g:NERDTree.IsOpen()))
 				:NERDTreeFind
-			else 
+			else
 				:NERDTreeToggle
 			endif
 		endfunction
@@ -441,7 +441,7 @@ call plug#begin('~/.config/nvim/plugged')
 	"}}}
          Plug 'ctrlpvim/ctrlp.vim'
          Plug 'git@github.com:majutsushi/tagbar.git'
- 
+
 
 " }}}
 
@@ -562,7 +562,6 @@ let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:ctrlp_cmd='CtrlP :pwd'
 noremap <leader>b :CtrlPBuffer<CR>
 nmap <F8> :TagbarToggle<CR>
-Plug 'tpope/vim-bundler'
 
 
 "if (filereadable(expand(~/.config/nvim/plugins.vim)))
@@ -575,3 +574,113 @@ Plug 'tpope/vim-bundler'
 "    source ~/.config/nvim/settings.vim
 "endif
 
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+" Leader-\ switches windows
+nnoremap <leader>\ <C-w>w
+" Pathogen setup
+"execute pathogen#infect()
+"call pathogen#helptags()
+" Airline tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+" Nerdtree
+"autocmd StdinReadPre * let s:std_in=1
+" Open automatically if Vim started with no files
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Alias Ag to Ag! so it doesn't auto-open the first match
+ca Ag Ag!
+
+" Compatibility
+set nocompatible
+set backspace=2
+set encoding=utf-8
+" Use 256 colours plx
+set t_Co=256
+
+" Customise a few colours
+set cursorline
+"set background=dark
+"colorscheme wombat256i
+autocmd ColorScheme * hi LineNr      ctermbg=235 ctermfg=248
+autocmd ColorScheme * hi CursorLine  ctermbg=234 cterm=NONE
+autocmd ColorScheme * hi ColorColumn ctermbg=235
+
+" Disable the default mode indicator (mode in statusline)
+set noshowmode
+
+" Highlight the 121st column (best-practice max line length)
+if exists("+colorcolumn")
+    set colorcolumn=121
+endif
+
+" Syntax highlighting(it will make the background dark)
+"syntax on
+" Detect filetypes and use correct indenting
+filetype plugin indent on
+" Autocompletion
+set omnifunc=syntaxcomplete#Complete
+
+" Write current session with F2
+map <F2> :mksession! ~/.vim_session <cr>
+" Load previous session with F3
+map <F3> :source ~/.vim_session <cr>
+" Highlight search matches whilst typing
+set incsearch
+" Ignore casing...
+set ignorecase
+" ... Unless typing an uppercase char
+set smartcase
+" Auto centre line when jumping between matches
+map N Nzz
+map n nzz
+
+" Update the terminal title with filename
+set title
+" Show the statusbar
+set laststatus=2
+" Leader-\ switches windows
+nnoremap <leader>/ <C-w>w
+
+" Leader-z zooms in or out of current split
+let s:zoomed=0
+function! ToggleZoom()
+    if (s:zoomed==1)
+	:tabclose
+	let s:zoomed=0
+    else
+	:tab split
+	let s:zoomed=1
+    endif
+endfunction
+nnoremap <leader>z :call ToggleZoom()<cr>
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" Trim trailing whitespace on save
+function! TrimWhiteSpace()
+	let l = line(".")
+	let c = col(".")
+	%s/\s\+$//e
+	call cursor(l, c)
+endfunction
+autocmd BufWritePre * :call TrimWhiteSpace()
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-H> :call <SID>SynStack()<cr>
+function! <SID>SynStack()
+	if !exists("*synstack")
+		return
+	endif
+	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')
+endfunc
+nnoremap <leader>b :so /root/dotfiles/nvim/init.vim <cr>
+Plug 'junegunn/vim-peekaboo'
