@@ -1,0 +1,13 @@
+pane	0	1	:nvim	0	:	1	:/win3/tc_climate	1	nvim	:nvim
+pane	0	1	:nvim	0	:	2	:/win3/Kaggle-Rental-Listing-Inquireies	0	zsh	:
+pane	0	2	:car_id	0	:-	1	:/home/yan	1	zsh	:
+pane	0	3	:toxic-comments	1	:*	1	:/win3/tc_climate	1	zsh	:
+pane	1	1	:the tmux save session	1	:*	1	:/tmp/nvimSkWGVx	1	nvim	:nvim
+pane	1	2	:pushdot	0	:-	1	:/root/dotfiles/zsh/configs	0	nvim	:nvim .bash_history_summary
+pane	1	2	:pushdot	0	:-	2	:/root	1	zsh	:
+window	0	1	0	:	daf3,141x27,0,0[141x13,0,0,1,141x13,0,14,2]
+window	0	2	0	:-	c400,141x27,0,0,3
+window	0	3	1	:*	c401,141x27,0,0,4
+window	1	1	1	:*	c402,141x27,0,0,5
+window	1	2	0	:-	5b05,141x27,0,0[141x13,0,0,8,141x13,0,14,9]
+state	1	0
