@@ -66,3 +66,4 @@ export GOBIN=/usr/local/go/bin
 export GOROOT=/usr/local/go/
 export GOPATH=$HOME/godns
 export QT_QPA_PLATFORM=offscreen
+export LSCOLORS=''
