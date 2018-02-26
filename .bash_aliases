@@ -15,7 +15,7 @@ alias llth='llt .|tail -10'
 alias lltopt='llt /opt|tail -10'
 alias lltwin3='llt /win3|tail -10'
 alias lltwin4='llt /win4|tail -10'
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 #git alias
 alias gc='git clone'
 alias ga='git add'
@@ -43,7 +43,7 @@ alias dfdata="df -lh|grep data"
 alias dfbackup="df -lh|grep backup"
 alias lltwin3="llt /win3|tail -10"
 alias lltwin4="llt /win4|tail -10"
-alias lltopt="llt /opt|tail -10" 
+alias lltopt="llt /opt|tail -10"
 alias llth="llt .|tail -10"
 alias alisec="47.94.205.80"
 alias b1="104.129.180.167"
