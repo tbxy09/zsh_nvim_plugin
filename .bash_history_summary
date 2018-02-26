@@ -28,11 +28,15 @@ ag accept-and-hold
 ag ag_handler
 ag ag_handler ./*
 ag -a --ignore-dir anaconda/ -G . marker|fzy
+ag airline
 ag airline ./*
+ag airline|fzf
 ag airline ./*|fzf
 ag airlinetoggle
 ag airlinetoggle ./*
 ag "alias ffzy"
+ag autoload
+ag autoload|fzf
 ag .bash_history_summary
 ag bind /*|fzf
 ag bindkey
@@ -100,6 +104,8 @@ ag --depth=7 -G .vim focus .
 ag --depth=7 -G .vim focus ./*
 ag --depth=8 -G .vim focus .
 ag df_g
+ag dir
+ag dir ./*
 ag DMatrix
 ag --d tc_ |fzf
 ag -d tc_ |fzf
@@ -153,6 +159,8 @@ ag GOPath
 ag GOPATH
 ag -G . osx|fzy
 ag -G . osx.txt|fzy
+ag -G peek autoload
+ag -G peek* autoload
 ag -G .py 
 ag -G .py ' '
 ag -G .py ''
@@ -205,6 +213,7 @@ ag --hidden "$HSLINES" .
 ag --hidden "HSLINES" .
 ag --hidden --ignore-dir anaconda/ -G .sh marker|fzy
 ag --hidden --ignore-dir anaconda/ runtimepath|fzy
+ag highlight
 ag hooks
 ag HSLINE|fzf
 ag HSLINES
@@ -233,6 +242,7 @@ ag --ignore-dir anaconda/,torch/ -G . marker|fzy
 ag --ignore-dir anaconda/ torch -G .sh marker|fzy
 ag -i "jump"|fzf
 ag -i jump|fzf
+ag -i lscolors
 ag -i "map"|fzf
 ag im.show
 ag -i nerd ./*
@@ -255,15 +265,19 @@ ag insert_last ./*|fzf
 ag insert_last_word
 ag insert-last-word
 ag label15
+ag -l autoload|fzf
 ag "let g:"
 ag -l -G . C-k
 ag -l .py
 ag -l .py |fzf
+ag ls
 ag map ./*
 ag map ./*|fzf
 ag marker
 ag marker|fzy
 ag _move_cursor ./*
+ag MYVIM
+ag MYVIMRC
 ag nerd
 ag NERD
 ag NERDF
@@ -285,8 +299,13 @@ ag output
 ag output ./*|fzf
 ag PATH
 ag $PATH
+ag peekaboo
+ag peekaboo_
+ag peekaboo_prefix
+ag peekaboo_window
 ag plt.save
 ag Plug
+ag Plug "airline"
 ag plug .vimrc.bundles
 ag Plug .vimrc.bundles
 ag ProgressBar
@@ -309,6 +328,7 @@ ag -r -G .vim focus ./*
 ag -r insert-last-command-output
 ag runtimepath
 ag runtimepath|fzy
+ag StratifiedKFold .
 ag tag
 ag tagbar
 ag taglist
@@ -447,6 +467,7 @@ bypy upload csv15
 bypy upload csv15 csv
  c
  ca
+call functions#PlugLoad()
 ""call fzf#vim#tags(expand("<cword>"))\
 "call fzf#vim#tags(expand('<cword>'))
 "call fzf#vim#tags(expand('<cword>'))\
@@ -648,6 +669,8 @@ cd .ipython/
 cd ipython/
 cd iTorch
 cd jiaotong/
+cd las
+cd last
 cd lib
 cd /lib
 cd libevent-2.1.8-stable
@@ -657,8 +680,10 @@ cd log
 cd mackup
 cd maker
 cd marker
+cd MercariPriceSuggestion
 cd neovim
 cd nicknisi_dotfiles
+cd notebook
 cd numpy
 cd numpy-1.11.3-py34_0
 cd nv
@@ -702,6 +727,7 @@ cd /root/dotfiles
 cd /root/dotfiles/zsh/functions/
 cd /root/.fzf
 cd /root/.vim/plugin
+cd samholman_dotfiles
 cd save_command_strategies
 cd scripts
 cd share
@@ -736,6 +762,7 @@ cd tmp
 cd /tmp
 cd tmux
 cd .tmux
+cd tmx
 cd torch
 cd tpm
 cd ts_ieee/
@@ -960,7 +987,10 @@ curl-config --ca
 curl-config --ca ./ssl/certs/ca-certificates.crt
 curl-config -ca ./ssl/certs/ca-certificates.crt
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\
 curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
@@ -981,6 +1011,7 @@ cut --help|aha --black --title 'ls-with-colors' > ls-with-colors.html
 cut --help|aha --title 'ls-with-colors' 
 cut --help|aha --title 'ls-with-colors' > ls-with-colors.html
 cut --help|aha --white --title 'ls-with-colors' > ls-with-colors.html
+ ca
 /data/src/vim --version
 dd --help
 dd if=.bash_history_summary bs=1048576|sort -k1|uniq -f1 > .bash_history_summary
@@ -1071,6 +1102,14 @@ echo 'alias sap34="conda activate python34"' >> /root/.bash_aliases
 echo "alias start7778='nohup python -m http.server 7778 &'" >> /root/.zshrc
 echo 'alias start8888="nohup jupyter notebook --ip=* --allow-root &"' >> /root/.zshrc
 echo "alias ta='tmux attach'
+echo "alias ta='tmux attach'
+alias tls='tmux ls'
+alias tat='tmux attach -t'
+alias tns='tmux new-session -s'" >>/root/.bash_aliases
+echo "alias ta='tmux attach'
+alias tls='tmux ls'
+alias tat='tmux attach -t'
+alias tns='tmux new-session -s'" >>/root/temp
 echo 'alias zhg='cat /root/.zhistory|fzy''>>/root/.bash_aliases
 echo "alias zhg='cat /root/.zhistory|fzy'">>/root/.bash_aliases
 echo alisec
@@ -1100,6 +1139,7 @@ echo -en "" > /dev/tty
 echo $ENHANCD_DIR 
 echo -en "r" > /dev/tty
 echo -en "thinks" > /dev/tty
+echo "export LSCOLORS=''">> /root/.zshrc
 echo "export $OPT=/opt/" >> .zshrc
 echo "export $OPT='/opt/'" >> .zshrc
 echo "$FILE"
@@ -1124,6 +1164,7 @@ echo "is the data latest" >> readme.md
 echo jfe
 echo "let g:ctrlp_cmd='CtrlP :pwd'" >> /root/.vimrc
 echo $LINES
+echo "LSCOLORS=''">> /root/.zshrc
 echo $MARKER_HOME
 echo $marker_key_get
 echo $MARKER_KEY_GET
@@ -1409,9 +1450,11 @@ ga -i
 ga /root/.bash_history_summary
 ga /root/dotfiles/nvim/init.vim
 gc "correct the history.zh and sync to the previous /data/dotfiles, and add the zsh.local as the oh-my-zsh"
+gc git@github.com:milkypostman/vim-togglelist.git
 gc git@github.com:neovim/neovim.git
 gc git@github.com:nicknisi/dotfiles.git
 gc git@github.com:nicknisi/dotfiles.git nicknisi_dotfiles
+gc git@github.com:samholman/dotfiles.git samholman_dotfiles
 gc git@github.com:Xfennec/progress.git
 gc 'inputs_pre.py'
 gc -m "correct the history.zh and sync to the previous /data/dotfiles, and add the zsh.local as the oh-my-zsh"
@@ -1443,6 +1486,7 @@ git add .bashrc
 git add .bash_rc
 git add .bashrc.backupt
 git add conda_update.sh
+git add .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 git add dotfififjiad
 git add dotfiles
 git add dotfiles/
@@ -1476,12 +1520,14 @@ git add  ./nvim/
 git add ./nvim
 git add *.py *.ipynb
 git add -r ./nvim
+git add /root/.bash_history_summary
 git add /root/dotfiles/init.vim
 git add tc_climate_temp_train.py
 git add temp0
 git add tempd2
 git add tf_flags.py
 git add .tmux.conf
+git add *.txt
 git add user_commands.txt
 git add .vimrc
 git add .vimrc.bundles
@@ -1493,6 +1539,7 @@ git add .zshrc.local
 gitbk
 git brach
 git branch
+git branch master_remote
 git branch -v
 git branch -va
 git checkcout .config/nvim/init.vim
@@ -1506,6 +1553,9 @@ git checkout HEAD~8
 git checkout HEAD~9
 git checkout --help
 git checkout init.vim
+git checkout master
+git check-out master_remote
+git checkout master_remote
 git checkout /root/.config/nvim/init.vim
 git checkout tmux.conf
 git chekcout .config/nvim/init.vim
@@ -1591,6 +1641,7 @@ git diff -i
 git diff init.vim
 git diff inputs_pre.py
 git diff lua_def.py
+git diff nvim/init.vim
 git diff /root/.bash_aliases
 git diff /root/.config/nvim/init.vim
 git diff /root/dotfiles/nvim/init.vim
@@ -1603,6 +1654,7 @@ git diff.zshrc
 git diff .zshrc.local
 git dif lua_def.py
 git fetch git@47.94.205.80:/opt/tc_git_bashrc
+git fetch master_remote
 git fetch origin
 git fetch origin master
 git fetch origin/master
@@ -1664,15 +1716,19 @@ git ls-tree -r master|fzf
 git ls-tree -r master --name-only
 git ls-tree -r master -name-only
 git ls-tree -r master --name-only|fpp
+git ls-tree -r master --name-only|fzf
 git ls-tree -r master --name-only|fzf --multi --preview 'git diff {+1}'
 git ls-tree -r master --name-only|fzf --multi --preview 'less {+1}'
 git ls-tree *-stage
+git make branch master_remote
+git mkbranch  master_remote
 git push
 git push git@47.94.205.80:/opt/tc_git_bashrc
 git push git@47.94.205.80:/opt/tc_git_climate
 git push orgin master
 git push origin
 git push origin master
+git push origin master_remote
 git push remote master
 git push --set-upstream git@47.94.205.80:/opt/tc_git_bashrc
 git push --set-upstream git@47.94.205.80:/opt/tc_git_bashrc master
@@ -1685,6 +1741,7 @@ git rebase --abort
 git rebase --help
 git rebase master
 git rebase master origin
+git rebase master_remote
 git rebase orgin master
 git rebase origin
 git rebase origin master
@@ -1711,9 +1768,11 @@ git rm --cached .vimrc
 git rm --cached .zhistory
 git rm --cached .zsh
 git rm --cached .zshrc
+git rm .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 git rm -i
 git rm -i --cached .bash_history
 git rm -i --cached bash_history
+git rm init.vim
 git rm *.ipynb
 git rm nvim
 git rm ./nvim
@@ -1746,6 +1805,7 @@ git show --stat
 git show  --stat .bash_history_summary
 git show  --stat functions/
 git show  --stat master .bash_history_summary
+git stash
 git status
 git status|
 git status .bash_history_summary
@@ -1781,9 +1841,11 @@ gm -m "add the MRU ones in nvim the init.vim"
 gm -m "i change the bin/marker.sh to a link, because I want to include all the sh files into the root"
 gm -m "update the .bash_history_summary"
 gm -m "update the bashrc"
+gm "rm .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml"
 gm "rm the backupt"
 gm "rm the erro"
 gm "save inputs_pre.py"
+gm "tmux_resurrect_*.txt files"
 gm "update bashrc"
 gm "update inputs_pre"
 gm "update tf_flags inputs_pre"
@@ -1792,8 +1854,9 @@ gm "update the .bash_history_summary"
 gm "update the .bashrc"
 gm "update the bash_rc"
 gm "update the bashrc"
+gm "update the init.vim and tmux.conf due to a finding a new dot files https://github.com/samholman/dotfiles"
 gm "update the init.vim under neovim"
-Goyo
+GOPATH
 grep /zsh$ /etc/shells | wc -l
 gs
 hel emac
@@ -2023,7 +2086,7 @@ less /win3/marker/bin/marker.sh
 less .zhistory
 # List of applications you want to explicitly sync
 # List of applications you want to ignore
-lls
+lllt
 llt 
 llt .
 llt .*
@@ -2060,6 +2123,7 @@ llt install.sh
 llt local
 llt *local*
 llt marker
+llt mo*
 llt n*
 llt nbssh.sh
 llt *.py
@@ -2160,6 +2224,7 @@ ls .bashrc.swp
 ls build*
 ls ch*
 ls chunck_test*
+LSCOLORS
 ls conda
 ls *csv
 ls *_*.csv
@@ -2298,6 +2363,8 @@ marker mark
  marker mark --command='FILE=$(ag -G . '"'"'placeholder'"'"' | fzy) && a1=$(echo "$FILE"|cut -d '"'"':'"'"' -f 1)&&a2=$(echo "$FILE"|cut -d '"'"':'"'"' -f 2)&&vim +$a2 $a1'
  marker mark --command='FILE=$(ag -G . {{'"'"'placeholder'"'"'}} | fzy) && a1=$(echo "$FILE"|cut -d '"'"':'"'"' -f 1)&&a2=$(echo "$FILE"|cut -d '"'"':'"'"' -f 2)&&vim +$a2 $a1'
  marker mark --command='FILE=$(ag -l -g '"'"''"'"' | fzy) && vim "$FILE'
+ marker mark --command='FILE=$(ag -l -G .py DMatrix)'
+ marker mark --command='FILE=$(ag -l -G .py {{keyword}})&& echo '"'"'$FILE'"'"'>> {{keyword}}'
  marker mark --command='FILE=$(ag -l -G .py '"'"'show_pool'"'"' | fzy) && vim "$FILE"'
  marker mark --command='file=$(ffzy)&&vim $file'
  marker mark --command='file=$(ps aux|fzy)&&a=$(echo $file|cut -c5-10)&&kill $a'
@@ -2337,6 +2404,7 @@ mkdir csv2
 mkdir csv3
 mkdir ../csv4
 mkdir git
+mkdir notebook
 mkdir nvim
 mkdir -p /backup/win3/data
 mkdir -p /data/dotfiles/
@@ -2366,6 +2434,7 @@ mount -t ntfs /dev/sdd /backup2
 mount -type ntfs /dev/sdd /backup2 
 mv airportscan/ ../
 mv bash1.sh gits.sh
+mv dotfiles thoughtbot_dotfiles_part
 mv fzy_0.9-1_amd64.deb /data
 mv fzy_locate hgss
 mv google-cloud-sdk.list.backup /opt
@@ -2517,6 +2586,8 @@ pip install neovim
 pip install pycscope
 pip install pyscope
 pip install sponge
+Plug 'JCLiang/vim-cscope-utils'
+Plug 'tpope/vim-bundler'
 pp
 /proc/2606/exe attach
 progress -c http
@@ -2647,6 +2718,8 @@ rmi .git
 rm inception_resnet_v2_2016_08_30.ckpt 
 rm index.html.1
 rm init.vim
+rm init.vim.swp
+rm int.vim.swp
 rm *.ipynb
 rmi -r *
 rmi -r data
@@ -2688,6 +2761,7 @@ rm stage1_a3daps.tar.gz
 rm stage1_aps.tar.gz 
 rm stage2_aps.tar.gz 
 rm *.swap
+rm *.swp
 rm tags
 rm tc_climate/
 rm test-tif-v2.tar.7z 
