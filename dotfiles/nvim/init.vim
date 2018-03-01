@@ -7,13 +7,13 @@ call plug#begin('~/.config/nvim/plugged')
 
 " General {{{
 	" Abbreviations
-	abbr funciton function
-	abbr teh the
-	abbr tempalte template
-	abbr fitler filter
-	abbr cosnt const
-	abbr attribtue attribute
-	abbr attribuet attribute
+	" abbr funciton function
+	" abbr teh the
+	" abbr tempalte template
+	" abbr fitler filter
+	" abbr cosnt const
+	" abbr attribtue attribute
+	" abbr attribuet attribute
 
 	set autoread " detect when a file is changed
 
@@ -30,90 +30,88 @@ call plug#begin('~/.config/nvim/plugged')
 		set inccommand=nosplit
 	endif
 
-	set backspace=indent,eol,start " make backspace behave in a sane manner
-	set clipboard=unnamed
+	" set backspace=indent,eol,start " make backspace behave in a sane manner
+	" set clipboard=unnamed
 
-	if has('mouse')
-		set mouse=a
-	endif
+	" if has('mouse')
+		" set mouse=a
+	" endif
 
 	" Searching
 	set ignorecase " case insensitive searching
 	set smartcase " case-sensitive if expresson contains a capital letter
 	set hlsearch " highlight search results
-	set incsearch " set incremental search, like modern browsers
-	set nolazyredraw " don't redraw while executing macros
+	" set incsearch " set incremental search, like modern browsers
+	" set nolazyredraw " don't redraw while executing macros
 
-	set magic " Set magic on, for regex
+	" set magic " Set magic on, for regex
 
 	" error bells
-	set noerrorbells
-	set visualbell
-	set t_vb=
-	set tm=500
+	" set noerrorbells
+	" set visualbell
+	" set t_vb=
+	" set tm=500
 " }}}
 
 " Appearance {{{
 	set number " show line numbers
-	set wrap " turn on line wrapping
-	set wrapmargin=8 " wrap lines when coming within n characters from side
-	set linebreak " set soft wrapping
-	set showbreak=… " show ellipsis at breaking
-	set autoindent " automatically set indent of new line
-	set ttyfast " faster redrawing
+	" set wrap " turn on line wrapping
+	" set wrapmargin=8 " wrap lines when coming within n characters from side
+	" set linebreak " set soft wrapping
+	" set showbreak=… " show ellipsis at breaking
+	" set autoindent " automatically set indent of new line
+	" set ttyfast " faster redrawing
 	set diffopt+=vertical
-	set laststatus=2 " show the satus line all the time
-	set so=7 " set 7 lines to the cursors - when moving vertical
-	set wildmenu " enhanced command line completion
-	set hidden " current buffer can be put into background
-	set showcmd " show incomplete commands
-	set noshowmode " don't show which mode disabled for PowerLine
-	set wildmode=list:longest " complete files like a shell
-	set scrolloff=3 " lines of text around cursor
-	set shell=$SHELL
-	set cmdheight=1 " command bar height
+	" set laststatus=2 " show the satus line all the time
+	" set so=7 " set 7 lines to the cursors - when moving vertical
+	" set wildmenu " enhanced command line completion
+	" set hidden " current buffer can be put into background
+	" set showcmd " show incomplete commands
+	" set noshowmode " don't show which mode disabled for PowerLine
+	" set wildmode=list:longest " complete files like a shell
+	" set scrolloff=3 " lines of text around cursor
+	" set shell=$SHELL
+	" set cmdheight=1 " command bar height
 	set title " set terminal title
-	set showmatch " show matching braces
-	set mat=2 " how many tenths of a second to blink
-
-	" Tab control
-	set noexpandtab " insert tabs rather than spaces for <Tab>
-	set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-	set tabstop=4 " the visible width of tabs
-	set softtabstop=4 " edit as if the tabs are 4 characters wide
-	set shiftwidth=4 " number of spaces to use for indent and unindent
-	set shiftround " round indent to a multiple of 'shiftwidth'
+	" set showmatch " show matching braces
+	" set mat=2 " how many tenths of a second to blink Tab control
+	" set noexpandtab " insert tabs rather than spaces for <Tab>
+	" set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+	" set tabstop=4 " the visible width of tabs
+	" set softtabstop=4 " edit as if the tabs are 4 characters wide
+	" set shiftwidth=4 " number of spaces to use for indent and unindent
+	" set shiftround " round indent to a multiple of 'shiftwidth'
 
 	" code folding settings
-	set foldmethod=syntax " fold based on indent
-	set foldlevelstart=99
-	set foldnestmax=10 " deepest fold is 10 levels
+	" set foldmethod=syntax " fold based on indent
+	" set foldlevelstart=99
+	" set foldnestmax=10 " deepest fold is 10 levels
 	set nofoldenable " don't fold by default
-	set foldlevel=1
+	" set foldlevel=1
 
 	" toggle invisible characters
-	set list
-	set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
-	set showbreak=↪
+	" set list
+	" set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+	" set showbreak=↪
 
-	set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+	" set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 	" switch cursor to line when in insert mode, and block when not
-	set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-	\,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-	\,sm:block-blinkwait175-blinkoff150-blinkon175
+	" set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+	" \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+	" \,sm:block-blinkwait175-blinkoff150-blinkon175
 
-	if &term =~ '256color'
+	" if &term =~ '256color'
 		" disable background color erase
-		set t_ut=
-	endif
+		" set t_ut=
+	" endif
 
 	" enable 24 bit color support if supported
-	if (has('mac') && empty($TMUX) && has("termguicolors"))
-		set termguicolors
-	endif
+	" if (has('mac') && empty($TMUX) && has("termguicolors"))
+		" set termguicolors
+	" endif
 
 	" highlight conflicts
-	match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+	" match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 	" Load colorschemes
 	Plug 'chriskempson/base16-vim'
@@ -147,7 +145,7 @@ call plug#begin('~/.config/nvim/plugged')
 	inoremap jk <esc>
 
 	" shortcut to save
-"	nmap <leader>, :w<cr>
+	nmap <leader>, :w<cr>
 
 	" set paste toggle
 	set pastetoggle=<leader>v
@@ -217,15 +215,15 @@ call plug#begin('~/.config/nvim/plugged')
 	nnoremap <silent> ^ g^
 	nnoremap <silent> $ g$
 
-	" inoremap <tab> <c-r>=Smart_TabComplete()<CR>
+	inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 	map <leader>r :call RunCustomCommand()<cr>
-	" map <leader>s :call SetCustomCommand()<cr>
+	map <leader>s :call SetCustomCommand()<cr>
 	let g:silent_custom_command = 0
 
 	" helpers for dealing with other people's code
-	nmap \t :set ts=4 sts=4 sw=4 noet<cr>
-	nmap \s :set ts=4 sts=4 sw=4 et<cr>
+	" nmap \t :set ts=4 sts=4 sw=4 noet<cr>
+	" nmap \s :set ts=4 sts=4 sw=4 et<cr>
 
 	nnoremap <silent> <leader>u :call functions#HtmlUnEscape()<cr>
 
@@ -254,62 +252,62 @@ call plug#begin('~/.config/nvim/plugged')
 
 " General Functionality {{{
 	" substitute, search, and abbreviate multiple variants of a word
-	Plug 'tpope/vim-abolish'
+	" Plug 'tpope/vim-abolish'
 
 	" search inside files using ack. Same as command line ack utility, but use :Ack
-	Plug 'mileszs/ack.vim'
+	" Plug 'mileszs/ack.vim'
 
 	" insert or delete brackets, parens, quotes in pair
-	Plug 'jiangmiao/auto-pairs'
+	" Plug 'jiangmiao/auto-pairs'
 
 	" easy commenting motions
 	Plug 'tpope/vim-commentary'
 
 	" mappings which are simply short normal mode aliases for commonly used ex commands
-	Plug 'tpope/vim-unimpaired'
+	" Plug 'tpope/vim-unimpaired'
 
 	" endings for html, xml, etc. - ehances surround
-	Plug 'tpope/vim-ragtag'
+	" Plug 'tpope/vim-ragtag'
 
 	" mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
-	Plug 'tpope/vim-surround'
+	" Plug 'tpope/vim-surround'
 
 	" tmux integration for vim
 	"Plug 'benmills/vimux'
 
 	" enables repeating other supported plugins with the . command
-	Plug 'tpope/vim-repeat'
+	" Plug 'tpope/vim-repeat'
 
 	" .editorconfig support
-	Plug 'editorconfig/editorconfig-vim'
+	" Plug 'editorconfig/editorconfig-vim'
 
 	" asynchronous build and test dispatcher
-	Plug 'tpope/vim-dispatch'
+	" Plug 'tpope/vim-dispatch'
 
 	" netrw helper
-	Plug 'tpope/vim-vinegar'
+	" Plug 'tpope/vim-vinegar'
 
 	" single/multi line code handler: gS - split one line into multiple, gJ - combine multiple lines into one
-	Plug 'AndrewRadev/splitjoin.vim'
+	" Plug 'AndrewRadev/splitjoin.vim'
 
 	" extended % matching
 	" Plug 'vim-scripts/matchit.zip'
 
 	" detect indent style (tabs vs. spaces)
-	Plug 'tpope/vim-sleuth'
+	" Plug 'tpope/vim-sleuth'
 
     " Close buffers but keep splits
-    Plug 'moll/vim-bbye'
+    " Plug 'moll/vim-bbye'
 	nmap <leader>b :Bdelete<cr>
 
     " Writing in vim {{{{
-		Plug 'junegunn/limelight.vim'
-"		Plug 'junegunn/goyo.vim'
+		" Plug 'junegunn/limelight.vim'
+		" Plug 'junegunn/goyo.vim'
 		let g:limelight_conceal_ctermfg = 240
 	" }}}
 
 	" context-aware pasting
-	Plug 'sickill/vim-pasta'
+	" Plug 'sickill/vim-pasta'
 
 	" NERDTree {{{
 		Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
@@ -397,8 +395,8 @@ call plug#begin('~/.config/nvim/plugged')
 	" }}}
 
 	" signify {{{
-	    Plug 'airblade/vim-gitgutter'
-	    Plug 'mhinz/vim-signify'
+	    "Plug 'airblade/vim-gitgutter'
+	    " Plug 'mhinz/vim-signify'
 	    let g:signify_vcs_list = [ 'git' ]
 	    let g:signify_sign_add               = '+'
 	    let g:signify_sign_delete            = '_'
@@ -416,7 +414,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" }}}
 
 	" ALE {{{
-		Plug 'w0rp/ale' " Asynchonous linting engine
+		" Plug 'w0rp/ale' " Asynchonous linting engine
 		let g:ale_change_sign_column_color = 0
 		let g:ale_sign_column_always = 1
 		let g:ale_sign_error = '✖'
@@ -430,7 +428,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" }}}
 
 	" UltiSnips {{{
-		Plug 'SirVer/ultisnips' " Snippets plugin
+		" Plug 'SirVer/ultisnips' " Snippets plugin
 		let g:UltiSnipsExpandTrigger="<tab>"
 	" }}}
 	"gitgutter{{{
@@ -448,83 +446,83 @@ call plug#begin('~/.config/nvim/plugged')
 " Language-Specific Configuration {{{
 	" html / templates {{{
 		" emmet support for vim - easily create markdup wth CSS-like syntax
-		Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'eruby' ]}
-		let g:user_emmet_settings = {
-		\  'javascript.jsx': {
-		\	   'extends': 'jsx',
-		\  },
-		\}
+		" Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'eruby' ]}
+		" let g:user_emmet_settings = {
+		" \  'javascript.jsx': {
+		" \	   'extends': 'jsx',
+		" \  },
+		" \}
 
 		" match tags in html, similar to paren support
-		" Plug 'gregsexton/MatchTag', { 'for': 'html' }
+		" plug 'gregsexton/MatchTag', { 'for': 'html' }
 
 		" html5 support
-		Plug 'othree/html5.vim', { 'for': 'html' }
+		" Plug 'othree/html5.vim', { 'for': 'html' }
 
 		" mustache support
-		Plug 'mustache/vim-mustache-handlebars'
+		" Plug 'mustache/vim-mustache-handlebars'
 
 		" pug / jade support
-		Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
+		" Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 
 		" Ruby / Ruby on Rails
-		Plug 'tpope/vim-rails', { 'for': 'ruby' }
+		" Plug 'tpope/vim-rails', { 'for': 'ruby' }
 	" }}}
 
 	" JavaScript {{{
-		Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
-		Plug 'moll/vim-node', { 'for': 'javascript' }
-		Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
-		Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
+		" Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
+		" Plug 'moll/vim-node', { 'for': 'javascript' }
+		" Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
+		" Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
 	" }}}
 
 	" TypeScript {{{
-		Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-		Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-		Plug 'Quramy/tsuquyomi', { 'for': 'typescript', 'do': 'npm install' }
+		" Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+		" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+		" Plug 'Quramy/tsuquyomi', { 'for': 'typescript', 'do': 'npm install' }
 
 		" TypeScript Options
-		let g:tsuquyomi_completion_detail = 1
-		let g:tsuquyomi_disable_default_mappings = 1
-		let g:tsuquyomi_completion_detail = 1
+		" let g:tsuquyomi_completion_detail = 1
+		" let g:tsuquyomi_disable_default_mappings = 1
+		" let g:tsuquyomi_completion_detail = 1
 	" }}}
 
 
 	" Styles {{{
-		Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
-		Plug 'groenewege/vim-less', { 'for': 'less' }
-		Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-		Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-		Plug 'gko/vim-coloresque'
-		Plug 'stephenway/postcss.vim', { 'for': 'css' }
+		" Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
+		" Plug 'groenewege/vim-less', { 'for': 'less' }
+		" Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+		" Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+		" Plug 'gko/vim-coloresque'
+		" Plug 'stephenway/postcss.vim', { 'for': 'css' }
 	" }}}
 
 	" markdown {{{
-		Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+		" Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
 		" Open markdown files in Marked.app - mapped to <leader>m
-		Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' }
-		nmap <leader>m :MarkedOpen!<cr>
-		nmap <leader>mq :MarkedQuit<cr>
-		nmap <leader>* *<c-o>:%s///gn<cr>
+		" Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' }
+		" nmap <leader>m :MarkedOpen!<cr>
+		" nmap <leader>mq :MarkedQuit<cr>
+		" nmap <leader>* *<c-o>:%s///gn<cr>
 
 		" a simple tool for presenting slides in vim based on text files
-		Plug 'sotte/presenting.vim', { 'for': 'markdown' }
+		" Plug 'sotte/presenting.vim', { 'for': 'markdown' }
 	" }}}
 
 	" JSON {{{
-		Plug 'elzr/vim-json', { 'for': 'json' }
-		let g:vim_json_syntax_conceal = 0
+		" Plug 'elzr/vim-json', { 'for': 'json' }
+		" let g:vim_json_syntax_conceal = 0
 	" }}}
 	"indentpython{{{
-	Plug 'vim-scripts/indentpython'
+	" Plug 'vim-scripts/indentpython'
 	"}}}
 
-	Plug 'fatih/vim-go', { 'for': 'go' }
-	Plug 'timcharper/textile.vim', { 'for': 'textile' }
-	Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
-	Plug 'tpope/vim-endwise', { 'for': [ 'ruby', 'bash', 'zsh', 'sh' ]}
-	Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
+	" Plug 'fatih/vim-go', { 'for': 'go' }
+	" Plug 'timcharper/textile.vim', { 'for': 'textile' }
+	" Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
+	" Plug 'tpope/vim-endwise', { 'for': [ 'ruby', 'bash', 'zsh', 'sh' ]}
+	" Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 " }}}
 
 call plug#end()
@@ -613,9 +611,9 @@ autocmd ColorScheme * hi ColorColumn ctermbg=235
 set noshowmode
 
 " Highlight the 121st column (best-practice max line length)
-if exists("+colorcolumn")
-    set colorcolumn=121
-endif
+" if exists("+colorcolumn")
+    " set colorcolumn=121
+" endif
 
 " Syntax highlighting(it will make the background dark)
 "syntax on
@@ -629,11 +627,11 @@ map <F2> :mksession! ~/.vim_session <cr>
 " Load previous session with F3
 map <F3> :source ~/.vim_session <cr>
 " Highlight search matches whilst typing
-set incsearch
+" set incsearch
 " Ignore casing...
-set ignorecase
+" set ignorecase
 " ... Unless typing an uppercase char
-set smartcase
+" set smartcase
 " Auto centre line when jumping between matches
 map N Nzz
 map n nzz
@@ -773,7 +771,7 @@ if !exists("g:toggle_list_no_mappings")
 endif
 
 
-Plug 'valloric/youcompleteme'
+"Plug 'valloric/youcompleteme'
 nnoremap <leader>h :History<cr>
 " imap <c-x><c-x> <plug>(fzf-complete-path)
 " imap <tab> <plug>(fzf-complete-path)
@@ -787,4 +785,4 @@ nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L $
-map <space> /
+map <space> gcc
