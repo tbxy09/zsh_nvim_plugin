@@ -67,3 +67,6 @@ export GOROOT=/usr/local/go/
 export GOPATH=$HOME/godns
 export QT_QPA_PLATFORM=offscreen
 export LSCOLORS=''
+export LS_COLORS=""
+eval $(dircolors -b $HOME/.dircolors)
+eval $(dircolors -b /data/dircolors-solarized/dircolors.256dark )

@@ -293,7 +293,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'AndrewRadev/splitjoin.vim'
 
 	" extended % matching
-	Plug 'vim-scripts/matchit.zip'
+	" Plug 'vim-scripts/matchit.zip'
 
 	" detect indent style (tabs vs. spaces)
 	Plug 'tpope/vim-sleuth'
@@ -456,7 +456,7 @@ call plug#begin('~/.config/nvim/plugged')
 		\}
 
 		" match tags in html, similar to paren support
-		Plug 'gregsexton/MatchTag', { 'for': 'html' }
+		" Plug 'gregsexton/MatchTag', { 'for': 'html' }
 
 		" html5 support
 		Plug 'othree/html5.vim', { 'for': 'html' }
@@ -682,7 +682,7 @@ function! <SID>SynStack()
 	endif
 	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')
 endfunc
-nnoremap <leader>b :so /root/dotfiles/nvim/init.vim <cr>
+nnoremap <leader>r :so /root/dotfiles/nvim/init.vim <cr>
 Plug 'christoomey/vim-run-interactive'
 Plug 'junegunn/vim-peekaboo'
 ca PlugS PlugStatus
@@ -773,3 +773,18 @@ if !exists("g:toggle_list_no_mappings")
 endif
 
 
+Plug 'valloric/youcompleteme'
+nnoremap <leader>h :History<cr>
+" imap <c-x><c-x> <plug>(fzf-complete-path)
+" imap <tab> <plug>(fzf-complete-path)
+vmap <leader>[ <gv
+vmap <leader>] >gv
+nmap <silent> <leader>b :Buffers<cr>
+cmap <c-a> <home>
+noremap ; :
+nnoremap <leader>m :maps<cr>
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+map <space> /
