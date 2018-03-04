@@ -20,8 +20,8 @@ call plug#begin('~/.config/nvim/plugged')
 	set history=1000 " change history to 1000
 	set textwidth=120
 
-	set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-	set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+	" set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+	" set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 	if (has('nvim'))
 	    let g:python_host_prog='/root/anaconda/bin/python2'
@@ -152,6 +152,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 	" edit ~/.config/nvim/init.vim
 	map <leader>ev :e! ~/.config/nvim/init.vim<cr>
+	map <leader>ev :e! ~/dotfiles/nvim/init.vim<cr>
 	" edit gitconfig
 	map <leader>eg :e! ~/.gitconfig<cr>
 
@@ -395,7 +396,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" }}}
 
 	" signify {{{
-	    "Plug 'airblade/vim-gitgutter'
+	    Plug 'airblade/vim-gitgutter'
 	    " Plug 'mhinz/vim-signify'
 	    let g:signify_vcs_list = [ 'git' ]
 	    let g:signify_sign_add               = '+'
@@ -554,8 +555,8 @@ call plug#end()
 " }}}
 
 " vim:set foldmethod=marker foldlevel=0
-set tags=./tags;/
-set autochdir
+set tags=~/anaconda/tags;./tags;/
+" set autochdir
 let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:ctrlp_cmd='CtrlP :pwd'
 noremap <leader>b :CtrlPBuffer<CR>
@@ -764,9 +765,24 @@ function! ToggleQuickfixList()
 	wincmd p
   endif
 endfunction
+function! Qf_sep()
+	for items in getqflist()
+		echo items.text
+	endfor
+endfunction
+command! Sp call Qf_sep()
+function! QuickfixRedir()
+	redir @a
+	silent Sp
+	redir END
+	new
+	put! a
+endfunction
+
+nmap <script> <silent> <leader>l :call QuickfixRedir()<CR>
 
 if !exists("g:toggle_list_no_mappings")
-	nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
+	" nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
 	nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 endif
 
@@ -785,4 +801,23 @@ nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L $
-map <space> gcc
+" map <space> gcc
+nnoremap <silent> <F5> :redir @a<CR>:silent Ag! redir<CR>:redir END<CR>:new<CR>:put! a<CR>
+" Plug 'suxpert/vimcaps'
+Plug 'tyru/qfhist.vim'
+command! Qfs call qfhist#save_qflist()
+command! Qfr call qfhist#get_histories()
+
+function! QuickfixRedir()
+	redir @a
+	silent echo qfhist#get_histories()
+	" silent echo unite#sources#qfhist#define()
+	redir END
+	new
+	put! a
+endfunction
+"TODO still in test, i need a way to log out all the github code i am visiting
+"this is using the vimscript pkg mamnagement
+
+"TODO tags and other function do not have other
+Plug 'tgrk/session-buddy-tool'
