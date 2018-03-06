@@ -20,6 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
 	set history=1000 " change history to 1000
 	set textwidth=120
 
+	" TODO disable the temp file, right now not seeing any swp file, need futher observation
 	" set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 	" set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
@@ -131,7 +132,7 @@ call plug#begin('~/.config/nvim/plugged')
 		" only show tabline if tabs are being used (more than 1 tab open)
 		let g:airline#extensions#tabline#tab_min_count = 2
 		" do not show open buffers in tabline
-		let g:airline#extensions#tabline#show_buffers = 0
+		let g:airline#extensions#tabline#show_buffers = 1
 		" Show errors in airline from ALE
 		let g:airline#extensions#ale#enabled = 1
 	" }}}
@@ -490,33 +491,33 @@ call plug#begin('~/.config/nvim/plugged')
 
 
 	" Styles {{{
-		" Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
-		" Plug 'groenewege/vim-less', { 'for': 'less' }
-		" Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-		" Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-		" Plug 'gko/vim-coloresque'
-		" Plug 'stephenway/postcss.vim', { 'for': 'css' }
+		Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
+		Plug 'groenewege/vim-less', { 'for': 'less' }
+		Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+		Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+		Plug 'gko/vim-coloresque'
+		Plug 'stephenway/postcss.vim', { 'for': 'css' }
 	" }}}
 
 	" markdown {{{
-		" Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+		Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
 		" Open markdown files in Marked.app - mapped to <leader>m
-		" Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' }
-		" nmap <leader>m :MarkedOpen!<cr>
-		" nmap <leader>mq :MarkedQuit<cr>
-		" nmap <leader>* *<c-o>:%s///gn<cr>
+		Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' }
+		nmap <leader>m :MarkedOpen!<cr>
+		nmap <leader>mq :MarkedQuit<cr>
+		nmap <leader>* *<c-o>:%s///gn<cr>
 
 		" a simple tool for presenting slides in vim based on text files
 		" Plug 'sotte/presenting.vim', { 'for': 'markdown' }
 	" }}}
 
 	" JSON {{{
-		" Plug 'elzr/vim-json', { 'for': 'json' }
-		" let g:vim_json_syntax_conceal = 0
+		Plug 'elzr/vim-json', { 'for': 'json' }
+		let g:vim_json_syntax_conceal = 0
 	" }}}
 	"indentpython{{{
-	" Plug 'vim-scripts/indentpython'
+	Plug 'vim-scripts/indentpython'
 	"}}}
 
 	" Plug 'fatih/vim-go', { 'for': 'go' }
@@ -819,5 +820,41 @@ endfunction
 "TODO still in test, i need a way to log out all the github code i am visiting
 "this is using the vimscript pkg mamnagement
 
-"TODO tags and other function do not have other
+"TODO tags and other function do not have other maps using the fzf do not have the Alt-D and Alt-A function
+"TODO involve in the google browser
+"TODO the gitgutter is not live enough, maybe I am wrong , I need to see if
 Plug 'tgrk/session-buddy-tool'
+"TODO  this is to fix the syntax issue
+"TODO jump to the todo file and todo line so I can ignore where is the to do file and todo line, the location infomation
+"canbe ignored
+"TODO jump to the history file, all the history file
+map <leader>eg :e! /win4/session_buddy/todo.md<cr>
+set noswapfile
+Plug 'suan/vim-instant-markdown'
+Plug 'vimwiki/vimwiki'
+map <leader>md :InstantMarkdownPreview<CR>
+let g:instant_markdown_autostart = 0
+"TODO when reopen a file in a buffer, do not reopen it ,just jump to the original one
+Plug 'jszakmeister/markdown2ctags'
+let g:tagbar_type_mkd = {
+    \ 'ctagstype': 'mkd',
+    \ 'ctagsbin' : '/root/.config/nvim/plugged/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+    \ }
+" let g:tagbar_type_markdown = {
+"     \ 'ctagstype' : 'markdown',
+"     \ 'kinds' : [
+"         \ 'h:Heading_L1',
+"         \ 'i:Heading_L2',
+"         \ 'k:Heading_L3'
+"     \ ]
+"     \ }
