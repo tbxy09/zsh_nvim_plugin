@@ -58,3 +58,5 @@ alias ta='tmux attach'
 alias tls='tmux ls'
 alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
+alias vim_plug="sudo mount --bind plugged /data/config/nvim/plugged"
+alias vim_unplug="umount /root/.config/nvim/plugged"

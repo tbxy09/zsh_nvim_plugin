@@ -164,3 +164,5 @@ fi
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval $(dircolors -b $HOME/.dircolors)
+eval $(dircolors -b $HOME/.dircolors)

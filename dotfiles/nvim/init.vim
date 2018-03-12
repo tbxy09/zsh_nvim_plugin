@@ -32,6 +32,7 @@ call plug#begin('~/.config/nvim/plugged')
 	endif
 
 	" set backspace=indent,eol,start " make backspace behave in a sane manner
+	" set backspace=indent " make backspace behave in a sane manner
 	" set clipboard=unnamed
 
 	" if has('mouse')
@@ -216,6 +217,8 @@ call plug#begin('~/.config/nvim/plugged')
 	nnoremap <silent> k gk
 	nnoremap <silent> ^ g^
 	nnoremap <silent> $ g$
+	nnoremap <silent> J j
+	nnoremap <silent> K k
 
 	inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
@@ -278,7 +281,7 @@ call plug#begin('~/.config/nvim/plugged')
 	"Plug 'benmills/vimux'
 
 	" enables repeating other supported plugins with the . command
-	" Plug 'tpope/vim-repeat'
+	Plug 'tpope/vim-repeat'
 
 	" .editorconfig support
 	" Plug 'editorconfig/editorconfig-vim'
@@ -526,7 +529,11 @@ call plug#begin('~/.config/nvim/plugged')
 	" Plug 'tpope/vim-endwise', { 'for': [ 'ruby', 'bash', 'zsh', 'sh' ]}
 	" Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
 " }}}
-
+Plug 'suan/vim-instant-markdown'
+Plug 'vimwiki/vimwiki',{'branch':'dev'}
+map <leader>md :InstantMarkdownPreview<CR>
+let g:instant_markdown_autostart = 0
+Plug 'jszakmeister/markdown2ctags'
 call plug#end()
 
 " Colorscheme and final setup {{{
@@ -675,7 +682,7 @@ endfunction
 autocmd BufWritePre * :call TrimWhiteSpace()
 
 " Show syntax highlighting groups for word under cursor
-nmap <C-S-H> :call <SID>SynStack()<cr>
+nmap <leader>s :call <SID>SynStack()<cr>
 function! <SID>SynStack()
 	if !exists("*synstack")
 		return
@@ -683,6 +690,7 @@ function! <SID>SynStack()
 	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')
 endfunc
 nnoremap <leader>r :so /root/dotfiles/nvim/init.vim <cr>
+nnoremap <leader>s :so /root/.config/nvim/plugged/vimwiki/autoload/vimwiki/base.vim <cr>
 Plug 'christoomey/vim-run-interactive'
 Plug 'junegunn/vim-peekaboo'
 ca PlugS PlugStatus
@@ -774,7 +782,8 @@ endfunction
 command! Sp call Qf_sep()
 function! QuickfixRedir()
 	redir @a
-	silent Sp
+	" silent Sp
+	silent cscope find d authenticate
 	redir END
 	new
 	put! a
@@ -809,14 +818,14 @@ Plug 'tyru/qfhist.vim'
 command! Qfs call qfhist#save_qflist()
 command! Qfr call qfhist#get_histories()
 
-function! QuickfixRedir()
-	redir @a
-	silent echo qfhist#get_histories()
-	" silent echo unite#sources#qfhist#define()
-	redir END
-	new
-	put! a
-endfunction
+" function! QuickfixRedir()
+" 	redir @a
+" 	silent echo qfhist#get_histories()
+" 	" silent echo unite#sources#qfhist#define()
+" 	redir END
+" 	new
+" 	put! a
+" endfunction
 "TODO still in test, i need a way to log out all the github code i am visiting
 "this is using the vimscript pkg mamnagement
 
@@ -830,12 +839,15 @@ Plug 'tgrk/session-buddy-tool'
 "TODO jump to the history file, all the history file
 map <leader>eg :e! /win4/session_buddy/todo.md<cr>
 set noswapfile
-Plug 'suan/vim-instant-markdown'
-Plug 'vimwiki/vimwiki'
-map <leader>md :InstantMarkdownPreview<CR>
-let g:instant_markdown_autostart = 0
+" Plug 'suan/vim-instant-markdown'
+" Plug 'vimwiki/vimwiki',{'branch':'dev'}
+" map <leader>md :InstantMarkdownPreview<CR>
+" let g:instant_markdown_autostart = 0
 "TODO when reopen a file in a buffer, do not reopen it ,just jump to the original one
-Plug 'jszakmeister/markdown2ctags'
+" Plug 'jszakmeister/markdown2ctags'
+
+" \ 'ctagstype': 'mkd',
+" let g:tagbar_type_mkd = {
 let g:tagbar_type_mkd = {
     \ 'ctagstype': 'mkd',
     \ 'ctagsbin' : '/root/.config/nvim/plugged/markdown2ctags/markdown2ctags.py',
@@ -850,11 +862,58 @@ let g:tagbar_type_mkd = {
     \ },
     \ 'sort': 0,
     \ }
-" let g:tagbar_type_markdown = {
-"     \ 'ctagstype' : 'markdown',
-"     \ 'kinds' : [
-"         \ 'h:Heading_L1',
-"         \ 'i:Heading_L2',
-"         \ 'k:Heading_L3'
-"     \ ]
-"     \ }
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
+    \ }
+"TODO enable ag and its map in Visual mode
+" vmap <silent><leader>ag :Ag <C-R><C-W><CR>
+" nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+let g:tagbar_type_vimwiki = {
+          \   'ctagstype':'vimwiki'
+          \ , 'kinds':['h:header']
+          \ , 'sro':'&&&'
+          \ , 'kind2scope':{'h':'header'}
+          \ , 'sort':0
+          \ , 'ctagsbin':'/root/.config/nvim/plugged/utils/vwtags.py'
+          \ , 'ctagsargs': 'default'
+          \ }
+Plug 'vimwiki/utils'
+function! VimwikiLinkHandler(link)
+	try
+		let browser = 'C:\Program Files\Firefox\firefox.exe'
+		execute '!start "'.browser.'" ' . a:link
+		return 1
+	catch
+		echo "This can happen for a variety of reasons ..."
+	endtry
+	return 0
+endfunction
+function! VimwikiLinkHandler(link)
+	" Use Vim to open external files with the 'vfile:' scheme.  E.g.:
+	"   1) [[vfile:~/Code/PythonProject/abc123.py]]
+	"   2) [[vfile:./|Wiki Home]]
+	let link = a:link
+	if link =~# '^vfile:'
+		let link = link[1:]
+	else
+		return 0
+	endif
+	let link_infos = vimwiki#base#resolve_link(link)
+	if link_infos.filename == ''
+		echomsg 'Vimwiki Error: Unable to resolve link!'
+		return 0
+	else
+		exe 'tabnew ' . fnameescape(link_infos.filename)
+		return 1
+	endif
+endfunction
+nmap <silent><buffer>J <Plug>VimwikiGoBackLink
+Plug 'Kaggle/kaggle-api'
+Plug 'facebook/redex'
+Plug 'tuhdo/tuhdo.github.io'
+Plug 'tuhdo/emacs-c-ide-demo'

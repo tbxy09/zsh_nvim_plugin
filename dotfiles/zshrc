@@ -70,3 +70,5 @@ export LSCOLORS=''
 export LS_COLORS=""
 eval $(dircolors -b $HOME/.dircolors)
 eval $(dircolors -b /data/dircolors-solarized/dircolors.256dark )
+eval $(dircolors -b /data/dircolors-solarized/dircolors.ansi-dark  )
+#eval $(dircolors -b /data/dircolors-solarized/dircolors.ansi-universal   )

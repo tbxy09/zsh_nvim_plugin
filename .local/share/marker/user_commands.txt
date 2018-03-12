@@ -20,3 +20,10 @@ cat /root/.bash_history_summary|fzf --multi --bind "f1:execute(echo {} >> {{cond
 proxychains curl --cacert /etc/ssl/certs/ca-certificates.crt https://packages.cloud.google.com/apt/doc/apt-key.gpg##curl ca
 let g:ctrlp_cmd='CtrlP :pwd'##add the call changes of CtrlP to the /bundler/ctrlp/plugin
 tmux list-buffers|fzf##tmux clip copy
+wget ftp://cent:{{passwd}}@67.218.133.93/data/sample_submission_stg2.csv.zip##wget kaggle remote server data
+ag last_fdm ./*##ag history
+ag setqflist##ag history
+ls|fzf --multi --preview 'ls {+1}'##ls preview
+sudo swapoff -a##turn the swap off
+/data/tags/root/anaconda/tags_abs##the anaconda tags path
+find type -f|wc -l##count files
