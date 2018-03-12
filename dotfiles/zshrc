@@ -1,3 +1,11 @@
+export PATH=$PATH:/usr/local/go/pkg/tool/linux_amd64/
+export GOBIN=/usr/local/go/bin
+export GOROOT=/usr/local/go/
+export GOPATH=$HOME/godns
+export QT_QPA_PLATFORM=offscreen
+export LSCOLORS=''
+export LS_COLORS=""
+
 #  load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -61,14 +69,7 @@ alias start8888="nohup jupyter notebook --ip=* --allow-root &"
 export OPT='/opt/'
 zle     -N    hgss
 bindkey '^Y' hgss
-export PATH=$PATH:/usr/local/go/pkg/tool/linux_amd64/
-export GOBIN=/usr/local/go/bin
-export GOROOT=/usr/local/go/
-export GOPATH=$HOME/godns
-export QT_QPA_PLATFORM=offscreen
-export LSCOLORS=''
-export LS_COLORS=""
 eval $(dircolors -b $HOME/.dircolors)
-eval $(dircolors -b /data/dircolors-solarized/dircolors.256dark )
-eval $(dircolors -b /data/dircolors-solarized/dircolors.ansi-dark  )
+eval $(dircolors -b /$DATA/dircolors-solarized/dircolors.256dark )
+eval $(dircolors -b /$DATA/dircolors-solarized/dircolors.ansi-dark  )
 #eval $(dircolors -b /data/dircolors-solarized/dircolors.ansi-universal   )

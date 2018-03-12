@@ -92,3 +92,6 @@ plugins=(
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#you can put some local configurate here
+#localfile do not need to add into the git
+export DATA='/data'
