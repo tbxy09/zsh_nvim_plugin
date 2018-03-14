@@ -154,7 +154,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 	" edit ~/.config/nvim/init.vim
 	map <leader>ev :e! ~/.config/nvim/init.vim<cr>
-	map <leader>ev :e! ~/dotfiles/nvim/init.vim<cr>
+	map <leader>ev :e! /$DATA/dotfiles_xy/nvim/init.vim<cr>
 	" edit gitconfig
 	map <leader>eg :e! ~/.gitconfig<cr>
 
@@ -938,3 +938,15 @@ echo g:tagsfiles
 Plug 'travis-ci/travis.rb'
 Plug 'aliyun/oss-browser'
 Plug 'aliyun/aliyun-cli'
+Plug 'git-tips/tips'
+Plug 'tj/git-extras'
+Plug 'junegunn/fzf'
+Plug 'b4b4r07/enhancd'
+map <leader>ec :e! ~/.enhancd/enhancd.log<cr>
+map <leader>eh :e! ~/.bash_history_summary<cr>
+function! s:buffer_lines()
+  return map(getline(1, "$"),
+    \ 'printf(s:yellow(" %4d ", "LineNr")."\t%s", v:key + 1, v:val)')
+endfunction
+
+map <silent> <leader>ed :BLines<cr>
