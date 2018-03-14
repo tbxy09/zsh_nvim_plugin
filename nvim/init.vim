@@ -2,7 +2,7 @@
 " The following vim/neovim configuration works for both Vim and NeoVim
 
 " ensure vim-plug is installed and then load it
-call functions#PlugLoad()
+" call functions#PlugLoad()
 call plug#begin('~/.config/nvim/plugged')
 
 " General {{{
@@ -25,7 +25,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 	if (has('nvim'))
-	    let g:python_host_prog='/root/anaconda/bin/python2'
+	    let g:python_host_prog='~/anaconda/bin/python2'
 		" show results of substition as they're happening
 		" but don't open a split
 		set inccommand=nosplit
@@ -443,7 +443,7 @@ call plug#begin('~/.config/nvim/plugged')
 	"Plug 'tpope/vim-unimpaired'
 	"}}}
          Plug 'ctrlpvim/ctrlp.vim'
-         Plug 'git@github.com:majutsushi/tagbar.git'
+         Plug 'majutsushi/tagbar'
 
 
 " }}}
@@ -534,6 +534,8 @@ Plug 'vimwiki/vimwiki',{'branch':'dev'}
 map <leader>md :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 0
 Plug 'jszakmeister/markdown2ctags'
+Plug 'christoomey/vim-run-interactive'
+Plug 'junegunn/vim-peekaboo'
 call plug#end()
 
 " Colorscheme and final setup {{{
@@ -689,10 +691,10 @@ function! <SID>SynStack()
 	endif
 	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')
 endfunc
-nnoremap <leader>r :so /root/dotfiles/nvim/init.vim <cr>
-nnoremap <leader>s :so /root/.config/nvim/plugged/vimwiki/autoload/vimwiki/base.vim <cr>
-Plug 'christoomey/vim-run-interactive'
-Plug 'junegunn/vim-peekaboo'
+nnoremap <leader>r :so ~/dotfiles/nvim/init.vim <cr>
+nnoremap <leader>s :so ~/.config/nvim/plugged/vimwiki/autoload/vimwiki/base.vim <cr>
+" Plug 'christoomey/vim-run-interactive'
+" Plug 'junegunn/vim-peekaboo'
 ca PlugS PlugStatus
 ca PlugI PlugInstall
 ca Run RunInInteractiveShell
@@ -850,7 +852,7 @@ set noswapfile
 " let g:tagbar_type_mkd = {
 let g:tagbar_type_mkd = {
     \ 'ctagstype': 'mkd',
-    \ 'ctagsbin' : '/root/.config/nvim/plugged/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsbin' : '~/.config/nvim/plugged/markdown2ctags/markdown2ctags.py',
     \ 'ctagsargs' : '-f - --sort=yes',
     \ 'kinds' : [
         \ 's:sections',
@@ -879,7 +881,7 @@ let g:tagbar_type_vimwiki = {
           \ , 'sro':'&&&'
           \ , 'kind2scope':{'h':'header'}
           \ , 'sort':0
-          \ , 'ctagsbin':'/root/.config/nvim/plugged/utils/vwtags.py'
+          \ , 'ctagsbin':'~/.config/nvim/plugged/utils/vwtags.py'
           \ , 'ctagsargs': 'default'
           \ }
 Plug 'vimwiki/utils'
@@ -917,4 +919,5 @@ Plug 'Kaggle/kaggle-api'
 Plug 'facebook/redex'
 Plug 'tuhdo/tuhdo.github.io'
 Plug 'tuhdo/emacs-c-ide-demo'
-Plug 'neovim/neovim'
+Plug 'tmux/tmux'
+Plug 'travis-ci/travis-build'
