@@ -188,7 +188,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" enable . command in visual mode
 	vnoremap . :normal .<cr>
 
-	map <silent> <C-h> :call functions#WinMove('h')<cr>
+	map <silent> <C-u> :call functions#WinMove('h')<cr>
 	map <silent> <C-j> :call functions#WinMove('j')<cr>
 	map <silent> <C-k> :call functions#WinMove('k')<cr>
 	map <silent> <C-l> :call functions#WinMove('l')<cr>
@@ -357,10 +357,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 		if isdirectory(".git")
 			" if in a git project, use :GFiles
-			nmap <silent> <leader>t :GFiles --cached --others --exclude-standard<cr>
+			" nmap <silent> <leader>t :GFiles --cached --others --exclude-standard<cr>
+			nmap <silent> <leader>e :GFiles <cr>
 		else
 			" otherwise, use :FZF
-			nmap <silent> <leader>t :FZF<cr>
+			nmap <silent> <leader>e :FZF<cr>
 		endif
 
 		nmap <silent> <leader>r :Buffers<cr>
@@ -699,8 +700,11 @@ ca PlugS PlugStatus
 ca PlugI PlugInstall
 ca Run RunInInteractiveShell
 ca M Maps
-ca His History
-ca His: History:
+" ca His History
+" ca his History
+ca Hi History:
+ca hi History:
+ca cm Commands
 " toggle list plugin
 "
 " Donald Ephraim Curtis (2011)
@@ -921,3 +925,16 @@ Plug 'tuhdo/tuhdo.github.io'
 Plug 'tuhdo/emacs-c-ide-demo'
 Plug 'tmux/tmux'
 Plug 'travis-ci/travis-build'
+Plug 'neovim/neovim'
+Plug 'coreos/etcd'
+nmap <silent> <leader>t :Tags!<cr>
+set tags=/win3/tags;./tags
+" set tags=./tags;/data/dotfiles_xy/tags;
+" set tags=~/anaconda/tags;./tags;/
+" set tags=~/anaconda/tags;/win3/tags
+" set tags=./tags;
+let g:tagsfiles=tagfiles()
+echo g:tagsfiles
+Plug 'travis-ci/travis.rb'
+Plug 'aliyun/oss-browser'
+Plug 'aliyun/aliyun-cli'
