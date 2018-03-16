@@ -408,6 +408,7 @@ call plug#begin('~/.config/nvim/plugged')
 	    let g:signify_sign_delete            = '_'
 	    let g:signify_sign_delete_first_line = '‾'
 	    let g:signify_sign_change = '!'
+	    nmap <leader>gg :GitGutterLineHighlightsToggle<CR>
 	" }}}
 
 	" vim-fugitive {{{
@@ -417,6 +418,21 @@ call plug#begin('~/.config/nvim/plugged')
 		nmap <leader>ge :Gedit<cr>
 		nmap <silent><leader>gr :Gread<cr>
 		nmap <silent><leader>gb :Gblame<cr>
+		nnoremap <leader>gs :Gstatus<CR>
+		nnoremap <leader>gc :Gcommit -v -q<CR>
+		nnoremap <leader>ga :Gcommit --amend<CR>
+		nnoremap <leader>gt :Gcommit -v -q %<CR>
+		nnoremap <leader>gd :Gvdiff<CR>
+		nnoremap <leader>ge :Gedit<CR>
+		nnoremap <leader>gr :Gread<CR>
+		nnoremap <leader>gw :Gwrite<CR><CR>
+		nnoremap <leader>gl :silent! Glog<CR>
+		" nnoremap <leader>gp :Ggrep<Space>
+		" nnoremap <leader>gm :Gmove<Space>
+		" nnoremap <leader>gb :Git branch<Space>
+		" nnoremap <leader>go :Git checkout<Space>
+		nnoremap <leader>gps :Dispatch! git push<CR>
+		" nnoremap <leader>gpl :Dispatch! git pull<CR>
 	" }}}
 
 	" ALE {{{
@@ -440,11 +456,11 @@ call plug#begin('~/.config/nvim/plugged')
 	"gitgutter{{{
 	"Plug 'airblade/vim-gitgutter'
 	"}}}
-	"vim-unimpared{{{
-	"Plug 'tpope/vim-unimpaired'
-	"}}}
-         Plug 'ctrlpvim/ctrlp.vim'
-         Plug 'majutsushi/tagbar'
+	" vim-unimpared{{{
+	Plug 'tpope/vim-unimpaired'
+	" }}}
+	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'majutsushi/tagbar'
 
 
 " }}}
