@@ -507,9 +507,9 @@ call plug#begin('~/.config/nvim/plugged')
 		Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
 		" Open markdown files in Marked.app - mapped to <leader>m
-		Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' }
-		nmap <leader>m :MarkedOpen!<cr>
-		nmap <leader>mq :MarkedQuit<cr>
+		" Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' }
+		" nmap <leader>m :MarkedOpen!<cr>
+		" nmap <leader>mq :MarkedQuit<cr>
 		nmap <leader>* *<c-o>:%s///gn<cr>
 
 		" a simple tool for presenting slides in vim based on text files
@@ -537,6 +537,8 @@ let g:instant_markdown_autostart = 0
 Plug 'jszakmeister/markdown2ctags'
 Plug 'christoomey/vim-run-interactive'
 Plug 'junegunn/vim-peekaboo'
+Plug 'wellle/tmux-complete.vim'
+" Plug 'dimasg/vim-mark'
 call plug#end()
 
 " Colorscheme and final setup {{{
@@ -699,7 +701,7 @@ nnoremap <leader>s :so ~/.config/nvim/plugged/vimwiki/autoload/vimwiki/base.vim 
 ca PlugS PlugStatus
 ca PlugI PlugInstall
 ca Run RunInInteractiveShell
-ca M Maps
+" ca M Maps
 " ca His History
 " ca his History
 ca Hi History:
@@ -812,7 +814,7 @@ vmap <leader>] >gv
 nmap <silent> <leader>b :Buffers<cr>
 cmap <c-a> <home>
 noremap ; :
-nnoremap <leader>m :maps<cr>
+nnoremap <leader>m :Marks<cr>
 nnoremap H ^
 nnoremap L $
 vnoremap H ^
@@ -868,12 +870,16 @@ let g:tagbar_type_mkd = {
     \ },
     \ 'sort': 0,
     \ }
+" this should be aligned with .ctags in $home
+        " \ 'h:Heading_L1',
+        " \ 'i:Heading_L2',
+        " \ 'k:Heading_L3'
 let g:tagbar_type_markdown = {
     \ 'ctagstype' : 'markdown',
     \ 'kinds' : [
-        \ 'h:Heading_L1',
-        \ 'i:Heading_L2',
-        \ 'k:Heading_L3'
+        \ 'h:headings',
+        \ 'l:links',
+        \ 'i:images'
     \ ]
     \ }
 "TODO enable ag and its map in Visual mode
@@ -928,11 +934,11 @@ Plug 'travis-ci/travis-build'
 Plug 'neovim/neovim'
 Plug 'coreos/etcd'
 nmap <silent> <leader>t :Tags!<cr>
-set tags=/win3/tags;./tags
+" set tags=/win3/tags;./tags
 " set tags=./tags;/data/dotfiles_xy/tags;
 " set tags=~/anaconda/tags;./tags;/
 " set tags=~/anaconda/tags;/win3/tags
-" set tags=./tags;
+set tags=./tags;
 let g:tagsfiles=tagfiles()
 echo g:tagsfiles
 Plug 'travis-ci/travis.rb'
@@ -944,9 +950,33 @@ Plug 'junegunn/fzf'
 Plug 'b4b4r07/enhancd'
 map <leader>ec :e! ~/.enhancd/enhancd.log<cr>
 map <leader>eh :e! ~/.bash_history_summary<cr>
-function! s:buffer_lines()
-  return map(getline(1, "$"),
-    \ 'printf(s:yellow(" %4d ", "LineNr")."\t%s", v:key + 1, v:val)')
-endfunction
 
 map <silent> <leader>ed :BLines<cr>
+" if !exists('g:tagbar_ctags_bin')
+" echo g:tagbar_ctags_bin
+nmap <leader>q :close<cr>
+nmap <leader>w :w<cr>
+Plug 'neh/myconfig'
+
+function! Tmarks()
+  redir => cout
+  silent marks
+  redir END
+  let g:LIST = split(cout, "\n")
+endfunction
+call Tmarks()
+
+function! Curfile()
+	" echo @%
+	let filename=expand('%:p')
+	let g:TYPE = {'dict': type({}), 'funcref': type(function('call')), 'string': type(''), 'list': type([])}
+	let line_nr=line(".")
+	let l:mybuf = bufnr(a:filename, 1)
+	call setpos("'".a:mark, [l:mybuf, a:line_nr, 1, 0])
+endfunction
+
+" if exists("g:LIST")
+	" echo g:LIST
+" endif
+nmap <leader>s :call Tmarks()<cr>
+nmap <leader>em :Maps!<cr>
