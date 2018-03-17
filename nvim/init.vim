@@ -154,7 +154,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 	" edit ~/.config/nvim/init.vim
 	map <leader>ev :e! ~/.config/nvim/init.vim<cr>
-	map <leader>ev :e! /$DATA/dotfiles_xy/nvim/init.vim<cr>
+	map <leader>ev :e! $DATA/dotfiles_xy/nvim/init.vim<cr>
 	" edit gitconfig
 	map <leader>eg :e! ~/.gitconfig<cr>
 
@@ -250,7 +250,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 		" make quickfix windows take all the lower section of the screen
 		" when there are multiple windows open
-		autocmd FileType qf wincmd J
+		autocmd FileType qf wincmd L
 		autocmd FileType qf nmap <buffer> q :q<cr>
 	augroup END
 " }}}
@@ -555,6 +555,12 @@ Plug 'christoomey/vim-run-interactive'
 Plug 'junegunn/vim-peekaboo'
 Plug 'wellle/tmux-complete.vim'
 " Plug 'dimasg/vim-mark'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+let g:easytags_cmd = '/usr/local/bin/ctags'
+let g:easytags_dynamic_files = 1
+" Plug 'benmills/vimux'
+" Plug 'ivanov/vim-ipython'
 call plug#end()
 
 " Colorscheme and final setup {{{
@@ -817,7 +823,7 @@ nmap <script> <silent> <leader>l :call QuickfixRedir()<CR>
 
 if !exists("g:toggle_list_no_mappings")
 	" nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
-	nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
+	nmap <script> <silent> <leader>eq :call ToggleQuickfixList()<CR>
 endif
 
 
@@ -830,7 +836,7 @@ vmap <leader>] >gv
 nmap <silent> <leader>b :Buffers<cr>
 cmap <c-a> <home>
 noremap ; :
-nnoremap <leader>m :Marks<cr>
+nnoremap <leader>m :Marks!<cr>
 nnoremap H ^
 nnoremap L $
 vnoremap H ^
@@ -956,7 +962,7 @@ nmap <silent> <leader>t :Tags!<cr>
 " set tags=~/anaconda/tags;/win3/tags
 set tags=./tags;
 let g:tagsfiles=tagfiles()
-echo g:tagsfiles
+" echo g:tagsfiles
 Plug 'travis-ci/travis.rb'
 Plug 'aliyun/oss-browser'
 Plug 'aliyun/aliyun-cli'
@@ -996,3 +1002,63 @@ endfunction
 " endif
 nmap <leader>s :call Tmarks()<cr>
 nmap <leader>em :Maps!<cr>
+" echo the cscope.vim to init.vim
+Plug 'google/gops'
+Plug 'mhausenblas/cinf'
+Plug 'open-guides/og-aws'
+Plug 'janko-m/vim-test'
+Plug 'jpmens/jo'
+Plug 'papers-we-love/papers-we-love'
+Plug 'deepthawtz/faker'
+Plug 'dgryski/vim-godef'
+Plug 'heroku/logplex'
+Plug 'bigcompany/know-your-http'
+Plug 'gleitz/howdoi'
+Plug 'deepthawtz/faker'
+nmap <leader>Q ,q
+Plug 'tpope/vim-dispatch'
+Plug 'facebook/pfff'
+echo "load"
+function! Cscope(option, query)
+	let color = '{ x = $1; $1 = ""; z = $3; $3 = ""; printf "\033[34m%s\033[0m:\033[31m%s\033[0m\011\033[37m%s\033[0m\n", x,z,$0; }'
+	let opts = {
+				\ 'source':  "cscope -dL" . a:option . " " . a:query . " | awk '" . color . "'",
+				\ 'options': ['--ansi', '--prompt', '> ',
+				\             '--multi', '--bind', 'alt-a:select-all,alt-d:deselect-all',
+				\             '--color', 'fg:188,fg+:222,bg+:#3a3a3a,hl+:104'],
+				\ 'down': '40%'
+				\ }
+	function! opts.sink(lines)
+		let data = split(a:lines)
+		let file = split(data[0], ":")
+		execute 'e ' . '+' . file[1] . ' ' . file[0]
+	endfunction
+	call fzf#run(opts)
+endfunction
+
+nnoremap <silent> <Leader>ca :call Cscope('0', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>cc :call Cscope('1', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>cd :call Cscope('2', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>ce :call Cscope('3', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>cf :call Cscope('4', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>cg :call Cscope('6', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>ci :call Cscope('7', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>cs :call Cscope('8', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>ct :call Cscope('9', expand('<cword>'))<CR>
+nmap <leader>ew :Windows<cr>
+nmap<leader>E :!echo "capson"<cr>
+nmap<leader>Q :!echo "capson"<cr>
+nmap<leader>ED :!echo "capson"<cr>
+nmap<leader>ef :BLines!<cr>
+nmap<leader>EV :!echo "capson"<cr>
+nmap<leader>eg :echo g:tagsfiles<cr>
+nmap ]C :!echo "capson"<cr>
+nmap [C :!echo "capson"<cr>
+imap <Tab> <c-x><c-o>
+function! Cdcurline()
+	let dirname= getline(".")
+	exe 'cd '.dirname
+	exe 'pwd'
+endfunction
+nnoremap <silent> <Leader>cw :call Cdcurline()<CR>
+autocmd BufReadPost quickfix setlocal nowrap

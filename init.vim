@@ -322,7 +322,7 @@ call plug#begin('~/.config/nvim/plugged')
 		function! ToggleNerdTree()
 			if @% != "" && (!exists("g:NERDTree") || (g:NERDTree.ExistsForTab() && !g:NERDTree.IsOpen()))
 				:NERDTreeFind
-			else 
+			else
 				:NERDTreeToggle
 			endif
 		endfunction
@@ -443,7 +443,7 @@ call plug#begin('~/.config/nvim/plugged')
 	"}}}
          Plug 'ctrlpvim/ctrlp.vim'
          Plug 'git@github.com:majutsushi/tagbar.git'
- 
+
 
 " }}}
 
