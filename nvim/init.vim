@@ -450,8 +450,8 @@ call plug#begin('~/.config/nvim/plugged')
 	" }}}
 
 	" UltiSnips {{{
-		" Plug 'SirVer/ultisnips' " Snippets plugin
-		let g:UltiSnipsExpandTrigger="<tab>"
+		Plug 'SirVer/ultisnips' " Snippets plugin
+		let g:UltiSnipsExpandTrigger="c-u"
 	" }}}
 	"gitgutter{{{
 	"Plug 'airblade/vim-gitgutter'
@@ -557,8 +557,12 @@ Plug 'wellle/tmux-complete.vim'
 " Plug 'dimasg/vim-mark'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
-let g:easytags_cmd = '/usr/local/bin/ctags'
-let g:easytags_dynamic_files = 1
+let g:easytags_cmd = '/usr/bin/ctags'
+" let g:easytags_dynamic_files = 2
+let g:easytags_auto_update = 0
+let g:easytags_auto_highlight = 0
+let g:easytags_autorecurse = 1
+
 " Plug 'benmills/vimux'
 " Plug 'ivanov/vim-ipython'
 call plug#end()
@@ -590,7 +594,7 @@ call plug#end()
 " }}}
 
 " vim:set foldmethod=marker foldlevel=0
-set tags=~/anaconda/tags;./tags;/
+" set tags=~/anaconda/tags;./tags;/
 " set autochdir
 let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:ctrlp_cmd='CtrlP :pwd'
@@ -960,8 +964,8 @@ nmap <silent> <leader>t :Tags!<cr>
 " set tags=./tags;/data/dotfiles_xy/tags;
 " set tags=~/anaconda/tags;./tags;/
 " set tags=~/anaconda/tags;/win3/tags
-set tags=./tags;
-let g:tagsfiles=tagfiles()
+" set tags=./tags;
+" let g:tagsfiles=tagfiles()
 " echo g:tagsfiles
 Plug 'travis-ci/travis.rb'
 Plug 'aliyun/oss-browser'
@@ -1054,11 +1058,47 @@ nmap<leader>EV :!echo "capson"<cr>
 nmap<leader>eg :echo g:tagsfiles<cr>
 nmap ]C :!echo "capson"<cr>
 nmap [C :!echo "capson"<cr>
-imap <Tab> <c-x><c-o>
-function! Cdcurline()
-	let dirname= getline(".")
-	exe 'cd '.dirname
+imap <Tab> <c-x><c-i>
+function! Cdcurline(i)
+	if a:i==1
+		let dirname= getline(".")
+		exe 'cd '.dirname
+	endif
+	if a:i==2
+		cd %:h
+	endif
 	exe 'pwd'
 endfunction
-nnoremap <silent> <Leader>cw :call Cdcurline()<CR>
+nnoremap <silent> <Leader>cw :call Cdcurline(1)<CR>
+nnoremap <silent> <Leader>cp :call Cdcurline(2)<CR>
 autocmd BufReadPost quickfix setlocal nowrap
+" echo system('__enhancd:cd')
+" call system('fzf')
+Plug 'universal-ctags/ctags'
+function! Tagsm()
+	set tags=~/.vimtags;
+	let g:easytags_file = '~/.vimtags'
+	" let g:easytags_autorecurse=1
+	echo system("cat ~/.vimtags|wc -l")
+	" silent call system("mv  ~/.vimtags ~/.vimtags.bk")
+	echo g:easytags_file
+	let g:tagsfiles=[tagfiles(),g:easytags_autorecurse]
+        " silent :UpdateTags
+endfunction
+function! Tagredir()
+	set tags=$DATA/dotfiles_xy/nvim/plugged/tags;
+	let g:easytags_file='$DATA/dotfiles_xy/nvim/plugged/tags'
+	echo g:easytags_file
+	let g:tagsfiles=[tagfiles(),g:easytags_autorecurse]
+endfunction
+
+nmap <leader>l :call Tagsm()<cr>
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+" temp
+nmap <leader>s :UpdateTags <cr>
+nmap <leader>v :call Tagredir()<cr>
+
+
+let g:tagsfiles=[tagfiles(),g:easytags_autorecurse]
