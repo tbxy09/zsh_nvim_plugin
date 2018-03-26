@@ -2,7 +2,7 @@
 zmodload zsh/parameter
 hgss() {
   local selected
-  if selected=$(cat /root/.bash_history_summary |fzf); then
+  if selected=$(cat ~/.bash_history_summary |fzf); then
     LBUFFER=$selected
   fi
   zle redisplay
