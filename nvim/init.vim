@@ -461,6 +461,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" }}}
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'majutsushi/tagbar'
+	let g:tagbar_ctags_bin='/usr/bin/ctags'
 
 
 " }}}
@@ -550,6 +551,9 @@ Plug 'suan/vim-instant-markdown'
 Plug 'vimwiki/vimwiki',{'branch':'dev'}
 map <leader>md :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 0
+" let g:instant_markdown_open_to_the_world = 1
+" let g:instant_markdown_allow_unsafe_content = 1
+
 Plug 'jszakmeister/markdown2ctags'
 Plug 'christoomey/vim-run-interactive'
 Plug 'junegunn/vim-peekaboo'
@@ -562,6 +566,7 @@ let g:easytags_cmd = '/usr/bin/ctags'
 let g:easytags_auto_update = 0
 let g:easytags_auto_highlight = 0
 let g:easytags_autorecurse = 1
+let g:easytags_include_members = 0
 
 " Plug 'benmills/vimux'
 " Plug 'ivanov/vim-ipython'
@@ -906,8 +911,101 @@ let g:tagbar_type_markdown = {
         \ 'h:headings',
         \ 'l:links',
         \ 'i:images'
-    \ ]
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 'h' : 'headings',
+        \ 'l' : 'links',
+        \ 'i' : 'images',
+    \ },
+    \ 'sort': 0,
     \ }
+
+     " \ 'sro' : '/',
+    " \ 'kind2scope' : {
+    "     \ 'c' : 'class',
+    " \ },
+    " " \ 'ctagsargs' : '-o ',
+let g:tagbar_type_foo = {
+    \ 'ctagstype' : 'foo',
+    \ 'ctagsargs' : '-o - ',
+    \ 'kinds' : [
+        \ 'c:class',
+        \ 'p:package',
+        \ 'd:definition',
+        \ 'n:namespace',
+        \ 'v:var',
+        \ 'f:function',
+        \ 's:scope',
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope': {
+    \ 's' : 'scope',
+    \ 'c' : 'class',
+    \ 'f' : 'funtion',
+    \ 'p' : 'package',
+    \ 'd' : 'definition',
+    \ },
+    \ }
+
+let g:tagbar_type_bar = {
+    \ 'ctagstype' : 'bar',
+    \ 'ctagsargs' : '-o - ',
+    \ 'kinds' : [
+        \ 's:scope',
+        \ 'd:definition',
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope': {
+    \ 's' : 'scope',
+    \ 'd' : 'definition',
+    \ },
+    \ }
+let g:tagbar_type_myvim = {
+    \ 'ctagstype' : 'myvim',
+    \ 'ctagsargs' : '-o - ',
+    \ 'kinds' : [
+        \ 's:scope',
+        \ 'd:definition',
+        \ 'f:function',
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope': {
+    \ 's' : 'scope',
+    \ 'd' : 'definition',
+    \ 'f' : 'function',
+    \ },
+    \ }
+    " \ 'deffile' : expand('<sfile>:p:h:h') . '/ctags/mylang.cnf',
+" let g:tagbar_type_python = {
+"     \ 'ctagstype' : 'python',
+"     \ 'ctagsargs' : '-o - ',
+"     \ 'deffile' : expand('<sfile>:p:h:h') . '/args.ctags',
+"     \ 'kinds' : [
+"         \ 'i:scope',
+"         \ 'x:function',
+"     \ ],
+"     \ 'sro' : '|',
+"     \ 'kind2scope': {
+"     \ 'i' : 'scope',
+"     \ 'x' : 'function',
+"     \ },
+"     \ }
+
+" \ 'deffile' : '/root/.ctags.d/args.ctags',
+function! SetPytag()
+	if filereadable(expand('%:p:h') . '/args.ctags')
+		echo expand('%:p:h') . '/args.ctags'
+		" ln -sf  expand('%:p:h') . '/args.ctags' ~/.ctags.d/args.ctags
+		!ln -sf  '%:p:h/args.ctags' ~/.ctags.d/args.ctags
+	" 	let g:tagbr_type_python = {
+	" 				\ 'deffile' : expand('%:p:h') . '/args.ctags',
+	" 				\ }
+	endif
+endfunction
+
+
+
 "TODO enable ag and its map in Visual mode
 " vmap <silent><leader>ag :Ag <C-R><C-W><CR>
 " nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
@@ -1080,16 +1178,19 @@ function! Tagsm()
 	let g:easytags_file = '~/.vimtags'
 	" let g:easytags_autorecurse=1
 	echo system("cat ~/.vimtags|wc -l")
-	" silent call system("mv  ~/.vimtags ~/.vimtags.bk")
+	silent call system("mv  ~/.vimtags ~/.vimtags.bk")
 	echo g:easytags_file
-	let g:tagsfiles=[tagfiles(),g:easytags_autorecurse]
+	let g:easytags_include_members = 0
+	let g:tagsfiles=[tagfiles(),g:easytags_autorecurse,g:easytags_include_members]
         " silent :UpdateTags
 endfunction
 function! Tagredir()
+	let g:easytags_include_members = 0
 	set tags=$DATA/dotfiles_xy/nvim/plugged/tags;
 	let g:easytags_file='$DATA/dotfiles_xy/nvim/plugged/tags'
 	echo g:easytags_file
-	let g:tagsfiles=[tagfiles(),g:easytags_autorecurse]
+	let g:tagsfiles=[tagfiles(),g:easytags_autorecurse,g:easytags_include_members]
+	"let g:tagsfiles=[tagfiles(),g:easytags_autorecurse]
 endfunction
 
 nmap <leader>l :call Tagsm()<cr>
@@ -1099,6 +1200,16 @@ omap <leader><tab> <plug>(fzf-maps-o)
 " temp
 nmap <leader>s :UpdateTags <cr>
 nmap <leader>v :call Tagredir()<cr>
+Plug 'easymotion/vim-easymotion'
+"this is to make instant-markdown to work
+filetype plugin on
 
-
-let g:tagsfiles=[tagfiles(),g:easytags_autorecurse]
+set tags=~/.vimtags;
+let g:tagsfiles=[tagfiles(),g:easytags_autorecurse,g:easytags_include_members]
+Plug 'suan/instant-markdown-d'
+Plug 'aliyun/aliyun-openapi-python-sdk'
+nmap <leader>f :set filetype=python<cr>
+nmap <leader>gf :set filetype=foo<cr>
+nmap <leader>en :TagbarDebugEnd<cr>
+nmap <leader>et :TagbarDebug<cr>
+nmap <leader>er :call SetPytag()<cr>
