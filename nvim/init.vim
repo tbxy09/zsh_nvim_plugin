@@ -1070,7 +1070,7 @@ Plug 'aliyun/oss-browser'
 Plug 'aliyun/aliyun-cli'
 Plug 'git-tips/tips'
 Plug 'tj/git-extras'
-Plug 'junegunn/fzf'
+" Plug 'junegunn/fzf'
 Plug 'b4b4r07/enhancd'
 map <leader>ec :e! ~/.enhancd/enhancd.log<cr>
 map <leader>eh :e! ~/.bash_history_summary<cr>
